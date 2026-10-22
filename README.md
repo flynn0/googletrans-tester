@@ -2,6 +2,7 @@
 
 [![Test Implementations Matrix](https://github.com/flynn0/googletrans-tester/actions/workflows/test-implementations.yml/badge.svg)](https://github.com/flynn0/googletrans-tester/actions/workflows/test-implementations.yml)
 [![Deploy Dashboard to GitHub Pages](https://github.com/flynn0/googletrans-tester/actions/workflows/deploy-pages.yml/badge.svg)](https://github.com/flynn0/googletrans-tester/actions/workflows/deploy-pages.yml)
+[![Latest Release](https://img.shields.io/github/v/release/flynn0/googletrans-tester?color=blue)](https://github.com/flynn0/googletrans-tester/releases/tag/v0.1.0)
 
 An agentic multi-target testing harness, statistical telemetry collector, and interactive Vite dashboard for validating and comparing **all 27 major PyPI packages and forks** of the Python `googletrans` ecosystem.
 

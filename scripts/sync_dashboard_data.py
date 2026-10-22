@@ -177,6 +177,8 @@ def sync():
         "generated_at": now_iso,
         "metadata": {
             "title": "Googletrans Implementations & Forks Live Matrix",
+            "version": "v0.1.0",
+            "release_url": "https://github.com/flynn0/googletrans-tester/releases/tag/v0.1.0",
             "repository": "https://github.com/flynn0/googletrans-tester",
             "inspiration_repos": [
                 "https://github.com/aikenf/googletrans-all",
