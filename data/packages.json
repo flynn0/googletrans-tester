@@ -1,0 +1,245 @@
+[
+  {
+    "id": "googletrans",
+    "pypi_name": "googletrans",
+    "pypi_url": "https://pypi.org/project/googletrans/",
+    "pepy_url": "https://pepy.tech/projects/googletrans",
+    "pypistats_url": "https://pypistats.org/packages/googletrans",
+    "default_module": "googletrans",
+    "description": "The original and most widespread unofficial Google Translate API library."
+  },
+  {
+    "id": "googletrans-curl",
+    "pypi_name": "googletrans-curl",
+    "pypi_url": "https://pypi.org/project/googletrans-curl/",
+    "pepy_url": "https://pepy.tech/projects/googletrans-curl",
+    "pypistats_url": "https://pypistats.org/packages/googletrans-curl",
+    "default_module": "googletrans",
+    "description": "Modern fork utilizing curl-cffi and httpx[http2] for enhanced bypass and stability."
+  },
+  {
+    "id": "googletrans-py",
+    "pypi_name": "googletrans-py",
+    "pypi_url": "https://pypi.org/project/googletrans-py/",
+    "pepy_url": "https://pepy.tech/projects/googletrans-py",
+    "pypistats_url": "https://pypistats.org/packages/googletrans-py",
+    "default_module": "googletrans",
+    "description": "Fork packaging synchronous 4.0.0 API."
+  },
+  {
+    "id": "googletrans-py39",
+    "pypi_name": "googletrans-py39",
+    "pypi_url": "https://pypi.org/project/googletrans-py39/",
+    "pepy_url": "https://pepy.tech/projects/googletrans-py39",
+    "pypistats_url": "https://pypistats.org/packages/googletrans-py39",
+    "default_module": "googletrans",
+    "description": "Python 3.9 compatibility fork."
+  },
+  {
+    "id": "googletrans-python",
+    "pypi_name": "googletrans-python",
+    "pypi_url": "https://pypi.org/project/googletrans-python/",
+    "pepy_url": "https://pepy.tech/projects/googletrans-python",
+    "pypistats_url": "https://pypistats.org/packages/googletrans-python",
+    "default_module": "googletrans",
+    "description": "Alternative wrapper providing direct translate() function."
+  },
+  {
+    "id": "googletrans-sw",
+    "pypi_name": "googletrans-sw",
+    "pypi_url": "https://pypi.org/project/googletrans-sw/",
+    "pepy_url": "https://pepy.tech/projects/googletrans-sw",
+    "pypistats_url": "https://pypistats.org/packages/googletrans-sw",
+    "default_module": "googletrans",
+    "description": "Swahili / customized distribution fork."
+  },
+  {
+    "id": "googletrans-wheel",
+    "pypi_name": "googletrans-wheel",
+    "pypi_url": "https://pypi.org/project/googletrans-wheel/",
+    "pepy_url": "https://pepy.tech/projects/googletrans-wheel",
+    "pypistats_url": "https://pypistats.org/packages/googletrans-wheel",
+    "default_module": "googletrans_wheel",
+    "description": "Binary wheel build with googletrans_wheel module namespace."
+  },
+  {
+    "id": "googletrans-di",
+    "pypi_name": "googletrans-di",
+    "pypi_url": "https://pypi.org/project/googletrans-di/",
+    "pepy_url": "https://pepy.tech/projects/googletrans-di",
+    "pypistats_url": "https://pypistats.org/packages/googletrans-di",
+    "default_module": "googletrans_di",
+    "description": "Fork using googletrans_di namespace."
+  },
+  {
+    "id": "googletrans-modified",
+    "pypi_name": "googletrans-modified",
+    "pypi_url": "https://pypi.org/project/googletrans-modified/",
+    "pepy_url": "https://pepy.tech/projects/googletrans-modified",
+    "pypistats_url": "https://pypistats.org/packages/googletrans-modified",
+    "default_module": "googletrans",
+    "description": "Modified release with adjusted query handling."
+  },
+  {
+    "id": "py-googletrans",
+    "pypi_name": "py-googletrans",
+    "pypi_url": "https://pypi.org/project/py-googletrans/",
+    "pepy_url": "https://pepy.tech/projects/py-googletrans",
+    "pypistats_url": "https://pypistats.org/packages/py-googletrans",
+    "default_module": "googletrans",
+    "description": "PyPI release published under original py-googletrans repository name."
+  },
+  {
+    "id": "googletrans-wheel2-py",
+    "pypi_name": "googletrans-wheel2-py",
+    "pypi_url": "https://pypi.org/project/googletrans-wheel2-py/",
+    "pepy_url": "https://pepy.tech/projects/googletrans-wheel2-py",
+    "pypistats_url": "https://pypistats.org/packages/googletrans-wheel2-py",
+    "default_module": "googletrans",
+    "description": "Wheel repackage fork targeting modern python versions."
+  },
+  {
+    "id": "googletrans-temp",
+    "pypi_name": "googletrans-temp",
+    "pypi_url": "https://pypi.org/project/googletrans-temp/",
+    "pepy_url": "https://pepy.tech/projects/googletrans-temp",
+    "pypistats_url": "https://pypistats.org/packages/googletrans-temp",
+    "default_module": "googletrans",
+    "description": "Temporary mirror release of googletrans v2.3.0."
+  },
+  {
+    "id": "googletrans2",
+    "pypi_name": "googletrans2",
+    "pypi_url": "https://pypi.org/project/googletrans2/",
+    "pepy_url": "https://pepy.tech/projects/googletrans2",
+    "pypistats_url": "https://pypistats.org/packages/googletrans2",
+    "default_module": "googletrans",
+    "description": "Alternative distribution tracking the googletrans 2.x branch."
+  },
+  {
+    "id": "googletrans2020",
+    "pypi_name": "googletrans2020",
+    "pypi_url": "https://pypi.org/project/googletrans2020/",
+    "pepy_url": "https://pepy.tech/projects/googletrans2020",
+    "pypistats_url": "https://pypistats.org/packages/googletrans2020",
+    "default_module": "GoogleTrans2020",
+    "description": "Community fork providing updated translation endpoints from 2020."
+  },
+  {
+    "id": "googletransapi",
+    "pypi_name": "googletransapi",
+    "pypi_url": "https://pypi.org/project/googletransapi/",
+    "pepy_url": "https://pepy.tech/projects/googletransapi",
+    "pypistats_url": "https://pypistats.org/packages/googletransapi",
+    "default_module": "GoogleTransAPI",
+    "description": "Wrapper package providing translation and MP3 audio generation."
+  },
+  {
+    "id": "googletransfork",
+    "pypi_name": "googletransfork",
+    "pypi_url": "https://pypi.org/project/googletransfork/",
+    "pepy_url": "https://pepy.tech/projects/googletransfork",
+    "pypistats_url": "https://pypistats.org/packages/googletransfork",
+    "default_module": "googletrans",
+    "description": "Fork package based on early googletrans release."
+  },
+  {
+    "id": "googletranslate",
+    "pypi_name": "googletranslate",
+    "pypi_url": "https://pypi.org/project/googletranslate/",
+    "pepy_url": "https://pepy.tech/projects/googletranslate",
+    "pypistats_url": "https://pypistats.org/packages/googletranslate",
+    "default_module": "googletranslate",
+    "description": "Candidate PyPI namespace tested for package availability."
+  },
+  {
+    "id": "googletranslate-neon-plugin",
+    "pypi_name": "googletranslate-neon-plugin",
+    "pypi_url": "https://pypi.org/project/googletranslate-neon-plugin/",
+    "pepy_url": "https://pepy.tech/projects/googletranslate-neon-plugin",
+    "pypistats_url": "https://pypistats.org/packages/googletranslate-neon-plugin",
+    "default_module": "googletranslate_neon_plugin",
+    "description": "Neon AI framework translation plugin powered by Google Translate."
+  },
+  {
+    "id": "googletranslate-python",
+    "pypi_name": "googletranslate-python",
+    "pypi_url": "https://pypi.org/project/googletranslate-python/",
+    "pepy_url": "https://pepy.tech/projects/googletranslate-python",
+    "pypistats_url": "https://pypistats.org/packages/googletranslate-python",
+    "default_module": "googletranslatepy",
+    "description": "Google Translate client built on top of deep-translator."
+  },
+  {
+    "id": "googletranslator-new",
+    "pypi_name": "googletranslator-new",
+    "pypi_url": "https://pypi.org/project/googletranslator-new/",
+    "pepy_url": "https://pepy.tech/projects/googletranslator-new",
+    "pypistats_url": "https://pypistats.org/packages/googletranslator-new",
+    "default_module": "src",
+    "description": "Convenient Russian/multilingual Google Translator client wrapper."
+  },
+  {
+    "id": "googletranswheel2",
+    "pypi_name": "googletranswheel2",
+    "pypi_url": "https://pypi.org/project/googletranswheel2/",
+    "pepy_url": "https://pepy.tech/projects/googletranswheel2",
+    "pypistats_url": "https://pypistats.org/packages/googletranswheel2",
+    "default_module": "googletranswheel2",
+    "description": "Repackaged wheel with googletranswheel2 namespace."
+  },
+  {
+    "id": "googletransx",
+    "pypi_name": "googletransx",
+    "pypi_url": "https://pypi.org/project/googletransx/",
+    "pepy_url": "https://pepy.tech/projects/googletransx",
+    "pypistats_url": "https://pypistats.org/packages/googletransx",
+    "default_module": "googletransx",
+    "description": "Independent fork using the googletransx namespace."
+  },
+  {
+    "id": "vtrans",
+    "pypi_name": "vtrans",
+    "pypi_url": "https://pypi.org/project/vtrans/",
+    "pepy_url": "https://pepy.tech/projects/vtrans",
+    "pypistats_url": "https://pypistats.org/packages/vtrans",
+    "default_module": "vtrans",
+    "description": "Cross-platform self-updating translator supporting up to 130 languages."
+  },
+  {
+    "id": "Flask-Googletrans",
+    "pypi_name": "Flask-Googletrans",
+    "pypi_url": "https://pypi.org/project/Flask-Googletrans/",
+    "pepy_url": "https://pepy.tech/projects/Flask-Googletrans",
+    "pypistats_url": "https://pypistats.org/packages/Flask-Googletrans",
+    "default_module": "flask_googletrans",
+    "description": "Flask web application extension for automated template translation."
+  },
+  {
+    "id": "simple-googletrans",
+    "pypi_name": "simple-googletrans",
+    "pypi_url": "https://pypi.org/project/simple-googletrans/",
+    "pepy_url": "https://pepy.tech/projects/simple-googletrans",
+    "pypistats_url": "https://pypistats.org/packages/simple-googletrans",
+    "default_module": "simple_googletrans",
+    "description": "Simple CLI and Python wrapper around googletrans with logging and batching."
+  },
+  {
+    "id": "py-googletrans-html",
+    "pypi_name": "py-googletrans-html",
+    "pypi_url": "https://pypi.org/project/py-googletrans-html/",
+    "pepy_url": "https://pepy.tech/projects/py-googletrans-html",
+    "pypistats_url": "https://pypistats.org/packages/py-googletrans-html",
+    "default_module": "googletrans",
+    "description": "Google Translate fork with specialized HTML preservation."
+  },
+  {
+    "id": "ggtrans",
+    "pypi_name": "ggtrans",
+    "pypi_url": "https://pypi.org/project/ggtrans/",
+    "pepy_url": "https://pepy.tech/projects/ggtrans",
+    "pypistats_url": "https://pypistats.org/packages/ggtrans",
+    "default_module": "googletrans",
+    "description": "Lightweight repackage of free Google Translate API for Python."
+  }
+]

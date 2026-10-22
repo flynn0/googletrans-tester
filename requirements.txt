@@ -1,0 +1,5 @@
+# Core test harness and runner dependencies
+packaging>=23.0
+legacy-cgi>=2.6.0
+pytest>=8.0.0
+pytest-asyncio>=0.23.0
