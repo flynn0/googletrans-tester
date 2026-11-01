@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-01T12:34:56.471622+00:00",
+  "generated_at": "2026-11-01T14:18:06.909650+00:00",
   "metadata": {
     "title": "Googletrans Implementations & Forks Live Matrix",
-    "version": "v0.1.0",
-    "release_url": "https://github.com/flynn0/googletrans-tester/releases/tag/v0.1.0",
+    "version": "v0.1.1",
+    "release_url": "https://github.com/flynn0/googletrans-tester/releases/tag/v0.1.1",
     "repository": "https://github.com/flynn0/googletrans-tester",
     "inspiration_repos": [
       "https://github.com/aikenf/googletrans-all",
