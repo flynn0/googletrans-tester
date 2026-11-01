@@ -1,9 +1,9 @@
 {
   "summary": {
-    "total": 27,
-    "passed": 10,
-    "failed": 17,
-    "timestamp": "2026-11-01T05:41:09.605228+00:00"
+    "total": 33,
+    "passed": 12,
+    "failed": 21,
+    "timestamp": "2026-11-01T12:33:50.932978+00:00"
   },
   "results": {
     "googletrans": {
@@ -1030,6 +1030,237 @@
       "package_id": "ggtrans",
       "description": "Lightweight repackage of free Google Translate API for Python.",
       "pypi_url": "https://pypi.org/project/ggtrans/"
+    },
+    "paraphrase-googletranslate": {
+      "package_name": "paraphrase-googletranslate",
+      "timestamp": "2026-11-01T12:33:21Z",
+      "python_version": "3.14.4",
+      "installed": true,
+      "import_success": true,
+      "module_name": "paraphrase_googletranslate",
+      "api_type": "sync",
+      "tests": {
+        "packaging": {
+          "status": "passed",
+          "details": "Installed version 0.0.7"
+        },
+        "import": {
+          "status": "passed",
+          "details": "Imported paraphrase_googletranslate (version: unknown)"
+        },
+        "translate_en_de": {
+          "status": "failed",
+          "latency_ms": 188.6,
+          "result": "None",
+          "error": "Invalid translation result: None"
+        },
+        "detect_language": {
+          "status": "skipped",
+          "latency_ms": null,
+          "result": null,
+          "error": null,
+          "details": "detect() API not provided by this implementation"
+        }
+      },
+      "overall_status": "failed",
+      "error_summary": "Invalid translation result: None",
+      "installed_version": "0.0.7",
+      "elapsed_sec": 3.57,
+      "package_id": "paraphrase-googletranslate",
+      "description": "Paraphrasing engine built on top of google-trans-new.",
+      "pypi_url": "https://pypi.org/project/paraphrase-googletranslate/"
+    },
+    "SmallGoogleTranslator": {
+      "package_name": "SmallGoogleTranslator",
+      "timestamp": "2026-11-01T12:33:24Z",
+      "python_version": "3.14.4",
+      "installed": true,
+      "import_success": false,
+      "module_name": null,
+      "api_type": "unknown",
+      "tests": {
+        "packaging": {
+          "status": "passed",
+          "details": "Installed version 1.2"
+        },
+        "import": {
+          "status": "failed",
+          "details": "google.translator: No module named 'aiohttp' | google: No module named 'aiohttp' | SmallGoogleTranslator: No module named 'SmallGoogleTranslator' | googletrans: No module named 'googletrans'"
+        },
+        "translate_en_de": {
+          "status": "pending",
+          "latency_ms": null,
+          "result": null,
+          "error": null
+        },
+        "detect_language": {
+          "status": "pending",
+          "latency_ms": null,
+          "result": null,
+          "error": null
+        }
+      },
+      "overall_status": "failed",
+      "error_summary": "Failed to import candidate modules: google.translator: No module named 'aiohttp' | google: No module named 'aiohttp' | SmallGoogleTranslator: No module named 'SmallGoogleTranslator' | googletrans: No module named 'googletrans'",
+      "installed_version": "1.2",
+      "elapsed_sec": 3.37,
+      "package_id": "SmallGoogleTranslator",
+      "description": "Minimalist async/sync Google Translator library scraping the web endpoint.",
+      "pypi_url": "https://pypi.org/project/SmallGoogleTranslator/"
+    },
+    "cloud-translator": {
+      "package_name": "cloud-translator",
+      "timestamp": "2026-11-01T12:33:29Z",
+      "python_version": "3.14.4",
+      "installed": true,
+      "import_success": true,
+      "module_name": "translator",
+      "api_type": "sync",
+      "tests": {
+        "packaging": {
+          "status": "passed",
+          "details": "Installed version 1.0"
+        },
+        "import": {
+          "status": "passed",
+          "details": "Imported translator (version: unknown)"
+        },
+        "translate_en_de": {
+          "status": "failed",
+          "latency_ms": 0.04,
+          "result": null,
+          "error": "AttributeError: 'coroutine' object has no attribute 'text'"
+        },
+        "detect_language": {
+          "status": "skipped",
+          "latency_ms": null,
+          "result": null,
+          "error": null,
+          "details": "detect() API not provided by this implementation"
+        }
+      },
+      "overall_status": "failed",
+      "error_summary": "AttributeError: 'coroutine' object has no attribute 'text'",
+      "installed_version": "1.0",
+      "elapsed_sec": 4.14,
+      "package_id": "cloud-translator",
+      "description": "Unified translation wrapper targeting Google Translate, Baidu, and Tencent.",
+      "pypi_url": "https://pypi.org/project/cloud-translator/"
+    },
+    "gotranslate": {
+      "package_name": "gotranslate",
+      "timestamp": "2026-11-01T12:33:32Z",
+      "python_version": "3.14.4",
+      "installed": true,
+      "import_success": true,
+      "module_name": "gtranslate",
+      "api_type": "sync",
+      "tests": {
+        "packaging": {
+          "status": "passed",
+          "details": "Installed version 1.0.0"
+        },
+        "import": {
+          "status": "passed",
+          "details": "Imported gtranslate (version: 1.0.0)"
+        },
+        "translate_en_de": {
+          "status": "passed",
+          "latency_ms": 190.06,
+          "result": "Hallo Welt",
+          "error": null
+        },
+        "detect_language": {
+          "status": "passed",
+          "latency_ms": 187.4,
+          "result": "fr",
+          "error": null
+        }
+      },
+      "overall_status": "passed",
+      "error_summary": null,
+      "installed_version": "1.0.0",
+      "elapsed_sec": 4.09,
+      "package_id": "gotranslate",
+      "description": "Lightweight GoogleTranslator library with language detection, details, and emoji flags.",
+      "pypi_url": "https://pypi.org/project/gotranslate/"
+    },
+    "unlimited-machine-translator": {
+      "package_name": "unlimited-machine-translator",
+      "timestamp": "2026-11-01T12:33:43Z",
+      "python_version": "3.14.4",
+      "installed": true,
+      "import_success": true,
+      "module_name": "unlimited_machine_translator",
+      "api_type": "function",
+      "tests": {
+        "packaging": {
+          "status": "passed",
+          "details": "Installed version 1.1.8"
+        },
+        "import": {
+          "status": "passed",
+          "details": "Imported unlimited_machine_translator (version: unknown)"
+        },
+        "translate_en_de": {
+          "status": "failed",
+          "latency_ms": 936.93,
+          "result": null,
+          "error": "TooManyRequests: Server Error: You made too many requests to the server.According to google, you are allowed to make 5 requests per secondand up to 200k requests per day. You can wait and try again later oryou can try the translate_batch function"
+        },
+        "detect_language": {
+          "status": "skipped",
+          "latency_ms": null,
+          "result": null,
+          "error": null,
+          "details": "detect() API not provided by this implementation"
+        }
+      },
+      "overall_status": "failed",
+      "error_summary": "TooManyRequests: Server Error: You made too many requests to the server.According to google, you are allowed to make 5 requests per secondand up to 200k requests per day. You can wait and try again later oryou can try the translate_batch function",
+      "installed_version": "1.1.8",
+      "elapsed_sec": 11.8,
+      "package_id": "unlimited-machine-translator",
+      "description": "Batch document and DataFrame machine translation leveraging Google Translate.",
+      "pypi_url": "https://pypi.org/project/unlimited-machine-translator/"
+    },
+    "mintrans": {
+      "package_name": "mintrans",
+      "timestamp": "2026-11-01T12:33:49Z",
+      "python_version": "3.14.4",
+      "installed": true,
+      "import_success": true,
+      "module_name": "mintrans",
+      "api_type": "sync",
+      "tests": {
+        "packaging": {
+          "status": "passed",
+          "details": "Installed version 1.1.0"
+        },
+        "import": {
+          "status": "passed",
+          "details": "Imported mintrans (version: unknown)"
+        },
+        "translate_en_de": {
+          "status": "passed",
+          "latency_ms": 859.92,
+          "result": "Hallo Welt",
+          "error": null
+        },
+        "detect_language": {
+          "status": "passed",
+          "latency_ms": 0.0,
+          "result": "en",
+          "error": null
+        }
+      },
+      "overall_status": "passed",
+      "error_summary": null,
+      "installed_version": "1.1.0",
+      "elapsed_sec": 5.67,
+      "package_id": "mintrans",
+      "description": "Free multi-service translation API wrapper supporting Google Translate, Bing, and DeepL.",
+      "pypi_url": "https://pypi.org/project/mintrans/"
     }
   }
 }

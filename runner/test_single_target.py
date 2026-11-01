@@ -116,14 +116,29 @@ def run_test(package_name, target_module_hint=None):
 
     # 3. Locate Translator or translate callable
     translator_cls = None
-    for cand_name in ["Translator", "GoogleTrans", "google_translator", "google_trans_new", "GoogleTranslator"]:
+    target_cls_names = [
+        "GoogleTranslator",
+        "Translator",
+        "GoogleTrans",
+        "google_translator",
+        "google_trans_new",
+        "Paraphraser",
+    ]
+    for cand_name in target_cls_names:
         cls_obj = getattr(module, cand_name, None)
         if cls_obj and inspect.isclass(cls_obj):
             translator_cls = cls_obj
             break
 
     direct_translate_fn = None
-    for cand_fn in ["translate", "translate_text", "google_translate"]:
+    target_fn_names = [
+        "translate",
+        "translate_text",
+        "google_translate",
+        "machine_translator_doc",
+        "machine_translator_df",
+    ]
+    for cand_fn in target_fn_names:
         fn_obj = getattr(module, cand_fn, None)
         if fn_obj and callable(fn_obj):
             direct_translate_fn = fn_obj
@@ -136,13 +151,25 @@ def run_test(package_name, target_module_hint=None):
                 continue
             try:
                 sub_obj = getattr(module, sub_name, None)
+                if not inspect.ismodule(sub_obj):
+                    try:
+                        sub_obj = importlib.import_module(f"{imported_name}.{sub_name}")
+                    except Exception:
+                        pass
                 if inspect.ismodule(sub_obj):
-                    for cand_name in ["Translator", "GoogleTrans", "google_translator", "google_trans_new", "GoogleTranslator"]:
+                    for cand_name in target_cls_names:
                         cls_obj = getattr(sub_obj, cand_name, None)
                         if cls_obj and inspect.isclass(cls_obj):
                             translator_cls = cls_obj
                             break
                     if translator_cls:
+                        break
+                    for cand_fn in target_fn_names:
+                        fn_obj = getattr(sub_obj, cand_fn, None)
+                        if fn_obj and callable(fn_obj):
+                            direct_translate_fn = fn_obj
+                            break
+                    if direct_translate_fn:
                         break
             except Exception:
                 pass
@@ -152,13 +179,28 @@ def run_test(package_name, target_module_hint=None):
 
     if translator_cls:
         try:
-            translator_instance = translator_cls()
-            if hasattr(translator_instance, "translate"):
-                is_async = inspect.iscoroutinefunction(translator_instance.translate)
-                report["api_type"] = "async" if is_async else "sync"
-            elif hasattr(translator_instance, "translate_text"):
-                is_async = inspect.iscoroutinefunction(translator_instance.translate_text)
-                report["api_type"] = "async" if is_async else "sync"
+            # Check constructor signature for target / destination parameters
+            init_kwargs = {}
+            try:
+                init_sig = inspect.signature(translator_cls.__init__)
+                params = init_sig.parameters
+                if "target" in params and params["target"].default != inspect.Parameter.empty:
+                    init_kwargs["target"] = "de"
+                elif "dest" in params and params["dest"].default != inspect.Parameter.empty:
+                    init_kwargs["dest"] = "de"
+                translator_instance = translator_cls(**init_kwargs)
+            except Exception:
+                translator_instance = translator_cls()
+
+            for method_name in ["translate", "translate_text", "translate_async", "translate_sync", "paraphrase"]:
+                if hasattr(translator_instance, method_name):
+                    fn = getattr(translator_instance, method_name)
+                    if inspect.iscoroutinefunction(fn):
+                        is_async = True
+                        report["api_type"] = "async"
+                    else:
+                        report["api_type"] = "sync"
+                    break
         except Exception as e:
             report["error_summary"] = f"Translator initialization failed: {e}"
             report["tests"]["translate_en_de"]["status"] = "failed"
@@ -176,34 +218,85 @@ def run_test(package_name, target_module_hint=None):
     async def async_test_suite():
         # Test 3: Translate English -> German
         t0 = time.perf_counter()
+        raw_res = None
         try:
             if translator_instance:
                 if hasattr(translator_instance, "translate"):
-                    if is_async:
-                        res = await translator_instance.translate("Hello world", dest="de")
-                    else:
+                    sig = inspect.signature(translator_instance.translate)
+                    params = sig.parameters
+                    if "dest" in params:
                         res = translator_instance.translate("Hello world", dest="de")
-                elif hasattr(translator_instance, "translate_text"):
-                    if is_async:
-                        res = await translator_instance.translate_text("Hello world", dest="de")
+                    elif "to_lang" in params and "from_lang" in params:
+                        res = translator_instance.translate("Hello world", from_lang="auto", to_lang="de")
+                    elif "target" in params:
+                        res = translator_instance.translate("Hello world", target="de")
                     else:
-                        res = translator_instance.translate_text("Hello world", dest="de")
+                        try:
+                            res = translator_instance.translate("Hello world", dest="de")
+                        except TypeError:
+                            try:
+                                res = translator_instance.translate("Hello world", "auto", "de")
+                            except TypeError:
+                                res = translator_instance.translate("Hello world")
+                elif hasattr(translator_instance, "translate_async"):
+                    try:
+                        res = await translator_instance.translate_async("Hello world", to_lang="de")
+                    except TypeError:
+                        res = await translator_instance.translate_async("Hello world", "de")
+                elif hasattr(translator_instance, "translate_sync"):
+                    try:
+                        res = translator_instance.translate_sync("Hello world", to_lang="de")
+                    except TypeError:
+                        res = translator_instance.translate_sync("Hello world", "de")
+                elif hasattr(translator_instance, "translate_text"):
+                    res = translator_instance.translate_text("Hello world", dest="de")
+                elif hasattr(translator_instance, "paraphrase"):
+                    res = translator_instance.paraphrase("Hello world", secondary_language="de")
                 else:
-                    raise RuntimeError("Translator instance has neither translate nor translate_text")
+                    raise RuntimeError("No recognized translation method on translator instance")
             elif direct_translate_fn:
-                sig = inspect.signature(direct_translate_fn)
-                params = sig.parameters
-                if "dest" in params:
-                    res = direct_translate_fn("Hello world", dest="de")
-                elif "to_lang" in params:
-                    res = direct_translate_fn("Hello world", to_lang="de")
+                fn_name = getattr(direct_translate_fn, "__name__", "")
+                if fn_name in ["machine_translator_doc", "machine_translator_df"]:
+                    import tempfile
+                    from deep_translator import GoogleTranslator as DTGoogleTranslator
+                    wd = tempfile.mkdtemp()
+                    res = direct_translate_fn(
+                        "Hello world",
+                        target_language="de",
+                        source_language="auto",
+                        Translator=DTGoogleTranslator,
+                        current_wd=wd,
+                    )
                 else:
-                    res = direct_translate_fn("Hello world", "de")
+                    sig = inspect.signature(direct_translate_fn)
+                    params = sig.parameters
+                    if "dest" in params:
+                        res = direct_translate_fn("Hello world", dest="de")
+                    elif "to_lang" in params:
+                        res = direct_translate_fn("Hello world", to_lang="de")
+                    else:
+                        res = direct_translate_fn("Hello world", "de")
             else:
                 raise RuntimeError("No translator interface available")
 
+            if inspect.iscoroutine(res):
+                res = await res
+
+            raw_res = res
             latency = round((time.perf_counter() - t0) * 1000, 2)
-            res_text = getattr(res, "text", str(res))
+
+            if isinstance(res, dict):
+                if "sentences" in res and isinstance(res["sentences"], list):
+                    res_text = "".join(s.get("trans", "") for s in res["sentences"] if isinstance(s, dict))
+                elif "translation" in res:
+                    res_text = str(res["translation"])
+                elif "translatedText" in res:
+                    res_text = str(res["translatedText"])
+                else:
+                    res_text = str(res)
+            else:
+                res_text = getattr(res, "text", str(res))
+
             report["tests"]["translate_en_de"]["latency_ms"] = latency
             report["tests"]["translate_en_de"]["result"] = res_text
 
@@ -226,15 +319,26 @@ def run_test(package_name, target_module_hint=None):
         # Test 4: Language detection
         t1 = time.perf_counter()
         try:
-            if translator_instance and hasattr(translator_instance, "detect"):
-                if inspect.iscoroutinefunction(translator_instance.detect):
-                    det_res = await translator_instance.detect("Bonjour tout le monde")
-                else:
-                    det_res = translator_instance.detect("Bonjour tout le monde")
+            det_fn = None
+            if translator_instance:
+                for cand in ["detect", "detect_language"]:
+                    fn = getattr(translator_instance, cand, None)
+                    if fn and callable(fn):
+                        det_fn = fn
+                        break
+            if det_fn:
+                det_res = det_fn("Bonjour tout le monde")
+                if inspect.iscoroutine(det_res) or inspect.iscoroutinefunction(det_fn):
+                    det_res = await det_res
                 det_latency = round((time.perf_counter() - t1) * 1000, 2)
                 report["tests"]["detect_language"]["latency_ms"] = det_latency
                 lang = getattr(det_res, "lang", str(det_res))
                 report["tests"]["detect_language"]["result"] = str(lang)
+                report["tests"]["detect_language"]["status"] = "passed"
+            elif isinstance(raw_res, dict) and "src" in raw_res:
+                det_latency = round((time.perf_counter() - t1) * 1000, 2)
+                report["tests"]["detect_language"]["latency_ms"] = det_latency
+                report["tests"]["detect_language"]["result"] = str(raw_res["src"])
                 report["tests"]["detect_language"]["status"] = "passed"
             else:
                 report["tests"]["detect_language"]["status"] = "skipped"

@@ -47,10 +47,10 @@ def test_package_in_isolation(package_meta, pip_timeout=60):
         pip_path = os.path.join(bin_dir, "pip")
         python_path = os.path.join(bin_dir, "python")
 
-        # 2. Pre-install compatibility shims (legacy-cgi for Python 3.13+)
+        # 2. Pre-install compatibility shims (legacy-cgi for Python 3.13+, requests for packages missing explicit requirements)
         # This gives older packages fair compatibility on modern runtimes
         subprocess.run([pip_path, "install", "--upgrade", "pip"], capture_output=True)
-        subprocess.run([pip_path, "install", "legacy-cgi"], capture_output=True)
+        subprocess.run([pip_path, "install", "legacy-cgi", "requests"], capture_output=True)
 
         # 3. Install the target package
         logging.info("Installing %s...", pypi_name)
@@ -140,24 +140,36 @@ def test_package_in_isolation(package_meta, pip_timeout=60):
 
 def run_matrix(package_filter=None):
     with open(PACKAGES_FILE, "r", encoding="utf-8") as f:
-        packages = json.load(f)
+        all_packages = json.load(f)
+
+    target_packages = all_packages
+    matrix_results = {}
 
     if package_filter:
-        packages = [p for p in packages if p["pypi_name"] == package_filter or p["id"] == package_filter]
-        if not packages:
+        target_packages = [p for p in all_packages if p["pypi_name"] == package_filter or p["id"] == package_filter]
+        if not target_packages:
             logging.error("Package %s not found in definitions", package_filter)
             sys.exit(1)
+        if OUTPUT_FILE.exists():
+            try:
+                with open(OUTPUT_FILE, "r", encoding="utf-8") as f:
+                    existing = json.load(f)
+                    matrix_results = existing.get("results", {})
+            except Exception as read_err:
+                logging.warning("Could not load existing matrix results: %s", read_err)
 
-    matrix_results = {}
-    summary = {"total": len(packages), "passed": 0, "failed": 0, "timestamp": datetime.now(timezone.utc).isoformat()}
-
-    for pkg_meta in packages:
+    for pkg_meta in target_packages:
         res = test_package_in_isolation(pkg_meta)
         matrix_results[pkg_meta["pypi_name"]] = res
-        if res and res.get("overall_status") == "passed":
-            summary["passed"] += 1
-        else:
-            summary["failed"] += 1
+
+    passed_cnt = sum(1 for r in matrix_results.values() if r and r.get("overall_status") == "passed")
+    failed_cnt = sum(1 for r in matrix_results.values() if not (r and r.get("overall_status") == "passed"))
+    summary = {
+        "total": len(matrix_results),
+        "passed": passed_cnt,
+        "failed": failed_cnt,
+        "timestamp": datetime.now(timezone.utc).isoformat()
+    }
 
     payload = {
         "summary": summary,

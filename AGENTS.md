@@ -1,6 +1,6 @@
 # AGENTS.md
 
-Welcome to **`googletrans-tester`**! This repository provides an agentic testing harness, statistical telemetry collector, and interactive Vite-based dashboard for validating and comparing **all 27 PyPI packages and forks** of the Python `googletrans` ecosystem.
+Welcome to **`googletrans-tester`**! This repository provides an agentic testing harness, statistical telemetry collector, and interactive Vite-based dashboard for validating and comparing **all 33 PyPI packages and forks** of the Python `googletrans` ecosystem.
 
 Mirrors and expands upon [`aikenf/googletrans-all`](https://github.com/aikenf/googletrans-all), [`aikenf/googletrans-test`](https://github.com/aikenf/googletrans-test), and [`flynn0/googletrans-curl-tester`](https://github.com/flynn0/googletrans-curl-tester).
 
@@ -8,7 +8,7 @@ Mirrors and expands upon [`aikenf/googletrans-all`](https://github.com/aikenf/go
 
 ## 🎯 Architecture & Objectives
 
-There are 27 different PyPI distributions implementing or forking the unofficial Google Translate API:
+There are 33 different PyPI distributions implementing, forking, or wrapping the unofficial Google Translate API:
 1. `googletrans`
 2. `googletrans-curl`
 3. `googletrans-py`
@@ -36,11 +36,17 @@ There are 27 different PyPI distributions implementing or forking the unofficial
 25. `simple-googletrans`
 26. `py-googletrans-html`
 27. `ggtrans`
+28. `paraphrase-googletranslate`
+29. `SmallGoogleTranslator`
+30. `cloud-translator`
+31. `gotranslate`
+32. `unlimited-machine-translator`
+33. `mintrans`
 
 Because Google regularly modifies its endpoints, token algorithms (e.g., `TKK`), rate limits, and network requirements, these forks exhibit varying states of functionality:
 - **Async vs. Sync:** Modern versions (like `googletrans` 4.0.2 and `googletrans-curl` 4.1.0) use `httpx` or `curl-cffi` and require `await translator.translate(...)`, whereas legacy forks provide synchronous APIs.
-- **Import namespaces:** Most forks claim the top-level namespace `googletrans`, while others use custom package modules (e.g. `googletrans_di`, `googletrans_wheel`, `googletranswheel2`, `googletransx`, `vtrans`, `flask_googletrans`, `simple_googletrans`, `googletranslatepy`).
-- **Python version & dependency incompatibilities:** Older packages depend on removed standard library modules (like Python 3.13+ removing `cgi`, mitigated via `legacy-cgi`) or pin older `httpx` submodules (e.g. `ProxiesTypes`).
+- **Import namespaces:** Most forks claim the top-level namespace `googletrans`, while others use custom package modules (e.g. `googletrans_di`, `googletrans_wheel`, `googletranswheel2`, `googletransx`, `vtrans`, `flask_googletrans`, `simple_googletrans`, `googletranslatepy`, `gtranslate`, `mintrans`, `translator`, `paraphrase_googletranslate`, `unlimited_machine_translator`).
+- **Python version & dependency incompatibilities:** Older packages depend on removed standard library modules (like Python 3.13+ removing `cgi`, mitigated via `legacy-cgi`), missing requirements declarations (mitigated via `requests`), or pin older `httpx` submodules (e.g. `ProxiesTypes`).
 - **UI & Theme Requirements:** The dashboard supports dynamic Dark and Light mode switching with CSS custom properties (`[data-theme="dark"]` and `[data-theme="light"]`) and local storage persistence. All tables use separate borders with overflow scrollbars to prevent border collapsing or clipping.
 
 To test them without dependency collision, our agentic harness runs tests in isolated virtual environments or isolated sub-processes for each implementation.
@@ -56,7 +62,7 @@ googletrans-tester/
 │       ├── test-implementations.yml  # Matrix & scheduled test runner workflow
 │       └── deploy-pages.yml          # GitHub Pages Vite dashboard deployment
 ├── data/
-│   ├── packages.json                 # Definition and config for all 27 packages
+│   ├── packages.json                 # Definition and config for all 33 packages
 │   ├── history.db                    # SQLite historical test runs database
 │   ├── runs_history.json             # Structured multi-run history export
 │   └── latest_results.json           # Cached test results & download telemetry
@@ -102,7 +108,7 @@ Fetches:
 ```bash
 python3 runner/run_matrix.py
 ```
-Tests all 27 packages (or a specific package with `--package <name>`), recording:
+Tests all 33 packages (or a specific package with `--package <name>`), recording:
 - Installation success / failure
 - Import resolution & module name
 - Translation capability (English -> German, source detection)

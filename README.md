@@ -4,7 +4,7 @@
 [![Deploy Dashboard to GitHub Pages](https://github.com/flynn0/googletrans-tester/actions/workflows/deploy-pages.yml/badge.svg)](https://github.com/flynn0/googletrans-tester/actions/workflows/deploy-pages.yml)
 [![Latest Release](https://img.shields.io/github/v/release/flynn0/googletrans-tester?color=blue)](https://github.com/flynn0/googletrans-tester/releases/tag/v0.1.0)
 
-An agentic multi-target testing harness, statistical telemetry collector, and interactive Vite dashboard for validating and comparing **all 27 major PyPI packages and forks** of the Python `googletrans` ecosystem.
+An agentic multi-target testing harness, statistical telemetry collector, and interactive Vite dashboard for validating and comparing **all 33 major PyPI packages and forks** of the Python `googletrans` ecosystem.
 
 Mirrors and expands upon [`aikenf/googletrans-all`](https://github.com/aikenf/googletrans-all), [`aikenf/googletrans-test`](https://github.com/aikenf/googletrans-test), and [`flynn0/googletrans-curl-tester`](https://github.com/flynn0/googletrans-curl-tester).
 
@@ -19,14 +19,14 @@ The interactive test dashboard is deployed to GitHub Pages:
 - **Dark & Light Mode Switch:** One-click toggle in the header with persistent theme storage in `localStorage` and automatic OS preference detection.
 - **Responsive, Non-Collapsing UI:** Clean separated borders, responsive grid layouts (`auto-fit`/`auto-fill`), and horizontal scroll views for full data visibility on desktop, tablet, and mobile without clipping.
 - **30-Day Statuspage SLA Tick Bars:** Discrete daily slot visualizations showing reliability, uptime percentage, and historical transitions.
-- **Working vs. Failing Status:** Real-time test results across all 27 candidate implementations.
+- **Working vs. Failing Status:** Real-time test results across all 33 candidate implementations.
 - **PyPI & Telemetry Stats:** Lifetime downloads (pepy.tech), 2026 current year downloads (pypistats.org), and last month active volume.
 - **Detailed Inspection Drawer:** View import resolutions, latency (ms), async vs. sync signatures, and error diagnostics.
 - **Instant Search & Filter:** Filter by API paradigm (`async` / `sync`) or test status.
 
 ---
 
-## 📦 Evaluated Implementations (27 Packages)
+## 📦 Evaluated Implementations (33 Packages)
 
 | Package | Status | API Paradigm | Lifetime DL (pepy) | Description |
 |---|---|---|---|---|
@@ -35,10 +35,12 @@ The interactive test dashboard is deployed to GitHub Pages:
 | [`Flask-Googletrans`](https://pypi.org/project/Flask-Googletrans/) | ✅ PASS | `async` | 88.0k | Flask web application extension for automated template translation. |
 | [`googletrans-py39`](https://pypi.org/project/googletrans-py39/) | ✅ PASS | `sync` | 23.0k | Python 3.9 compatibility fork. |
 | [`googletrans-modified`](https://pypi.org/project/googletrans-modified/) | ✅ PASS | `sync` | 15.0k | Modified release with adjusted query handling. |
+| [`mintrans`](https://pypi.org/project/mintrans/) | ✅ PASS | `sync` | 8.0k | Free multi-service translation API wrapper supporting Google Translate, Bing, and DeepL. |
 | [`googletransfork`](https://pypi.org/project/googletransfork/) | ✅ PASS | `sync` | 6.0k | Fork package based on early googletrans release. |
 | [`googletrans-sw`](https://pypi.org/project/googletrans-sw/) | ✅ PASS | `sync` | 4.0k | Swahili / customized distribution fork. |
 | [`googletrans-wheel2-py`](https://pypi.org/project/googletrans-wheel2-py/) | ✅ PASS | `sync` | 3.0k | Wheel repackage fork targeting modern python versions. |
 | [`googletranswheel2`](https://pypi.org/project/googletranswheel2/) | ✅ PASS | `sync` | 2.0k | Repackaged wheel with googletranswheel2 namespace. |
+| [`gotranslate`](https://pypi.org/project/gotranslate/) | ✅ PASS | `sync` | 1.0k | Lightweight GoogleTranslator library with language detection, details, and emoji flags. |
 | [`googletrans-curl`](https://pypi.org/project/googletrans-curl/) | ✅ PASS | `async` | 903 | Modern fork utilizing curl-cffi and httpx[http2] for enhanced bypass and stability. |
 | [`googletransx`](https://pypi.org/project/googletransx/) | ❌ FAIL | `sync` | 1.0M | Independent fork using the googletransx namespace. |
 | [`googletrans2`](https://pypi.org/project/googletrans2/) | ❌ FAIL | `sync` | 317.0k | Alternative distribution tracking the googletrans 2.x branch. |
@@ -46,11 +48,15 @@ The interactive test dashboard is deployed to GitHub Pages:
 | [`ggtrans`](https://pypi.org/project/ggtrans/) | ❌ FAIL | `sync` | 157.0k | Lightweight repackage of free Google Translate API for Python. |
 | [`googletrans2020`](https://pypi.org/project/googletrans2020/) | ❌ FAIL | `-` | 105.0k | Community fork providing updated translation endpoints from 2020. |
 | [`py-googletrans`](https://pypi.org/project/py-googletrans/) | ❌ FAIL | `-` | 84.0k | PyPI release published under original py-googletrans repository name. |
+| [`cloud-translator`](https://pypi.org/project/cloud-translator/) | ❌ FAIL | `sync` | 30.0k | Unified translation wrapper targeting Google Translate, Baidu, and Tencent. |
+| [`paraphrase-googletranslate`](https://pypi.org/project/paraphrase-googletranslate/) | ❌ FAIL | `sync` | 25.0k | Paraphrasing engine built on top of google-trans-new. |
 | [`googletranslate-python`](https://pypi.org/project/googletranslate-python/) | ❌ FAIL | `sync` | 22.0k | Google Translate client built on top of deep-translator. |
 | [`googletrans-temp`](https://pypi.org/project/googletrans-temp/) | ❌ FAIL | `sync` | 21.0k | Temporary mirror release of googletrans v2.3.0. |
 | [`googletransapi`](https://pypi.org/project/googletransapi/) | ❌ FAIL | `-` | 18.0k | Wrapper package providing translation and MP3 audio generation. |
+| [`unlimited-machine-translator`](https://pypi.org/project/unlimited-machine-translator/) | ❌ FAIL | `function` | 16.0k | Batch document and DataFrame machine translation leveraging Google Translate. |
 | [`simple-googletrans`](https://pypi.org/project/simple-googletrans/) | ❌ FAIL | `-` | 13.0k | Simple CLI and Python wrapper around googletrans with logging and batching. |
 | [`googletrans-python`](https://pypi.org/project/googletrans-python/) | ❌ FAIL | `function` | 11.0k | Alternative wrapper providing direct translate() function. |
+| [`SmallGoogleTranslator`](https://pypi.org/project/SmallGoogleTranslator/) | ❌ FAIL | `unknown` | 9.0k | Minimalist async/sync Google Translator library scraping the web endpoint. |
 | [`googletrans-di`](https://pypi.org/project/googletrans-di/) | ❌ FAIL | `-` | 9.0k | Fork using googletrans_di namespace. |
 | [`googletranslator-new`](https://pypi.org/project/googletranslator-new/) | ❌ FAIL | `-` | 6.0k | Convenient Russian/multilingual Google Translator client wrapper. |
 | [`py-googletrans-html`](https://pypi.org/project/py-googletrans-html/) | ❌ FAIL | `sync` | 6.0k | Google Translate fork with specialized HTML preservation. |
@@ -69,7 +75,7 @@ googletrans-tester/
 │       ├── test-implementations.yml  # Daily matrix test & telemetry updater
 │       └── deploy-pages.yml          # GitHub Pages Vite deployment on push
 ├── data/
-│   ├── packages.json                 # Single source of truth for all 27 packages
+│   ├── packages.json                 # Single source of truth for all 33 packages
 │   ├── history.db                    # SQLite historical test runs database
 │   ├── runs_history.json             # Historical test runs JSON export
 │   ├── stats.json                    # Raw telemetry data (PyPI, pypistats, pepy)
@@ -125,7 +131,7 @@ Fetches:
 
 ### 2. Run Test Matrix
 ```bash
-# Test all 27 packages
+# Test all 33 packages
 python3 runner/run_matrix.py
 
 # Test a specific package
@@ -153,7 +159,7 @@ Or run everything with the helper script:
 
 1. **`test-implementations.yml`**:
    - Runs on schedule (`0 5 * * *`) and `workflow_dispatch`.
-   - Runs test matrix across all 27 implementations and collects latest statistics.
+   - Runs test matrix across all 33 implementations and collects latest statistics.
    - Commits updated telemetry data and automatically triggers dashboard deployment.
 
 2. **`deploy-pages.yml`**:

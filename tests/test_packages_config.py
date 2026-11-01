@@ -24,7 +24,7 @@ def test_packages_count_and_keys():
         packages = json.load(f)
 
     assert isinstance(packages, list)
-    assert len(packages) == 27, f"Expected 27 packages, got {len(packages)}"
+    assert len(packages) == 33, f"Expected 33 packages, got {len(packages)}"
 
     seen_ids = set()
     seen_names = set()

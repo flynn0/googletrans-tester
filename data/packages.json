@@ -241,5 +241,60 @@
     "pypistats_url": "https://pypistats.org/packages/ggtrans",
     "default_module": "googletrans",
     "description": "Lightweight repackage of free Google Translate API for Python."
+  },
+  {
+    "id": "paraphrase-googletranslate",
+    "pypi_name": "paraphrase-googletranslate",
+    "pypi_url": "https://pypi.org/project/paraphrase-googletranslate/",
+    "pepy_url": "https://pepy.tech/projects/paraphrase-googletranslate",
+    "pypistats_url": "https://pypistats.org/packages/paraphrase-googletranslate",
+    "default_module": "paraphrase_googletranslate",
+    "description": "Paraphrasing engine built on top of google-trans-new."
+  },
+  {
+    "id": "SmallGoogleTranslator",
+    "pypi_name": "SmallGoogleTranslator",
+    "pypi_url": "https://pypi.org/project/SmallGoogleTranslator/",
+    "pepy_url": "https://pepy.tech/projects/SmallGoogleTranslator",
+    "pypistats_url": "https://pypistats.org/packages/SmallGoogleTranslator",
+    "default_module": "google.translator",
+    "description": "Minimalist async/sync Google Translator library scraping the web endpoint."
+  },
+  {
+    "id": "cloud-translator",
+    "pypi_name": "cloud-translator",
+    "pypi_url": "https://pypi.org/project/cloud-translator/",
+    "pepy_url": "https://pepy.tech/projects/cloud-translator",
+    "pypistats_url": "https://pypistats.org/packages/cloud-translator",
+    "default_module": "translator",
+    "description": "Unified translation wrapper targeting Google Translate, Baidu, and Tencent."
+  },
+  {
+    "id": "gotranslate",
+    "pypi_name": "gotranslate",
+    "pypi_url": "https://pypi.org/project/gotranslate/",
+    "pepy_url": "https://pepy.tech/projects/gotranslate",
+    "pypistats_url": "https://pypistats.org/packages/gotranslate",
+    "default_module": "gtranslate",
+    "description": "Lightweight GoogleTranslator library with language detection, details, and emoji flags."
+  },
+  {
+    "id": "unlimited-machine-translator",
+    "pypi_name": "unlimited-machine-translator",
+    "pypi_url": "https://pypi.org/project/unlimited-machine-translator/",
+    "pepy_url": "https://pepy.tech/projects/unlimited-machine-translator",
+    "pypistats_url": "https://pypistats.org/packages/unlimited-machine-translator",
+    "default_module": "unlimited_machine_translator",
+    "description": "Batch document and DataFrame machine translation leveraging Google Translate."
+  },
+  {
+    "id": "mintrans",
+    "pypi_name": "mintrans",
+    "pypi_url": "https://pypi.org/project/mintrans/",
+    "pepy_url": "https://pepy.tech/projects/mintrans",
+    "pypistats_url": "https://pypistats.org/packages/mintrans",
+    "default_module": "mintrans",
+    "description": "Free multi-service translation API wrapper supporting Google Translate, Bing, and DeepL."
   }
 ]
+
