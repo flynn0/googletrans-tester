@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-02T06:00:39.609779+00:00",
+  "generated_at": "2026-11-02T10:17:42.147486+00:00",
   "total_runs_tracked": 39,
   "runs": [
     {
@@ -345,8 +345,8 @@
       "source": "matrix_results_sync"
     },
     {
-      "run_id": "run_2026-11-02T06-00-39_510667+00-00",
-      "timestamp": "2026-11-02T06:00:39.510667+00:00",
+      "run_id": "run_2026-11-02T10-13-50_384713+00-00",
+      "timestamp": "2026-11-02T10:13:50.384713+00:00",
       "total_packages": 33,
       "passed_count": 12,
       "failed_count": 21,
@@ -361,7 +361,7 @@
       "passed_runs": 11,
       "failed_runs": 8,
       "reliability_percentage": 57.9,
-      "avg_latency_ms": 397.8,
+      "avg_latency_ms": 364.2,
       "trend": "stable",
       "history": [
         {
@@ -923,12 +923,12 @@
           }
         },
         {
-          "run_id": "run_2026-11-02T06-00-39_510667+00-00",
-          "timestamp": "2026-11-02T06:00:39.510667+00:00",
+          "run_id": "run_2026-11-02T10-13-50_384713+00-00",
+          "timestamp": "2026-11-02T10:13:50.384713+00:00",
           "status": "passed",
           "version": "0.11",
           "api_type": "async",
-          "latency_ms": 802.13,
+          "latency_ms": 164.63,
           "error_summary": null,
           "tests": {
             "packaging": {
@@ -941,13 +941,13 @@
             },
             "translate_en_de": {
               "status": "passed",
-              "latency_ms": 802.13,
+              "latency_ms": 164.63,
               "result": "Hallo Welt",
               "error": null
             },
             "detect_language": {
               "status": "passed",
-              "latency_ms": 64.68,
+              "latency_ms": 60.74,
               "result": "fr",
               "error": null
             }
@@ -1151,8 +1151,8 @@
           }
         },
         {
-          "run_id": "run_2026-11-02T06-00-39_510667+00-00",
-          "timestamp": "2026-11-02T06:00:39.510667+00:00",
+          "run_id": "run_2026-11-02T10-13-50_384713+00-00",
+          "timestamp": "2026-11-02T10:13:50.384713+00:00",
           "status": "failed",
           "version": "1.2",
           "api_type": "unknown",
@@ -1385,12 +1385,12 @@
           }
         },
         {
-          "run_id": "run_2026-11-02T06-00-39_510667+00-00",
-          "timestamp": "2026-11-02T06:00:39.510667+00:00",
+          "run_id": "run_2026-11-02T10-13-50_384713+00-00",
+          "timestamp": "2026-11-02T10:13:50.384713+00:00",
           "status": "failed",
           "version": "1.0",
           "api_type": "sync",
-          "latency_ms": 0.07,
+          "latency_ms": 0.04,
           "error_summary": "AttributeError: 'coroutine' object has no attribute 'text'",
           "tests": {
             "packaging": {
@@ -1403,7 +1403,7 @@
             },
             "translate_en_de": {
               "status": "failed",
-              "latency_ms": 0.07,
+              "latency_ms": 0.04,
               "result": null,
               "error": "AttributeError: 'coroutine' object has no attribute 'text'"
             },
@@ -1424,7 +1424,7 @@
       "passed_runs": 0,
       "failed_runs": 19,
       "reliability_percentage": 0.0,
-      "avg_latency_ms": 272.2,
+      "avg_latency_ms": 269.7,
       "trend": "stable",
       "history": [
         {
@@ -1986,12 +1986,12 @@
           }
         },
         {
-          "run_id": "run_2026-11-02T06-00-39_510667+00-00",
-          "timestamp": "2026-11-02T06:00:39.510667+00:00",
+          "run_id": "run_2026-11-02T10-13-50_384713+00-00",
+          "timestamp": "2026-11-02T10:13:50.384713+00:00",
           "status": "failed",
           "version": "2.4.1",
           "api_type": "sync",
-          "latency_ms": 292.78,
+          "latency_ms": 244.91,
           "error_summary": "AttributeError: 'NoneType' object has no attribute 'group'",
           "tests": {
             "packaging": {
@@ -2004,13 +2004,13 @@
             },
             "translate_en_de": {
               "status": "failed",
-              "latency_ms": 292.78,
+              "latency_ms": 244.91,
               "result": null,
               "error": "AttributeError: 'NoneType' object has no attribute 'group'"
             },
             "detect_language": {
               "status": "failed",
-              "latency_ms": 210.77,
+              "latency_ms": 229.47,
               "result": null,
               "error": "AttributeError: 'NoneType' object has no attribute 'group'"
             }
@@ -2024,7 +2024,7 @@
       "passed_runs": 16,
       "failed_runs": 15,
       "reliability_percentage": 51.6,
-      "avg_latency_ms": 512.9,
+      "avg_latency_ms": 506.6,
       "trend": "stable",
       "history": [
         {
@@ -2958,12 +2958,12 @@
           }
         },
         {
-          "run_id": "run_2026-11-02T06-00-39_510667+00-00",
-          "timestamp": "2026-11-02T06:00:39.510667+00:00",
+          "run_id": "run_2026-11-02T10-13-50_384713+00-00",
+          "timestamp": "2026-11-02T10:13:50.384713+00:00",
           "status": "passed",
           "version": "4.0.2",
           "api_type": "async",
-          "latency_ms": 539.1,
+          "latency_ms": 341.52,
           "error_summary": null,
           "tests": {
             "packaging": {
@@ -2976,13 +2976,13 @@
             },
             "translate_en_de": {
               "status": "passed",
-              "latency_ms": 539.1,
+              "latency_ms": 341.52,
               "result": "Hallo Welt",
               "error": null
             },
             "detect_language": {
               "status": "passed",
-              "latency_ms": 86.14,
+              "latency_ms": 342.32,
               "result": "fr",
               "error": null
             }
@@ -2996,7 +2996,7 @@
       "passed_runs": 31,
       "failed_runs": 0,
       "reliability_percentage": 100.0,
-      "avg_latency_ms": 439.2,
+      "avg_latency_ms": 475.1,
       "trend": "stable",
       "history": [
         {
@@ -3930,12 +3930,12 @@
           }
         },
         {
-          "run_id": "run_2026-11-02T06-00-39_510667+00-00",
-          "timestamp": "2026-11-02T06:00:39.510667+00:00",
+          "run_id": "run_2026-11-02T10-13-50_384713+00-00",
+          "timestamp": "2026-11-02T10:13:50.384713+00:00",
           "status": "passed",
           "version": "4.1.0",
-          "api_type": "async",
-          "latency_ms": 114.96,
+          "api_type": "async, sync",
+          "latency_ms": 1228.95,
           "error_summary": null,
           "tests": {
             "packaging": {
@@ -3948,13 +3948,14 @@
             },
             "translate_en_de": {
               "status": "passed",
-              "latency_ms": 114.96,
+              "latency_ms": 1228.95,
               "result": "Hallo Welt",
-              "error": null
+              "error": null,
+              "details": "Verified both async (Translator) and sync (SyncTranslator) implementations"
             },
             "detect_language": {
               "status": "passed",
-              "latency_ms": 55.75,
+              "latency_ms": 543.65,
               "result": "fr",
               "error": null
             }
@@ -4902,8 +4903,8 @@
           }
         },
         {
-          "run_id": "run_2026-11-02T06-00-39_510667+00-00",
-          "timestamp": "2026-11-02T06:00:39.510667+00:00",
+          "run_id": "run_2026-11-02T10-13-50_384713+00-00",
+          "timestamp": "2026-11-02T10:13:50.384713+00:00",
           "status": "failed",
           "version": "4.0.2",
           "api_type": "unknown",
@@ -4940,7 +4941,7 @@
       "passed_runs": 16,
       "failed_runs": 15,
       "reliability_percentage": 51.6,
-      "avg_latency_ms": 521.1,
+      "avg_latency_ms": 525.1,
       "trend": "stable",
       "history": [
         {
@@ -5874,12 +5875,12 @@
           }
         },
         {
-          "run_id": "run_2026-11-02T06-00-39_510667+00-00",
-          "timestamp": "2026-11-02T06:00:39.510667+00:00",
+          "run_id": "run_2026-11-02T10-13-50_384713+00-00",
+          "timestamp": "2026-11-02T10:13:50.384713+00:00",
           "status": "passed",
           "version": "1.1.1",
           "api_type": "sync",
-          "latency_ms": 453.06,
+          "latency_ms": 577.21,
           "error_summary": null,
           "tests": {
             "packaging": {
@@ -5892,13 +5893,13 @@
             },
             "translate_en_de": {
               "status": "passed",
-              "latency_ms": 453.06,
+              "latency_ms": 577.21,
               "result": "Hallo Welt",
               "error": null
             },
             "detect_language": {
               "status": "passed",
-              "latency_ms": 62.9,
+              "latency_ms": 52.3,
               "result": "fr",
               "error": null
             }
@@ -5912,7 +5913,7 @@
       "passed_runs": 30,
       "failed_runs": 1,
       "reliability_percentage": 96.8,
-      "avg_latency_ms": 699.5,
+      "avg_latency_ms": 671.8,
       "trend": "stable",
       "history": [
         {
@@ -6846,12 +6847,12 @@
           }
         },
         {
-          "run_id": "run_2026-11-02T06-00-39_510667+00-00",
-          "timestamp": "2026-11-02T06:00:39.510667+00:00",
+          "run_id": "run_2026-11-02T10-13-50_384713+00-00",
+          "timestamp": "2026-11-02T10:13:50.384713+00:00",
           "status": "passed",
           "version": "4.0.0",
           "api_type": "sync",
-          "latency_ms": 1038.06,
+          "latency_ms": 178.79,
           "error_summary": null,
           "tests": {
             "packaging": {
@@ -6864,13 +6865,13 @@
             },
             "translate_en_de": {
               "status": "passed",
-              "latency_ms": 1038.06,
+              "latency_ms": 178.79,
               "result": "Hallo Welt",
               "error": null
             },
             "detect_language": {
               "status": "passed",
-              "latency_ms": 182.8,
+              "latency_ms": 130.52,
               "result": "fr",
               "error": null
             }
@@ -6884,7 +6885,7 @@
       "passed_runs": 30,
       "failed_runs": 1,
       "reliability_percentage": 96.8,
-      "avg_latency_ms": 537.1,
+      "avg_latency_ms": 537.7,
       "trend": "stable",
       "history": [
         {
@@ -7818,12 +7819,12 @@
           }
         },
         {
-          "run_id": "run_2026-11-02T06-00-39_510667+00-00",
-          "timestamp": "2026-11-02T06:00:39.510667+00:00",
+          "run_id": "run_2026-11-02T10-13-50_384713+00-00",
+          "timestamp": "2026-11-02T10:13:50.384713+00:00",
           "status": "passed",
           "version": "4.0.2",
           "api_type": "sync",
-          "latency_ms": 85.22,
+          "latency_ms": 103.23,
           "error_summary": null,
           "tests": {
             "packaging": {
@@ -7836,13 +7837,13 @@
             },
             "translate_en_de": {
               "status": "passed",
-              "latency_ms": 85.22,
+              "latency_ms": 103.23,
               "result": "Hallo Welt",
               "error": null
             },
             "detect_language": {
               "status": "passed",
-              "latency_ms": 71.05,
+              "latency_ms": 334.61,
               "result": "fr",
               "error": null
             }
@@ -7856,7 +7857,7 @@
       "passed_runs": 0,
       "failed_runs": 31,
       "reliability_percentage": 0.0,
-      "avg_latency_ms": 501.6,
+      "avg_latency_ms": 510.8,
       "trend": "stable",
       "history": [
         {
@@ -8820,12 +8821,12 @@
           }
         },
         {
-          "run_id": "run_2026-11-02T06-00-39_510667+00-00",
-          "timestamp": "2026-11-02T06:00:39.510667+00:00",
+          "run_id": "run_2026-11-02T10-13-50_384713+00-00",
+          "timestamp": "2026-11-02T10:13:50.384713+00:00",
           "status": "failed",
           "version": "0.2.0",
           "api_type": "function",
-          "latency_ms": 266.93,
+          "latency_ms": 551.91,
           "error_summary": "HTTPError: HTTP Error 429: Too Many Requests",
           "tests": {
             "packaging": {
@@ -8838,7 +8839,7 @@
             },
             "translate_en_de": {
               "status": "failed",
-              "latency_ms": 266.93,
+              "latency_ms": 551.91,
               "result": null,
               "error": "HTTPError: HTTP Error 429: Too Many Requests"
             },
@@ -8859,7 +8860,7 @@
       "passed_runs": 30,
       "failed_runs": 1,
       "reliability_percentage": 96.8,
-      "avg_latency_ms": 852.6,
+      "avg_latency_ms": 876.6,
       "trend": "stable",
       "history": [
         {
@@ -9793,12 +9794,12 @@
           }
         },
         {
-          "run_id": "run_2026-11-02T06-00-39_510667+00-00",
-          "timestamp": "2026-11-02T06:00:39.510667+00:00",
+          "run_id": "run_2026-11-02T10-13-50_384713+00-00",
+          "timestamp": "2026-11-02T10:13:50.384713+00:00",
           "status": "passed",
           "version": "4.0.1",
           "api_type": "sync",
-          "latency_ms": 86.1,
+          "latency_ms": 827.53,
           "error_summary": null,
           "tests": {
             "packaging": {
@@ -9811,13 +9812,13 @@
             },
             "translate_en_de": {
               "status": "passed",
-              "latency_ms": 86.1,
+              "latency_ms": 827.53,
               "result": "Hallo Welt",
               "error": null
             },
             "detect_language": {
               "status": "passed",
-              "latency_ms": 118.53,
+              "latency_ms": 183.41,
               "result": "fr",
               "error": null
             }
@@ -9831,7 +9832,7 @@
       "passed_runs": 0,
       "failed_runs": 19,
       "reliability_percentage": 0.0,
-      "avg_latency_ms": 276.6,
+      "avg_latency_ms": 277.3,
       "trend": "stable",
       "history": [
         {
@@ -10393,12 +10394,12 @@
           }
         },
         {
-          "run_id": "run_2026-11-02T06-00-39_510667+00-00",
-          "timestamp": "2026-11-02T06:00:39.510667+00:00",
+          "run_id": "run_2026-11-02T10-13-50_384713+00-00",
+          "timestamp": "2026-11-02T10:13:50.384713+00:00",
           "status": "failed",
           "version": "2.3.0",
           "api_type": "sync",
-          "latency_ms": 238.74,
+          "latency_ms": 252.27,
           "error_summary": "AttributeError: 'NoneType' object has no attribute 'group'",
           "tests": {
             "packaging": {
@@ -10411,13 +10412,13 @@
             },
             "translate_en_de": {
               "status": "failed",
-              "latency_ms": 238.74,
+              "latency_ms": 252.27,
               "result": null,
               "error": "AttributeError: 'NoneType' object has no attribute 'group'"
             },
             "detect_language": {
               "status": "failed",
-              "latency_ms": 225.46,
+              "latency_ms": 229.77,
               "result": null,
               "error": "AttributeError: 'NoneType' object has no attribute 'group'"
             }
@@ -10431,7 +10432,7 @@
       "passed_runs": 0,
       "failed_runs": 31,
       "reliability_percentage": 0.0,
-      "avg_latency_ms": 310.5,
+      "avg_latency_ms": 312.5,
       "trend": "stable",
       "history": [
         {
@@ -11365,12 +11366,12 @@
           }
         },
         {
-          "run_id": "run_2026-11-02T06-00-39_510667+00-00",
-          "timestamp": "2026-11-02T06:00:39.510667+00:00",
+          "run_id": "run_2026-11-02T10-13-50_384713+00-00",
+          "timestamp": "2026-11-02T10:13:50.384713+00:00",
           "status": "failed",
           "version": "3.0.0",
           "api_type": "sync",
-          "latency_ms": 200.99,
+          "latency_ms": 264.1,
           "error_summary": "AttributeError: 'NoneType' object has no attribute 'group'",
           "tests": {
             "packaging": {
@@ -11383,13 +11384,13 @@
             },
             "translate_en_de": {
               "status": "failed",
-              "latency_ms": 200.99,
+              "latency_ms": 264.1,
               "result": null,
               "error": "AttributeError: 'NoneType' object has no attribute 'group'"
             },
             "detect_language": {
               "status": "failed",
-              "latency_ms": 191.57,
+              "latency_ms": 219.92,
               "result": null,
               "error": "AttributeError: 'NoneType' object has no attribute 'group'"
             }
@@ -11403,7 +11404,7 @@
       "passed_runs": 31,
       "failed_runs": 0,
       "reliability_percentage": 100.0,
-      "avg_latency_ms": 314.1,
+      "avg_latency_ms": 316.2,
       "trend": "stable",
       "history": [
         {
@@ -12337,12 +12338,12 @@
           }
         },
         {
-          "run_id": "run_2026-11-02T06-00-39_510667+00-00",
-          "timestamp": "2026-11-02T06:00:39.510667+00:00",
+          "run_id": "run_2026-11-02T10-13-50_384713+00-00",
+          "timestamp": "2026-11-02T10:13:50.384713+00:00",
           "status": "passed",
           "version": "4.0.0",
           "api_type": "sync",
-          "latency_ms": 107.69,
+          "latency_ms": 173.18,
           "error_summary": null,
           "tests": {
             "packaging": {
@@ -12355,13 +12356,13 @@
             },
             "translate_en_de": {
               "status": "passed",
-              "latency_ms": 107.69,
+              "latency_ms": 173.18,
               "result": "Hallo Welt",
               "error": null
             },
             "detect_language": {
               "status": "passed",
-              "latency_ms": 113.54,
+              "latency_ms": 254.26,
               "result": "fr",
               "error": null
             }
@@ -12375,7 +12376,7 @@
       "passed_runs": 0,
       "failed_runs": 19,
       "reliability_percentage": 0.0,
-      "avg_latency_ms": 256.7,
+      "avg_latency_ms": 256.9,
       "trend": "stable",
       "history": [
         {
@@ -12937,12 +12938,12 @@
           }
         },
         {
-          "run_id": "run_2026-11-02T06-00-39_510667+00-00",
-          "timestamp": "2026-11-02T06:00:39.510667+00:00",
+          "run_id": "run_2026-11-02T10-13-50_384713+00-00",
+          "timestamp": "2026-11-02T10:13:50.384713+00:00",
           "status": "failed",
           "version": "2.3.0",
           "api_type": "sync",
-          "latency_ms": 217.96,
+          "latency_ms": 220.32,
           "error_summary": "IndexError: list index out of range",
           "tests": {
             "packaging": {
@@ -12955,13 +12956,13 @@
             },
             "translate_en_de": {
               "status": "failed",
-              "latency_ms": 217.96,
+              "latency_ms": 220.32,
               "result": null,
               "error": "IndexError: list index out of range"
             },
             "detect_language": {
               "status": "failed",
-              "latency_ms": 198.98,
+              "latency_ms": 190.25,
               "result": null,
               "error": "IndexError: list index out of range"
             }
@@ -13537,8 +13538,8 @@
           }
         },
         {
-          "run_id": "run_2026-11-02T06-00-39_510667+00-00",
-          "timestamp": "2026-11-02T06:00:39.510667+00:00",
+          "run_id": "run_2026-11-02T10-13-50_384713+00-00",
+          "timestamp": "2026-11-02T10:13:50.384713+00:00",
           "status": "failed",
           "version": null,
           "api_type": "unknown",
@@ -14137,8 +14138,8 @@
           }
         },
         {
-          "run_id": "run_2026-11-02T06-00-39_510667+00-00",
-          "timestamp": "2026-11-02T06:00:39.510667+00:00",
+          "run_id": "run_2026-11-02T10-13-50_384713+00-00",
+          "timestamp": "2026-11-02T10:13:50.384713+00:00",
           "status": "failed",
           "version": "1.0.0",
           "api_type": "unknown",
@@ -14175,7 +14176,7 @@
       "passed_runs": 19,
       "failed_runs": 0,
       "reliability_percentage": 100.0,
-      "avg_latency_ms": 440.4,
+      "avg_latency_ms": 442.4,
       "trend": "stable",
       "history": [
         {
@@ -14737,12 +14738,12 @@
           }
         },
         {
-          "run_id": "run_2026-11-02T06-00-39_510667+00-00",
-          "timestamp": "2026-11-02T06:00:39.510667+00:00",
+          "run_id": "run_2026-11-02T10-13-50_384713+00-00",
+          "timestamp": "2026-11-02T10:13:50.384713+00:00",
           "status": "passed",
           "version": "1.0.1",
           "api_type": "sync",
-          "latency_ms": 421.48,
+          "latency_ms": 459.99,
           "error_summary": null,
           "tests": {
             "packaging": {
@@ -14755,13 +14756,13 @@
             },
             "translate_en_de": {
               "status": "passed",
-              "latency_ms": 421.48,
+              "latency_ms": 459.99,
               "result": "Hallo Welt",
               "error": null
             },
             "detect_language": {
               "status": "passed",
-              "latency_ms": 460.62,
+              "latency_ms": 336.37,
               "result": "fr",
               "error": null
             }
@@ -15337,8 +15338,8 @@
           }
         },
         {
-          "run_id": "run_2026-11-02T06-00-39_510667+00-00",
-          "timestamp": "2026-11-02T06:00:39.510667+00:00",
+          "run_id": "run_2026-11-02T10-13-50_384713+00-00",
+          "timestamp": "2026-11-02T10:13:50.384713+00:00",
           "status": "failed",
           "version": null,
           "api_type": "unknown",
@@ -15937,8 +15938,8 @@
           }
         },
         {
-          "run_id": "run_2026-11-02T06-00-39_510667+00-00",
-          "timestamp": "2026-11-02T06:00:39.510667+00:00",
+          "run_id": "run_2026-11-02T10-13-50_384713+00-00",
+          "timestamp": "2026-11-02T10:13:50.384713+00:00",
           "status": "failed",
           "version": null,
           "api_type": "unknown",
@@ -15975,7 +15976,7 @@
       "passed_runs": 0,
       "failed_runs": 20,
       "reliability_percentage": 0.0,
-      "avg_latency_ms": 524.4,
+      "avg_latency_ms": 530.2,
       "trend": "stable",
       "history": [
         {
@@ -16587,12 +16588,12 @@
           }
         },
         {
-          "run_id": "run_2026-11-02T06-00-39_510667+00-00",
-          "timestamp": "2026-11-02T06:00:39.510667+00:00",
+          "run_id": "run_2026-11-02T10-13-50_384713+00-00",
+          "timestamp": "2026-11-02T10:13:50.384713+00:00",
           "status": "failed",
           "version": "1.0.3",
           "api_type": "sync",
-          "latency_ms": 504.84,
+          "latency_ms": 620.23,
           "error_summary": "Invalid translation result: False",
           "tests": {
             "packaging": {
@@ -16605,7 +16606,7 @@
             },
             "translate_en_de": {
               "status": "failed",
-              "latency_ms": 504.84,
+              "latency_ms": 620.23,
               "result": "False",
               "error": "Invalid translation result: False"
             },
@@ -17188,8 +17189,8 @@
           }
         },
         {
-          "run_id": "run_2026-11-02T06-00-39_510667+00-00",
-          "timestamp": "2026-11-02T06:00:39.510667+00:00",
+          "run_id": "run_2026-11-02T10-13-50_384713+00-00",
+          "timestamp": "2026-11-02T10:13:50.384713+00:00",
           "status": "failed",
           "version": "1.0",
           "api_type": "unknown",
@@ -17226,7 +17227,7 @@
       "passed_runs": 18,
       "failed_runs": 1,
       "reliability_percentage": 94.7,
-      "avg_latency_ms": 517.8,
+      "avg_latency_ms": 499.2,
       "trend": "stable",
       "history": [
         {
@@ -17788,12 +17789,12 @@
           }
         },
         {
-          "run_id": "run_2026-11-02T06-00-39_510667+00-00",
-          "timestamp": "2026-11-02T06:00:39.510667+00:00",
+          "run_id": "run_2026-11-02T10-13-50_384713+00-00",
+          "timestamp": "2026-11-02T10:13:50.384713+00:00",
           "status": "passed",
           "version": "4.0.0",
           "api_type": "sync",
-          "latency_ms": 542.4,
+          "latency_ms": 190.07,
           "error_summary": null,
           "tests": {
             "packaging": {
@@ -17806,13 +17807,13 @@
             },
             "translate_en_de": {
               "status": "passed",
-              "latency_ms": 542.4,
+              "latency_ms": 190.07,
               "result": "Hallo Welt",
               "error": null
             },
             "detect_language": {
               "status": "passed",
-              "latency_ms": 255.24,
+              "latency_ms": 542.02,
               "result": "fr",
               "error": null
             }
@@ -17826,7 +17827,7 @@
       "passed_runs": 0,
       "failed_runs": 19,
       "reliability_percentage": 0.0,
-      "avg_latency_ms": 277.2,
+      "avg_latency_ms": 274.9,
       "trend": "stable",
       "history": [
         {
@@ -18388,12 +18389,12 @@
           }
         },
         {
-          "run_id": "run_2026-11-02T06-00-39_510667+00-00",
-          "timestamp": "2026-11-02T06:00:39.510667+00:00",
+          "run_id": "run_2026-11-02T10-13-50_384713+00-00",
+          "timestamp": "2026-11-02T10:13:50.384713+00:00",
           "status": "failed",
           "version": "2.4.2",
           "api_type": "sync",
-          "latency_ms": 317.76,
+          "latency_ms": 273.16,
           "error_summary": "AttributeError: 'NoneType' object has no attribute 'group'",
           "tests": {
             "packaging": {
@@ -18406,13 +18407,13 @@
             },
             "translate_en_de": {
               "status": "failed",
-              "latency_ms": 317.76,
+              "latency_ms": 273.16,
               "result": null,
               "error": "AttributeError: 'NoneType' object has no attribute 'group'"
             },
             "detect_language": {
               "status": "failed",
-              "latency_ms": 243.72,
+              "latency_ms": 233.0,
               "result": null,
               "error": "AttributeError: 'NoneType' object has no attribute 'group'"
             }
@@ -18426,7 +18427,7 @@
       "passed_runs": 5,
       "failed_runs": 0,
       "reliability_percentage": 100.0,
-      "avg_latency_ms": 172.2,
+      "avg_latency_ms": 198.0,
       "trend": "stable",
       "history": [
         {
@@ -18554,12 +18555,12 @@
           }
         },
         {
-          "run_id": "run_2026-11-02T06-00-39_510667+00-00",
-          "timestamp": "2026-11-02T06:00:39.510667+00:00",
+          "run_id": "run_2026-11-02T10-13-50_384713+00-00",
+          "timestamp": "2026-11-02T10:13:50.384713+00:00",
           "status": "passed",
           "version": "1.0.0",
           "api_type": "sync",
-          "latency_ms": 61.29,
+          "latency_ms": 190.06,
           "error_summary": null,
           "tests": {
             "packaging": {
@@ -18572,13 +18573,13 @@
             },
             "translate_en_de": {
               "status": "passed",
-              "latency_ms": 61.29,
+              "latency_ms": 190.06,
               "result": "Hallo Welt",
               "error": null
             },
             "detect_language": {
               "status": "passed",
-              "latency_ms": 67.92,
+              "latency_ms": 187.4,
               "result": "fr",
               "error": null
             }
@@ -18592,7 +18593,7 @@
       "passed_runs": 3,
       "failed_runs": 0,
       "reliability_percentage": 100.0,
-      "avg_latency_ms": 804.5,
+      "avg_latency_ms": 881.2,
       "trend": "stable",
       "history": [
         {
@@ -18658,12 +18659,12 @@
           }
         },
         {
-          "run_id": "run_2026-11-02T06-00-39_510667+00-00",
-          "timestamp": "2026-11-02T06:00:39.510667+00:00",
+          "run_id": "run_2026-11-02T10-13-50_384713+00-00",
+          "timestamp": "2026-11-02T10:13:50.384713+00:00",
           "status": "passed",
           "version": "1.1.0",
           "api_type": "sync",
-          "latency_ms": 629.88,
+          "latency_ms": 859.92,
           "error_summary": null,
           "tests": {
             "packaging": {
@@ -18676,7 +18677,7 @@
             },
             "translate_en_de": {
               "status": "passed",
-              "latency_ms": 629.88,
+              "latency_ms": 859.92,
               "result": "Hallo Welt",
               "error": null
             },
@@ -18696,7 +18697,7 @@
       "passed_runs": 0,
       "failed_runs": 8,
       "reliability_percentage": 0.0,
-      "avg_latency_ms": 224.5,
+      "avg_latency_ms": 227.6,
       "trend": "stable",
       "history": [
         {
@@ -18924,12 +18925,12 @@
           }
         },
         {
-          "run_id": "run_2026-11-02T06-00-39_510667+00-00",
-          "timestamp": "2026-11-02T06:00:39.510667+00:00",
+          "run_id": "run_2026-11-02T10-13-50_384713+00-00",
+          "timestamp": "2026-11-02T10:13:50.384713+00:00",
           "status": "failed",
           "version": "0.0.7",
           "api_type": "sync",
-          "latency_ms": 163.53,
+          "latency_ms": 188.6,
           "error_summary": "Invalid translation result: None",
           "tests": {
             "packaging": {
@@ -18942,7 +18943,7 @@
             },
             "translate_en_de": {
               "status": "failed",
-              "latency_ms": 163.53,
+              "latency_ms": 188.6,
               "result": "None",
               "error": "Invalid translation result: None"
             },
@@ -19897,13 +19898,13 @@
           }
         },
         {
-          "run_id": "run_2026-11-02T06-00-39_510667+00-00",
-          "timestamp": "2026-11-02T06:00:39.510667+00:00",
+          "run_id": "run_2026-11-02T10-13-50_384713+00-00",
+          "timestamp": "2026-11-02T10:13:50.384713+00:00",
           "status": "failed",
           "version": "4.0.0",
           "api_type": "unknown",
           "latency_ms": null,
-          "error_summary": "Failed to import candidate modules: googletrans: cannot import name 'ProxiesTypes' from 'httpx._types' (/tmp/test_py_googletrans_sicw87ef/venv/lib/python3.12/site-packages/httpx/_types.py) | py_googletrans: No module named 'py_googletrans'",
+          "error_summary": "Failed to import candidate modules: googletrans: cannot import name 'ProxiesTypes' from 'httpx._types' (/tmp/test_py_googletrans_aisz3dk4/venv/lib/python3.12/site-packages/httpx/_types.py) | py_googletrans: No module named 'py_googletrans'",
           "tests": {
             "packaging": {
               "status": "passed",
@@ -19911,7 +19912,7 @@
             },
             "import": {
               "status": "failed",
-              "details": "googletrans: cannot import name 'ProxiesTypes' from 'httpx._types' (/tmp/test_py_googletrans_sicw87ef/venv/lib/python3.12/site-packages/httpx/_types.py) | py_googletrans: No module named 'py_googletrans'"
+              "details": "googletrans: cannot import name 'ProxiesTypes' from 'httpx._types' (/tmp/test_py_googletrans_aisz3dk4/venv/lib/python3.12/site-packages/httpx/_types.py) | py_googletrans: No module named 'py_googletrans'"
             },
             "translate_en_de": {
               "status": "pending",
@@ -19935,7 +19936,7 @@
       "passed_runs": 0,
       "failed_runs": 19,
       "reliability_percentage": 0.0,
-      "avg_latency_ms": 299.3,
+      "avg_latency_ms": 299.5,
       "trend": "stable",
       "history": [
         {
@@ -20497,12 +20498,12 @@
           }
         },
         {
-          "run_id": "run_2026-11-02T06-00-39_510667+00-00",
-          "timestamp": "2026-11-02T06:00:39.510667+00:00",
+          "run_id": "run_2026-11-02T10-13-50_384713+00-00",
+          "timestamp": "2026-11-02T10:13:50.384713+00:00",
           "status": "failed",
           "version": "2.4.1",
           "api_type": "sync",
-          "latency_ms": 282.13,
+          "latency_ms": 287.36,
           "error_summary": "AttributeError: 'NoneType' object has no attribute 'group'",
           "tests": {
             "packaging": {
@@ -20515,13 +20516,13 @@
             },
             "translate_en_de": {
               "status": "failed",
-              "latency_ms": 282.13,
+              "latency_ms": 287.36,
               "result": null,
               "error": "AttributeError: 'NoneType' object has no attribute 'group'"
             },
             "detect_language": {
               "status": "failed",
-              "latency_ms": 243.85,
+              "latency_ms": 237.65,
               "result": null,
               "error": "AttributeError: 'NoneType' object has no attribute 'group'"
             }
@@ -21097,8 +21098,8 @@
           }
         },
         {
-          "run_id": "run_2026-11-02T06-00-39_510667+00-00",
-          "timestamp": "2026-11-02T06:00:39.510667+00:00",
+          "run_id": "run_2026-11-02T10-13-50_384713+00-00",
+          "timestamp": "2026-11-02T10:13:50.384713+00:00",
           "status": "failed",
           "version": "1.0.2",
           "api_type": "unknown",
@@ -21135,7 +21136,7 @@
       "passed_runs": 0,
       "failed_runs": 4,
       "reliability_percentage": 0.0,
-      "avg_latency_ms": 856.2,
+      "avg_latency_ms": 936.1,
       "trend": "stable",
       "history": [
         {
@@ -21235,12 +21236,12 @@
           }
         },
         {
-          "run_id": "run_2026-11-02T06-00-39_510667+00-00",
-          "timestamp": "2026-11-02T06:00:39.510667+00:00",
+          "run_id": "run_2026-11-02T10-13-50_384713+00-00",
+          "timestamp": "2026-11-02T10:13:50.384713+00:00",
           "status": "failed",
           "version": "1.1.8",
           "api_type": "function",
-          "latency_ms": 617.12,
+          "latency_ms": 936.93,
           "error_summary": "TooManyRequests: Server Error: You made too many requests to the server.According to google, you are allowed to make 5 requests per secondand up to 200k requests per day. You can wait and try again later oryou can try the translate_batch function",
           "tests": {
             "packaging": {
@@ -21253,7 +21254,7 @@
             },
             "translate_en_de": {
               "status": "failed",
-              "latency_ms": 617.12,
+              "latency_ms": 936.93,
               "result": null,
               "error": "TooManyRequests: Server Error: You made too many requests to the server.According to google, you are allowed to make 5 requests per secondand up to 200k requests per day. You can wait and try again later oryou can try the translate_batch function"
             },
@@ -21274,7 +21275,7 @@
       "passed_runs": 0,
       "failed_runs": 19,
       "reliability_percentage": 0.0,
-      "avg_latency_ms": 464.9,
+      "avg_latency_ms": 474.9,
       "trend": "stable",
       "history": [
         {
@@ -21836,12 +21837,12 @@
           }
         },
         {
-          "run_id": "run_2026-11-02T06-00-39_510667+00-00",
-          "timestamp": "2026-11-02T06:00:39.510667+00:00",
+          "run_id": "run_2026-11-02T10-13-50_384713+00-00",
+          "timestamp": "2026-11-02T10:13:50.384713+00:00",
           "status": "failed",
           "version": "3.5.0",
           "api_type": "sync",
-          "latency_ms": 400.88,
+          "latency_ms": 589.5,
           "error_summary": "Untranslated echo output: 'Hello world'",
           "tests": {
             "packaging": {
@@ -21854,13 +21855,13 @@
             },
             "translate_en_de": {
               "status": "failed",
-              "latency_ms": 400.88,
+              "latency_ms": 589.5,
               "result": "Hello world",
               "error": "Untranslated echo output: 'Hello world'"
             },
             "detect_language": {
               "status": "passed",
-              "latency_ms": 328.32,
+              "latency_ms": 416.44,
               "result": "en",
               "error": null
             }

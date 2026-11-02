@@ -2,7 +2,7 @@
 
 [![Test Implementations Matrix](https://github.com/flynn0/googletrans-tester/actions/workflows/test-implementations.yml/badge.svg)](https://github.com/flynn0/googletrans-tester/actions/workflows/test-implementations.yml)
 [![Deploy Dashboard to GitHub Pages](https://github.com/flynn0/googletrans-tester/actions/workflows/deploy-pages.yml/badge.svg)](https://github.com/flynn0/googletrans-tester/actions/workflows/deploy-pages.yml)
-[![Latest Release](https://img.shields.io/github/v/release/flynn0/googletrans-tester?color=blue)](https://github.com/flynn0/googletrans-tester/releases/tag/v0.1.1)
+[![Latest Release](https://img.shields.io/github/v/release/flynn0/googletrans-tester?color=blue)](https://github.com/flynn0/googletrans-tester/releases/tag/v0.1.2)
 
 An agentic multi-target testing harness, statistical telemetry collector, and interactive Vite dashboard for validating and comparing **all 33 major PyPI packages and forks** of the Python `googletrans` ecosystem.
 
@@ -41,7 +41,7 @@ The interactive test dashboard is deployed to GitHub Pages:
 | [`googletrans-wheel2-py`](https://pypi.org/project/googletrans-wheel2-py/) | ✅ PASS | `sync` | 3.0k | Wheel repackage fork targeting modern python versions. |
 | [`googletranswheel2`](https://pypi.org/project/googletranswheel2/) | ✅ PASS | `sync` | 2.0k | Repackaged wheel with googletranswheel2 namespace. |
 | [`gotranslate`](https://pypi.org/project/gotranslate/) | ✅ PASS | `sync` | 1.0k | Lightweight GoogleTranslator library with language detection, details, and emoji flags. |
-| [`googletrans-curl`](https://pypi.org/project/googletrans-curl/) | ✅ PASS | `async` | 903 | Modern fork utilizing curl-cffi and httpx[http2] for enhanced bypass and stability. |
+| [`googletrans-curl`](https://pypi.org/project/googletrans-curl/) | ✅ PASS | `async, sync` | 903 | Modern fork utilizing curl-cffi and httpx[http2] for enhanced bypass and stability; supports both v4.x async Translator and legacy v3.x SyncTranslator. |
 | [`googletransx`](https://pypi.org/project/googletransx/) | ❌ FAIL | `sync` | 1.0M | Independent fork using the googletransx namespace. |
 | [`googletrans2`](https://pypi.org/project/googletrans2/) | ❌ FAIL | `sync` | 317.0k | Alternative distribution tracking the googletrans 2.x branch. |
 | [`googletranslate`](https://pypi.org/project/googletranslate/) | ❌ FAIL | `-` | 177.0k | Candidate PyPI namespace tested for package availability. |
@@ -63,6 +63,44 @@ The interactive test dashboard is deployed to GitHub Pages:
 | [`vtrans`](https://pypi.org/project/vtrans/) | ❌ FAIL | `sync` | 5.0k | Cross-platform self-updating translator supporting up to 130 languages. |
 | [`googletrans-wheel`](https://pypi.org/project/googletrans-wheel/) | ❌ FAIL | `sync` | 2.0k | Binary wheel build with googletrans_wheel module namespace. |
 | [`googletranslate-neon-plugin`](https://pypi.org/project/googletranslate-neon-plugin/) | ❌ FAIL | `-` | 2.0k | Neon AI framework translation plugin powered by Google Translate. |
+
+---
+
+## ⚡ Dual Async & Synchronous Implementation Support
+
+Modern `googletrans` forks have bifurcated across v3.x (synchronous) and v4.x (asynchronous with `httpx`):
+
+### 1. `googletrans-curl` (Dual Support)
+`googletrans-curl` uniquely provides full backward and modern forward compatibility out of the box:
+
+- **Modern Asynchronous API (v4.x compatible):**
+  ```python
+  import asyncio
+  from googletrans import Translator
+
+  async def main():
+      translator = Translator()
+      result = await translator.translate("Hello world", dest="de")
+      print(result.text)  # Hallo Welt
+
+  asyncio.run(main())
+  ```
+
+- **Legacy Synchronous Drop-in API (v3.x compatible):**
+  Compatible drop-in replacement for older codebases that used `googletrans` v3.x, requiring only updating the import statement:
+  ```python
+  from googletrans import SyncTranslator as Translator
+
+  translator = Translator()
+  result = translator.translate("Hello world", dest="de")
+  print(result.text)  # Hallo Welt
+  ```
+  `SyncTranslator` executes blocking requests safely via a persistent background event loop thread, supporting `translate()`, `detect()`, context managers (`with SyncTranslator() as translator:`), and session cleanup. Additionally, the async `Translator` exposes synchronous helpers `translator.translate_sync()` and `translator.detect_sync()`.
+
+### 2. Other Evaluated Variants
+- **`mintrans`:** Provides separate `GoogleTranslator` (synchronous) and `AsyncGoogleTranslator` (asynchronous) classes, though currently throttled by Google Translate rate limits on unauthenticated endpoints.
+- **`googletranslator-new` & `SmallGoogleTranslator`:** Define classes with both `translate_sync` and `translate_async` methods, but currently fail due to obsolete token and HTML parsing algorithms.
+- **Other 29 forks:** Either provide purely synchronous APIs (e.g. `googletrans-py`, `googletrans-sw`, `googletrans-modified`, `gotranslate`) or strictly asynchronous APIs (`googletrans` 4.0.2, `Flask-Googletrans`). Official `googletrans` 4.0.2 does not provide `SyncTranslator`.
 
 ---
 

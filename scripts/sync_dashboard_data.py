@@ -150,7 +150,8 @@ def sync():
                 "module_name": test_res.get("module_name"),
                 "elapsed_sec": test_res.get("elapsed_sec"),
                 "error_summary": test_res.get("error_summary"),
-                "tests": test_res.get("tests", {})
+                "tests": test_res.get("tests", {}),
+                "implementations": test_res.get("implementations", {})
             },
             "reliability": {
                 "percentage": pkg_hist_data.get("reliability_percentage", 0.0),
@@ -177,8 +178,8 @@ def sync():
         "generated_at": now_iso,
         "metadata": {
             "title": "Googletrans Implementations & Forks Live Matrix",
-            "version": "v0.1.1",
-            "release_url": "https://github.com/flynn0/googletrans-tester/releases/tag/v0.1.1",
+            "version": "v0.1.2",
+            "release_url": "https://github.com/flynn0/googletrans-tester/releases/tag/v0.1.2",
             "repository": "https://github.com/flynn0/googletrans-tester",
             "inspiration_repos": [
                 "https://github.com/aikenf/googletrans-all",

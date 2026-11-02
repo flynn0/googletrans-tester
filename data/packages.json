@@ -15,7 +15,7 @@
     "pepy_url": "https://pepy.tech/projects/googletrans-curl",
     "pypistats_url": "https://pypistats.org/packages/googletrans-curl",
     "default_module": "googletrans",
-    "description": "Modern fork utilizing curl-cffi and httpx[http2] for enhanced bypass and stability."
+    "description": "Modern fork utilizing curl-cffi and httpx[http2]; supports both v4.x async Translator and v3.x SyncTranslator."
   },
   {
     "id": "googletrans-py",

@@ -150,8 +150,8 @@ function renderTable(packages) {
 
     if (activeFilter === "passed" && status !== "passed") return false;
     if (activeFilter === "failed" && status === "passed") return false;
-    if (activeFilter === "async" && apiType !== "async") return false;
-    if (activeFilter === "sync" && apiType !== "sync") return false;
+    if (activeFilter === "async" && !apiType.includes("async")) return false;
+    if (activeFilter === "sync" && !apiType.includes("sync")) return false;
 
     // 2. Search query
     if (searchQuery) {
@@ -604,6 +604,40 @@ function openModal(pkg) {
         </div>
       </div>
     </div>
+
+    ${
+      tr.implementations && Object.keys(tr.implementations).length > 0
+        ? `
+      <div class="modal-section">
+        <h4>Discovered API Implementations (${Object.keys(tr.implementations).length})</h4>
+        <div class="implementations-list" style="display: flex; flex-direction: column; gap: 0.8rem;">
+          ${Object.entries(tr.implementations)
+            .map(
+              ([implKey, impl]) => `
+            <div class="impl-card" style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 0.8rem 1rem;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.4rem;">
+                <span style="font-weight: 700; color: var(--text-main); font-size: 0.9rem;">
+                  ${impl.class || implKey} <span class="badge-api" style="margin-left: 0.4rem;">${impl.api_type || implKey}</span>
+                </span>
+                <span class="badge ${impl.translate_status === "passed" ? "badge-passed" : "badge-failed"}">
+                  ${impl.translate_status === "passed" ? `PASS (${impl.translate_latency_ms} ms)` : "FAIL"}
+                </span>
+              </div>
+              ${impl.notes ? `<div style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.5rem;">${impl.notes}</div>` : ""}
+              <div style="display: flex; flex-direction: column; gap: 0.3rem;">
+                <div style="font-size: 0.75rem; color: var(--text-muted);">Import & Usage:</div>
+                <div class="code-block" style="margin: 0; padding: 0.4rem 0.6rem; font-size: 0.78rem;">${impl.import_syntax || ""}\n${impl.call_syntax || ""}</div>
+              </div>
+              ${impl.translate_result ? `<div style="font-size: 0.78rem; color: var(--text-dim); margin-top: 0.4rem;">Result: <em>"${impl.translate_result}"</em>${impl.detect_result ? ` · Detected: <code>${impl.detect_result}</code>` : ""}</div>` : ""}
+            </div>
+          `
+            )
+            .join("")}
+        </div>
+      </div>
+    `
+        : ""
+    }
 
     ${
       tr.error_summary
