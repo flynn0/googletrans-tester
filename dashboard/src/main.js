@@ -141,8 +141,8 @@ function renderSummaryCards(summary) {
 
 function renderApiBadges(apiType, implementations) {
   const typeStr = (apiType || "").toLowerCase();
-  const hasAsync = typeStr.includes("async") || (implementations && Boolean(implementations.async));
-  const hasSync = typeStr.includes("sync") || (implementations && Boolean(implementations.sync));
+  const hasAsync = /\basync\b/.test(typeStr) || (implementations && Boolean(implementations.async));
+  const hasSync = /\bsync\b/.test(typeStr) || (implementations && Boolean(implementations.sync));
 
   if (hasAsync && hasSync) {
     return `
@@ -175,8 +175,8 @@ function renderTable(packages) {
 
     if (activeFilter === "passed" && status !== "passed") return false;
     if (activeFilter === "failed" && status === "passed") return false;
-    if (activeFilter === "async" && !apiType.includes("async")) return false;
-    if (activeFilter === "sync" && !apiType.includes("sync")) return false;
+    if (activeFilter === "async" && !/\basync\b/.test(apiType)) return false;
+    if (activeFilter === "sync" && !/\bsync\b/.test(apiType)) return false;
 
     // 2. Search query
     if (searchQuery) {
