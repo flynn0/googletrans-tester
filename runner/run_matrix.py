@@ -47,10 +47,10 @@ def test_package_in_isolation(package_meta, pip_timeout=60):
         pip_path = os.path.join(bin_dir, "pip")
         python_path = os.path.join(bin_dir, "python")
 
-        # 2. Pre-install compatibility shims (legacy-cgi for Python 3.13+, requests for packages missing explicit requirements)
+        # 2. Pre-install compatibility shims (legacy-cgi for Python 3.13+, requests and aiohttp for packages missing explicit requirements)
         # This gives older packages fair compatibility on modern runtimes
         subprocess.run([pip_path, "install", "--upgrade", "pip"], capture_output=True)
-        subprocess.run([pip_path, "install", "legacy-cgi", "requests"], capture_output=True)
+        subprocess.run([pip_path, "install", "legacy-cgi", "requests", "aiohttp"], capture_output=True)
 
         # 3. Install the target package
         logging.info("Installing %s...", pypi_name)

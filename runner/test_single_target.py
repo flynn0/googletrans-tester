@@ -482,22 +482,14 @@ def run_test(package_name, target_module_hint=None):
     sync_ok = sync_res and sync_res.get("translate_status") == "passed"
     func_ok = func_res and func_res.get("translate_status") == "passed"
 
-    # API Paradigm determination
-    if async_ok and sync_ok:
+    # API Paradigm determination based on supported package implementations
+    if "async" in impls and "sync" in impls:
         report["api_type"] = "async, sync"
-    elif async_ok:
+    elif "async" in impls or async_ok:
         report["api_type"] = "async"
-    elif sync_ok:
+    elif "sync" in impls or sync_ok:
         report["api_type"] = "sync"
-    elif func_ok:
-        report["api_type"] = "function"
-    elif "async" in impls and "sync" in impls:
-        report["api_type"] = "async, sync"
-    elif "async" in impls:
-        report["api_type"] = "async"
-    elif "sync" in impls:
-        report["api_type"] = "sync"
-    elif "function" in impls:
+    elif "function" in impls or func_ok:
         report["api_type"] = "function"
     else:
         report["api_type"] = "unknown"

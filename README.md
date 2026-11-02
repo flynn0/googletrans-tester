@@ -35,7 +35,7 @@ The interactive test dashboard is deployed to GitHub Pages:
 | [`Flask-Googletrans`](https://pypi.org/project/Flask-Googletrans/) | ✅ PASS | `async` | 88.0k | Flask web application extension for automated template translation. |
 | [`googletrans-py39`](https://pypi.org/project/googletrans-py39/) | ✅ PASS | `sync` | 23.0k | Python 3.9 compatibility fork. |
 | [`googletrans-modified`](https://pypi.org/project/googletrans-modified/) | ✅ PASS | `sync` | 15.0k | Modified release with adjusted query handling. |
-| [`mintrans`](https://pypi.org/project/mintrans/) | ✅ PASS | `sync` | 8.0k | Free multi-service translation API wrapper supporting Google Translate, Bing, and DeepL. |
+| [`mintrans`](https://pypi.org/project/mintrans/) | ✅ PASS | `async, sync` | 8.0k | Free multi-service translation API wrapper supporting Google Translate, Bing, and DeepL. |
 | [`googletransfork`](https://pypi.org/project/googletransfork/) | ✅ PASS | `sync` | 6.0k | Fork package based on early googletrans release. |
 | [`googletrans-sw`](https://pypi.org/project/googletrans-sw/) | ✅ PASS | `sync` | 4.0k | Swahili / customized distribution fork. |
 | [`googletrans-wheel2-py`](https://pypi.org/project/googletrans-wheel2-py/) | ✅ PASS | `sync` | 3.0k | Wheel repackage fork targeting modern python versions. |
@@ -56,9 +56,9 @@ The interactive test dashboard is deployed to GitHub Pages:
 | [`unlimited-machine-translator`](https://pypi.org/project/unlimited-machine-translator/) | ❌ FAIL | `function` | 16.0k | Batch document and DataFrame machine translation leveraging Google Translate. |
 | [`simple-googletrans`](https://pypi.org/project/simple-googletrans/) | ❌ FAIL | `-` | 13.0k | Simple CLI and Python wrapper around googletrans with logging and batching. |
 | [`googletrans-python`](https://pypi.org/project/googletrans-python/) | ❌ FAIL | `function` | 11.0k | Alternative wrapper providing direct translate() function. |
-| [`SmallGoogleTranslator`](https://pypi.org/project/SmallGoogleTranslator/) | ❌ FAIL | `unknown` | 9.0k | Minimalist async/sync Google Translator library scraping the web endpoint. |
+| [`SmallGoogleTranslator`](https://pypi.org/project/SmallGoogleTranslator/) | ❌ FAIL | `async, sync` | 9.0k | Minimalist async/sync Google Translator library scraping the web endpoint. |
 | [`googletrans-di`](https://pypi.org/project/googletrans-di/) | ❌ FAIL | `-` | 9.0k | Fork using googletrans_di namespace. |
-| [`googletranslator-new`](https://pypi.org/project/googletranslator-new/) | ❌ FAIL | `-` | 6.0k | Convenient Russian/multilingual Google Translator client wrapper. |
+| [`googletranslator-new`](https://pypi.org/project/googletranslator-new/) | ❌ FAIL | `async, sync` | 6.0k | Convenient Russian/multilingual Google Translator client wrapper. |
 | [`py-googletrans-html`](https://pypi.org/project/py-googletrans-html/) | ❌ FAIL | `sync` | 6.0k | Google Translate fork with specialized HTML preservation. |
 | [`vtrans`](https://pypi.org/project/vtrans/) | ❌ FAIL | `sync` | 5.0k | Cross-platform self-updating translator supporting up to 130 languages. |
 | [`googletrans-wheel`](https://pypi.org/project/googletrans-wheel/) | ❌ FAIL | `sync` | 2.0k | Binary wheel build with googletrans_wheel module namespace. |

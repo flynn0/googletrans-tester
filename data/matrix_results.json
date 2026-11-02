@@ -3,7 +3,7 @@
     "total": 33,
     "passed": 12,
     "failed": 21,
-    "timestamp": "2026-11-02T10:13:50.384713+00:00"
+    "timestamp": "2026-11-02T11:19:25.101389+00:00"
   },
   "results": {
     "googletrans": {
@@ -760,38 +760,71 @@
     },
     "googletranslator-new": {
       "package_name": "googletranslator-new",
-      "timestamp": "2026-11-01T05:43:18Z",
-      "python_version": "3.12.15",
+      "timestamp": "2026-11-02T11:18:29Z",
+      "python_version": "3.14.4",
       "installed": true,
-      "import_success": false,
-      "module_name": null,
-      "api_type": "unknown",
+      "import_success": true,
+      "module_name": "src",
+      "api_type": "async, sync",
       "tests": {
         "packaging": {
           "status": "passed",
           "details": "Installed version 1.0"
         },
         "import": {
-          "status": "failed",
-          "details": "src: No module named 'aiohttp' | googletranslator_new: No module named 'googletranslator_new' | googletrans: No module named 'googletrans'"
+          "status": "passed",
+          "details": "Imported src (version: unknown)"
         },
         "translate_en_de": {
-          "status": "pending",
-          "latency_ms": null,
+          "status": "failed",
+          "latency_ms": 667.59,
           "result": null,
-          "error": null
+          "error": "IndexError: list index out of range"
         },
         "detect_language": {
-          "status": "pending",
-          "latency_ms": null,
+          "status": "skipped",
+          "latency_ms": 0.01,
           "result": null,
-          "error": null
+          "error": null,
+          "details": "detect() API not provided by this implementation"
         }
       },
       "overall_status": "failed",
-      "error_summary": "Failed to import candidate modules: src: No module named 'aiohttp' | googletranslator_new: No module named 'googletranslator_new' | googletrans: No module named 'googletrans'",
+      "error_summary": "IndexError: list index out of range",
       "installed_version": "1.0",
-      "elapsed_sec": 6.21,
+      "implementations": {
+        "async": {
+          "class": "GoogleTranslator",
+          "api_type": "async",
+          "import_syntax": "from src import GoogleTranslator",
+          "call_syntax": "translator = GoogleTranslator(); res = await translator.translate('Hello world', dest='de')",
+          "notes": "Modern asynchronous implementation (GoogleTranslator)",
+          "translate_status": "failed",
+          "translate_latency_ms": 667.59,
+          "translate_result": null,
+          "detect_status": "skipped",
+          "detect_latency_ms": 0.01,
+          "detect_result": null,
+          "error": "IndexError: list index out of range",
+          "detect_details": "detect() API not provided by this implementation"
+        },
+        "sync": {
+          "class": "GoogleTranslator",
+          "api_type": "sync",
+          "import_syntax": "from src import GoogleTranslator",
+          "call_syntax": "translator = GoogleTranslator(); res = translator.translate_sync('Hello world', dest='de')",
+          "notes": "Synchronous translate_sync method on GoogleTranslator",
+          "translate_status": "failed",
+          "translate_latency_ms": 968.21,
+          "translate_result": null,
+          "detect_status": "skipped",
+          "detect_latency_ms": 0.01,
+          "detect_result": null,
+          "error": "AttributeError: 'Response' object has no attribute 'decode'",
+          "detect_details": "detect() API not provided by this implementation"
+        }
+      },
+      "elapsed_sec": 5.82,
       "package_id": "googletranslator-new",
       "description": "Convenient Russian/multilingual Google Translator client wrapper.",
       "pypi_url": "https://pypi.org/project/googletranslator-new/"
@@ -1103,38 +1136,71 @@
     },
     "SmallGoogleTranslator": {
       "package_name": "SmallGoogleTranslator",
-      "timestamp": "2026-11-01T12:33:24Z",
+      "timestamp": "2026-11-02T11:18:45Z",
       "python_version": "3.14.4",
       "installed": true,
-      "import_success": false,
-      "module_name": null,
-      "api_type": "unknown",
+      "import_success": true,
+      "module_name": "google.translator",
+      "api_type": "async, sync",
       "tests": {
         "packaging": {
           "status": "passed",
           "details": "Installed version 1.2"
         },
         "import": {
-          "status": "failed",
-          "details": "google.translator: No module named 'aiohttp' | google: No module named 'aiohttp' | SmallGoogleTranslator: No module named 'SmallGoogleTranslator' | googletrans: No module named 'googletrans'"
+          "status": "passed",
+          "details": "Imported google.translator (version: unknown)"
         },
         "translate_en_de": {
-          "status": "pending",
-          "latency_ms": null,
+          "status": "failed",
+          "latency_ms": 630.38,
           "result": null,
-          "error": null
+          "error": "IndexError: list index out of range"
         },
         "detect_language": {
-          "status": "pending",
-          "latency_ms": null,
+          "status": "skipped",
+          "latency_ms": 0.01,
           "result": null,
-          "error": null
+          "error": null,
+          "details": "detect() API not provided by this implementation"
         }
       },
       "overall_status": "failed",
-      "error_summary": "Failed to import candidate modules: google.translator: No module named 'aiohttp' | google: No module named 'aiohttp' | SmallGoogleTranslator: No module named 'SmallGoogleTranslator' | googletrans: No module named 'googletrans'",
+      "error_summary": "IndexError: list index out of range",
       "installed_version": "1.2",
-      "elapsed_sec": 3.37,
+      "implementations": {
+        "async": {
+          "class": "GoogleTranslator",
+          "api_type": "async",
+          "import_syntax": "from google.translator import GoogleTranslator",
+          "call_syntax": "translator = GoogleTranslator(); res = await translator.translate('Hello world', dest='de')",
+          "notes": "Modern asynchronous implementation (GoogleTranslator)",
+          "translate_status": "failed",
+          "translate_latency_ms": 630.38,
+          "translate_result": null,
+          "detect_status": "skipped",
+          "detect_latency_ms": 0.01,
+          "detect_result": null,
+          "error": "IndexError: list index out of range",
+          "detect_details": "detect() API not provided by this implementation"
+        },
+        "sync": {
+          "class": "GoogleTranslator",
+          "api_type": "sync",
+          "import_syntax": "from google.translator import GoogleTranslator",
+          "call_syntax": "translator = GoogleTranslator(); res = translator.translate_sync('Hello world', dest='de')",
+          "notes": "Synchronous translate_sync method on GoogleTranslator",
+          "translate_status": "failed",
+          "translate_latency_ms": 760.35,
+          "translate_result": null,
+          "detect_status": "skipped",
+          "detect_latency_ms": 0.01,
+          "detect_result": null,
+          "error": "AttributeError: 'Response' object has no attribute 'decode'",
+          "detect_details": "detect() API not provided by this implementation"
+        }
+      },
+      "elapsed_sec": 5.71,
       "package_id": "SmallGoogleTranslator",
       "description": "Minimalist async/sync Google Translator library scraping the web endpoint.",
       "pypi_url": "https://pypi.org/project/SmallGoogleTranslator/"
@@ -1257,12 +1323,12 @@
     },
     "mintrans": {
       "package_name": "mintrans",
-      "timestamp": "2026-11-01T12:33:49Z",
+      "timestamp": "2026-11-02T11:19:18Z",
       "python_version": "3.14.4",
       "installed": true,
       "import_success": true,
       "module_name": "mintrans",
-      "api_type": "sync",
+      "api_type": "async, sync",
       "tests": {
         "packaging": {
           "status": "passed",
@@ -1274,13 +1340,14 @@
         },
         "translate_en_de": {
           "status": "passed",
-          "latency_ms": 859.92,
+          "latency_ms": 930.1,
           "result": "Hallo Welt",
-          "error": null
+          "error": null,
+          "details": "Verified sync (GoogleTranslator) implementation"
         },
         "detect_language": {
           "status": "passed",
-          "latency_ms": 0.0,
+          "latency_ms": 0.01,
           "result": "en",
           "error": null
         }
@@ -1288,7 +1355,38 @@
       "overall_status": "passed",
       "error_summary": null,
       "installed_version": "1.1.0",
-      "elapsed_sec": 5.67,
+      "implementations": {
+        "async": {
+          "class": "AsyncGoogleTranslator",
+          "api_type": "async",
+          "import_syntax": "from mintrans import AsyncGoogleTranslator as Translator",
+          "call_syntax": "translator = Translator(); res = await translator.translate('Hello world', to_lang='de')",
+          "notes": "Asynchronous implementation via AsyncGoogleTranslator",
+          "translate_status": "failed",
+          "translate_latency_ms": 5649.76,
+          "translate_result": null,
+          "detect_status": "skipped",
+          "detect_latency_ms": 0.01,
+          "detect_result": null,
+          "error": "RateLimitException: Google Translate rate limit reached!",
+          "detect_details": "detect() API not provided by this implementation"
+        },
+        "sync": {
+          "class": "GoogleTranslator",
+          "api_type": "sync",
+          "import_syntax": "from mintrans import GoogleTranslator",
+          "call_syntax": "translator = GoogleTranslator(); res = translator.translate('Hello world', dest='de')",
+          "notes": "Synchronous implementation (GoogleTranslator)",
+          "translate_status": "passed",
+          "translate_latency_ms": 930.1,
+          "translate_result": "Hallo Welt",
+          "detect_status": "passed",
+          "detect_latency_ms": 0.01,
+          "detect_result": "en",
+          "error": null
+        }
+      },
+      "elapsed_sec": 10.86,
       "package_id": "mintrans",
       "description": "Free multi-service translation API wrapper supporting Google Translate, Bing, and DeepL.",
       "pypi_url": "https://pypi.org/project/mintrans/"

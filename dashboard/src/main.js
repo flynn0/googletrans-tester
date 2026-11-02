@@ -139,6 +139,31 @@ function renderSummaryCards(summary) {
   `;
 }
 
+function renderApiBadges(apiType, implementations) {
+  const typeStr = (apiType || "").toLowerCase();
+  const hasAsync = typeStr.includes("async") || (implementations && Boolean(implementations.async));
+  const hasSync = typeStr.includes("sync") || (implementations && Boolean(implementations.sync));
+
+  if (hasAsync && hasSync) {
+    return `
+      <div class="api-badge-stack" title="Dual implementation: supports both async and sync">
+        <span class="badge-api badge-api-async">async</span>
+        <span class="badge-api badge-api-sync">sync</span>
+      </div>
+    `;
+  }
+  if (hasAsync) {
+    return `<span class="badge-api badge-api-async">async</span>`;
+  }
+  if (hasSync) {
+    return `<span class="badge-api badge-api-sync">sync</span>`;
+  }
+  if (typeStr.includes("func")) {
+    return `<span class="badge-api badge-api-func">function</span>`;
+  }
+  return `<span class="badge-api badge-api-unknown">${apiType || "-"}</span>`;
+}
+
 function renderTable(packages) {
   const tbody = document.getElementById("packages-table-body");
   if (!tbody) return;
@@ -178,7 +203,7 @@ function renderTable(packages) {
         ? `<span class="badge badge-passed">PASS</span>`
         : `<span class="badge badge-failed">FAIL</span>`;
 
-      const apiBadge = `<span class="badge-api">${pkg.test_result.api_type || "n/a"}</span>`;
+      const apiBadge = renderApiBadges(pkg.test_result.api_type, pkg.test_result.implementations);
       const latency = pkg.test_result.tests?.translate_en_de?.latency_ms;
       const latencyStr = latency ? `${latency} ms` : "-";
 
@@ -566,7 +591,7 @@ function openModal(pkg) {
         </div>
         <div class="test-item">
           <div class="test-item-title"><span>API Paradigm</span><span>Async / Sync</span></div>
-          <div class="test-item-content">${tr.api_type}</div>
+          <div class="test-item-content">${renderApiBadges(tr.api_type, tr.implementations)}</div>
         </div>
         <div class="test-item">
           <div class="test-item-title"><span>Total Lifetime Downloads</span><span>pepy.tech</span></div>
@@ -617,7 +642,7 @@ function openModal(pkg) {
             <div class="impl-card" style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 0.8rem 1rem;">
               <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.4rem;">
                 <span style="font-weight: 700; color: var(--text-main); font-size: 0.9rem;">
-                  ${impl.class || implKey} <span class="badge-api" style="margin-left: 0.4rem;">${impl.api_type || implKey}</span>
+                  ${impl.class || implKey} <span class="badge-api badge-api-${impl.api_type || implKey}" style="margin-left: 0.4rem;">${impl.api_type || implKey}</span>
                 </span>
                 <span class="badge ${impl.translate_status === "passed" ? "badge-passed" : "badge-failed"}">
                   ${impl.translate_status === "passed" ? `PASS (${impl.translate_latency_ms} ms)` : "FAIL"}

@@ -130,3 +130,24 @@ def test_dual_implementation_discovery_in_matrix_results():
     assert impls["async"]["class"] == "Translator"
     assert impls["async"]["translate_status"] == "passed"
     assert "both async" in curl_res["tests"]["translate_en_de"]["details"].lower()
+
+
+def test_all_four_dual_packages_in_matrix_results():
+    """Verifies that googletrans-curl, mintrans, googletranslator-new, and SmallGoogleTranslator report dual async, sync support."""
+    import json
+    matrix_file = BASE_DIR / "data" / "matrix_results.json"
+    if not matrix_file.exists():
+        pytest.skip("matrix_results.json not found")
+
+    with open(matrix_file, "r", encoding="utf-8") as f:
+        data = json.load(f)
+
+    results = data.get("results", {})
+    expected_dual = ["googletrans-curl", "mintrans", "googletranslator-new", "SmallGoogleTranslator"]
+
+    for name in expected_dual:
+        pkg = results.get(name)
+        assert pkg is not None, f"Package {name} should be present in results"
+        assert pkg.get("api_type") == "async, sync", f"Package {name} should have api_type 'async, sync', got {pkg.get('api_type')}"
+        impls = pkg.get("implementations", {})
+        assert "async" in impls and "sync" in impls, f"Package {name} should have both async and sync implementations"
