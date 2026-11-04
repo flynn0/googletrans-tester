@@ -1,9 +1,9 @@
 {
   "summary": {
-    "total": 34,
-    "passed": 10,
-    "failed": 24,
-    "timestamp": "2026-11-04T03:37:20.345659+00:00"
+    "total": 37,
+    "passed": 11,
+    "failed": 26,
+    "timestamp": "2026-11-04T11:20:50.414954+00:00"
   },
   "results": {
     "googletrans": {
@@ -1845,6 +1845,202 @@
       "package_id": "freetrans-py",
       "description": "Multi-provider translation library with curl-cffi anti-rate-limiting; supports both async Translator and sync SyncTranslator.",
       "pypi_url": "https://pypi.org/project/freetrans-py/"
+    },
+    "py-trans": {
+      "package_name": "py-trans",
+      "timestamp": "2026-11-04T11:20:29Z",
+      "python_version": "3.14.4",
+      "installed": true,
+      "import_success": true,
+      "module_name": "py_trans",
+      "api_type": "async, sync",
+      "tests": {
+        "packaging": {
+          "status": "passed",
+          "details": "Installed version 0.6.1"
+        },
+        "import": {
+          "status": "passed",
+          "details": "Imported py_trans (version: v0.6.1)"
+        },
+        "translate_en_de": {
+          "status": "passed",
+          "latency_ms": 200.45,
+          "result": "Hallo Welt",
+          "error": null,
+          "details": "Verified both async (Async_PyTranslator) and sync (PyTranslator) implementations"
+        },
+        "detect_language": {
+          "status": "passed",
+          "latency_ms": 353.95,
+          "result": "en",
+          "error": null
+        }
+      },
+      "overall_status": "passed",
+      "error_summary": null,
+      "installed_version": "0.6.1",
+      "implementations": {
+        "async": {
+          "class": "Async_PyTranslator",
+          "api_type": "async",
+          "import_syntax": "from py_trans import Async_PyTranslator as Translator",
+          "call_syntax": "translator = Translator(); res = await translator.google('Hello world', dest='de')",
+          "notes": "Asynchronous implementation via Async_PyTranslator",
+          "translate_status": "passed",
+          "translate_latency_ms": 200.45,
+          "translate_result": "Hallo Welt",
+          "detect_status": "passed",
+          "detect_latency_ms": 353.95,
+          "detect_result": "en",
+          "error": null
+        },
+        "sync": {
+          "class": "PyTranslator",
+          "api_type": "sync",
+          "import_syntax": "from py_trans import PyTranslator",
+          "call_syntax": "translator = PyTranslator(); res = translator.google('Hello world', dest='de')",
+          "notes": "Synchronous implementation (PyTranslator)",
+          "translate_status": "passed",
+          "translate_latency_ms": 168.48,
+          "translate_result": "Hallo Welt",
+          "detect_status": "passed",
+          "detect_latency_ms": 327.96,
+          "detect_result": "en",
+          "error": null
+        }
+      },
+      "elapsed_sec": 5.92,
+      "package_id": "py-trans",
+      "description": "Free translation library supporting multiple providers (Google Translate, Translate Dict) with async and sync support.",
+      "pypi_url": "https://pypi.org/project/py-trans/"
+    },
+    "google-translate-py": {
+      "package_name": "google-translate-py",
+      "timestamp": "2026-11-04T11:20:39Z",
+      "python_version": "3.14.4",
+      "installed": true,
+      "import_success": true,
+      "module_name": "google_translate_py",
+      "api_type": "async, sync",
+      "tests": {
+        "packaging": {
+          "status": "passed",
+          "details": "Installed version 1.0.0"
+        },
+        "import": {
+          "status": "passed",
+          "details": "Imported google_translate_py (version: 1.0.0)"
+        },
+        "translate_en_de": {
+          "status": "failed",
+          "latency_ms": 598.02,
+          "result": null,
+          "error": "TranslateError: The API is not working properly."
+        },
+        "detect_language": {
+          "status": "skipped",
+          "latency_ms": 0.0,
+          "result": null,
+          "error": null,
+          "details": "detect() API not provided by this implementation"
+        }
+      },
+      "overall_status": "failed",
+      "error_summary": "TranslateError: The API is not working properly.",
+      "installed_version": "1.0.0",
+      "implementations": {
+        "async": {
+          "class": "AsyncTranslator",
+          "api_type": "async",
+          "import_syntax": "from google_translate_py import AsyncTranslator as Translator",
+          "call_syntax": "translator = Translator(); res = await translator.translate('Hello world', to_lang='de')",
+          "notes": "Asynchronous implementation via AsyncTranslator",
+          "translate_status": "failed",
+          "translate_latency_ms": 598.02,
+          "translate_result": null,
+          "detect_status": "skipped",
+          "detect_latency_ms": 0.0,
+          "detect_result": null,
+          "error": "TranslateError: The API is not working properly.",
+          "detect_details": "detect() API not provided by this implementation"
+        },
+        "sync": {
+          "class": "Translator",
+          "api_type": "sync",
+          "import_syntax": "from google_translate_py import Translator",
+          "call_syntax": "translator = Translator(); res = translator.translate('Hello world', dest='de')",
+          "notes": "Synchronous implementation (Translator)",
+          "translate_status": "failed",
+          "translate_latency_ms": 562.6,
+          "translate_result": null,
+          "detect_status": "skipped",
+          "detect_latency_ms": 0.01,
+          "detect_result": null,
+          "error": "TranslateError: The API is not working properly.",
+          "detect_details": "detect() API not provided by this implementation"
+        }
+      },
+      "elapsed_sec": 5.35,
+      "package_id": "google-translate-py",
+      "description": "Google Apps Script-backed translation wrapper supporting sync and async Translator.",
+      "pypi_url": "https://pypi.org/project/google-translate-py/"
+    },
+    "python-translator": {
+      "package_name": "python-translator",
+      "timestamp": "2026-11-04T11:20:49Z",
+      "python_version": "3.14.4",
+      "installed": true,
+      "import_success": true,
+      "module_name": "python_translator",
+      "api_type": "sync",
+      "tests": {
+        "packaging": {
+          "status": "passed",
+          "details": "Installed version 1.0.3"
+        },
+        "import": {
+          "status": "passed",
+          "details": "Imported python_translator (version: unknown)"
+        },
+        "translate_en_de": {
+          "status": "failed",
+          "latency_ms": 572.34,
+          "result": "None",
+          "error": "Invalid translation result: None"
+        },
+        "detect_language": {
+          "status": "skipped",
+          "latency_ms": 0.0,
+          "result": null,
+          "error": null,
+          "details": "detect() API not provided by this implementation"
+        }
+      },
+      "overall_status": "failed",
+      "error_summary": "Invalid translation result: None",
+      "installed_version": "1.0.3",
+      "implementations": {
+        "sync": {
+          "class": "Translator",
+          "api_type": "sync",
+          "import_syntax": "from python_translator import Translator",
+          "call_syntax": "translator = Translator(); res = translator.translate('Hello world', dest='de')",
+          "notes": "Synchronous implementation (Translator)",
+          "translate_status": "failed",
+          "translate_latency_ms": 572.34,
+          "translate_result": "None",
+          "detect_status": "skipped",
+          "detect_latency_ms": 0.0,
+          "detect_result": null,
+          "error": "Invalid translation result: None",
+          "detect_details": "detect() API not provided by this implementation"
+        }
+      },
+      "elapsed_sec": 4.63,
+      "package_id": "python-translator",
+      "description": "HTML-scraping translation library with language code conversion.",
+      "pypi_url": "https://pypi.org/project/python-translator/"
     }
   }
 }

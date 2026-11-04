@@ -6,7 +6,8 @@
     "pepy_url": "https://pepy.tech/projects/googletrans",
     "pypistats_url": "https://pypistats.org/packages/googletrans",
     "default_module": "googletrans",
-    "description": "The original and most widespread unofficial Google Translate API library."
+    "description": "The original and most widespread unofficial Google Translate API library.",
+    "category": "active"
   },
   {
     "id": "googletrans-curl",
@@ -15,7 +16,8 @@
     "pepy_url": "https://pepy.tech/projects/googletrans-curl",
     "pypistats_url": "https://pypistats.org/packages/googletrans-curl",
     "default_module": "googletrans",
-    "description": "Modern fork utilizing curl-cffi and httpx[http2]; supports both v4.x async Translator and v3.x SyncTranslator."
+    "description": "Modern fork utilizing curl-cffi and httpx[http2]; supports both v4.x async Translator and v3.x SyncTranslator.",
+    "category": "active"
   },
   {
     "id": "googletrans-py",
@@ -24,7 +26,8 @@
     "pepy_url": "https://pepy.tech/projects/googletrans-py",
     "pypistats_url": "https://pypistats.org/packages/googletrans-py",
     "default_module": "googletrans",
-    "description": "Fork packaging synchronous 4.0.0 API."
+    "description": "Fork packaging synchronous 4.0.0 API.",
+    "category": "active"
   },
   {
     "id": "googletrans-py39",
@@ -33,7 +36,8 @@
     "pepy_url": "https://pepy.tech/projects/googletrans-py39",
     "pypistats_url": "https://pypistats.org/packages/googletrans-py39",
     "default_module": "googletrans",
-    "description": "Python 3.9 compatibility fork."
+    "description": "Python 3.9 compatibility fork.",
+    "category": "active"
   },
   {
     "id": "googletrans-python",
@@ -42,7 +46,8 @@
     "pepy_url": "https://pepy.tech/projects/googletrans-python",
     "pypistats_url": "https://pypistats.org/packages/googletrans-python",
     "default_module": "googletrans",
-    "description": "Alternative wrapper providing direct translate() function."
+    "description": "Alternative wrapper providing direct translate() function.",
+    "category": "active"
   },
   {
     "id": "googletrans-sw",
@@ -51,7 +56,8 @@
     "pepy_url": "https://pepy.tech/projects/googletrans-sw",
     "pypistats_url": "https://pypistats.org/packages/googletrans-sw",
     "default_module": "googletrans",
-    "description": "Swahili / customized distribution fork."
+    "description": "Swahili / customized distribution fork.",
+    "category": "active"
   },
   {
     "id": "googletrans-wheel",
@@ -60,7 +66,8 @@
     "pepy_url": "https://pepy.tech/projects/googletrans-wheel",
     "pypistats_url": "https://pypistats.org/packages/googletrans-wheel",
     "default_module": "googletrans_wheel",
-    "description": "Binary wheel build with googletrans_wheel module namespace."
+    "description": "Binary wheel build with googletrans_wheel module namespace.",
+    "category": "active"
   },
   {
     "id": "googletrans-di",
@@ -69,7 +76,8 @@
     "pepy_url": "https://pepy.tech/projects/googletrans-di",
     "pypistats_url": "https://pypistats.org/packages/googletrans-di",
     "default_module": "googletrans_di",
-    "description": "Fork using googletrans_di namespace."
+    "description": "Fork using googletrans_di namespace.",
+    "category": "active"
   },
   {
     "id": "googletrans-modified",
@@ -78,7 +86,8 @@
     "pepy_url": "https://pepy.tech/projects/googletrans-modified",
     "pypistats_url": "https://pypistats.org/packages/googletrans-modified",
     "default_module": "googletrans",
-    "description": "Modified release with adjusted query handling."
+    "description": "Modified release with adjusted query handling.",
+    "category": "active"
   },
   {
     "id": "py-googletrans",
@@ -87,7 +96,8 @@
     "pepy_url": "https://pepy.tech/projects/py-googletrans",
     "pypistats_url": "https://pypistats.org/packages/py-googletrans",
     "default_module": "googletrans",
-    "description": "PyPI release published under original py-googletrans repository name."
+    "description": "PyPI release published under original py-googletrans repository name.",
+    "category": "active"
   },
   {
     "id": "googletrans-wheel2-py",
@@ -96,7 +106,8 @@
     "pepy_url": "https://pepy.tech/projects/googletrans-wheel2-py",
     "pypistats_url": "https://pypistats.org/packages/googletrans-wheel2-py",
     "default_module": "googletrans",
-    "description": "Wheel repackage fork targeting modern python versions."
+    "description": "Wheel repackage fork targeting modern python versions.",
+    "category": "active"
   },
   {
     "id": "googletrans-temp",
@@ -105,7 +116,8 @@
     "pepy_url": "https://pepy.tech/projects/googletrans-temp",
     "pypistats_url": "https://pypistats.org/packages/googletrans-temp",
     "default_module": "googletrans",
-    "description": "Temporary mirror release of googletrans v2.3.0."
+    "description": "Temporary mirror release of googletrans v2.3.0.",
+    "category": "active"
   },
   {
     "id": "googletrans2",
@@ -114,7 +126,8 @@
     "pepy_url": "https://pepy.tech/projects/googletrans2",
     "pypistats_url": "https://pypistats.org/packages/googletrans2",
     "default_module": "googletrans",
-    "description": "Alternative distribution tracking the googletrans 2.x branch."
+    "description": "Alternative distribution tracking the googletrans 2.x branch.",
+    "category": "active"
   },
   {
     "id": "googletrans2020",
@@ -123,7 +136,8 @@
     "pepy_url": "https://pepy.tech/projects/googletrans2020",
     "pypistats_url": "https://pypistats.org/packages/googletrans2020",
     "default_module": "GoogleTrans2020",
-    "description": "Community fork providing updated translation endpoints from 2020."
+    "description": "Community fork providing updated translation endpoints from 2020.",
+    "category": "active"
   },
   {
     "id": "googletransapi",
@@ -132,7 +146,8 @@
     "pepy_url": "https://pepy.tech/projects/googletransapi",
     "pypistats_url": "https://pypistats.org/packages/googletransapi",
     "default_module": "GoogleTransAPI",
-    "description": "Wrapper package providing translation and MP3 audio generation."
+    "description": "Wrapper package providing translation and MP3 audio generation.",
+    "category": "active"
   },
   {
     "id": "googletransfork",
@@ -141,7 +156,8 @@
     "pepy_url": "https://pepy.tech/projects/googletransfork",
     "pypistats_url": "https://pypistats.org/packages/googletransfork",
     "default_module": "googletrans",
-    "description": "Fork package based on early googletrans release."
+    "description": "Fork package based on early googletrans release.",
+    "category": "active"
   },
   {
     "id": "googletranslate",
@@ -150,7 +166,8 @@
     "pepy_url": "https://pepy.tech/projects/googletranslate",
     "pypistats_url": "https://pypistats.org/packages/googletranslate",
     "default_module": "googletranslate",
-    "description": "Candidate PyPI namespace tested for package availability."
+    "description": "Candidate PyPI namespace tested for package availability.",
+    "category": "active"
   },
   {
     "id": "googletranslate-neon-plugin",
@@ -159,7 +176,8 @@
     "pepy_url": "https://pepy.tech/projects/googletranslate-neon-plugin",
     "pypistats_url": "https://pypistats.org/packages/googletranslate-neon-plugin",
     "default_module": "googletranslate_neon_plugin",
-    "description": "Neon AI framework translation plugin powered by Google Translate."
+    "description": "Neon AI framework translation plugin powered by Google Translate.",
+    "category": "active"
   },
   {
     "id": "googletranslate-python",
@@ -168,7 +186,8 @@
     "pepy_url": "https://pepy.tech/projects/googletranslate-python",
     "pypistats_url": "https://pypistats.org/packages/googletranslate-python",
     "default_module": "googletranslatepy",
-    "description": "Google Translate client built on top of deep-translator."
+    "description": "Google Translate client built on top of deep-translator.",
+    "category": "active"
   },
   {
     "id": "googletranslator-new",
@@ -177,7 +196,8 @@
     "pepy_url": "https://pepy.tech/projects/googletranslator-new",
     "pypistats_url": "https://pypistats.org/packages/googletranslator-new",
     "default_module": "src",
-    "description": "Convenient Russian/multilingual Google Translator client wrapper."
+    "description": "Convenient Russian/multilingual Google Translator client wrapper.",
+    "category": "active"
   },
   {
     "id": "googletranswheel2",
@@ -186,7 +206,8 @@
     "pepy_url": "https://pepy.tech/projects/googletranswheel2",
     "pypistats_url": "https://pypistats.org/packages/googletranswheel2",
     "default_module": "googletranswheel2",
-    "description": "Repackaged wheel with googletranswheel2 namespace."
+    "description": "Repackaged wheel with googletranswheel2 namespace.",
+    "category": "active"
   },
   {
     "id": "googletransx",
@@ -195,7 +216,8 @@
     "pepy_url": "https://pepy.tech/projects/googletransx",
     "pypistats_url": "https://pypistats.org/packages/googletransx",
     "default_module": "googletransx",
-    "description": "Independent fork using the googletransx namespace."
+    "description": "Independent fork using the googletransx namespace.",
+    "category": "active"
   },
   {
     "id": "vtrans",
@@ -204,7 +226,8 @@
     "pepy_url": "https://pepy.tech/projects/vtrans",
     "pypistats_url": "https://pypistats.org/packages/vtrans",
     "default_module": "vtrans",
-    "description": "Cross-platform self-updating translator supporting up to 130 languages."
+    "description": "Cross-platform self-updating translator supporting up to 130 languages.",
+    "category": "active"
   },
   {
     "id": "Flask-Googletrans",
@@ -213,7 +236,8 @@
     "pepy_url": "https://pepy.tech/projects/Flask-Googletrans",
     "pypistats_url": "https://pypistats.org/packages/Flask-Googletrans",
     "default_module": "flask_googletrans",
-    "description": "Flask web application extension for automated template translation."
+    "description": "Flask web application extension for automated template translation.",
+    "category": "active"
   },
   {
     "id": "simple-googletrans",
@@ -222,7 +246,8 @@
     "pepy_url": "https://pepy.tech/projects/simple-googletrans",
     "pypistats_url": "https://pypistats.org/packages/simple-googletrans",
     "default_module": "simple_googletrans",
-    "description": "Simple CLI and Python wrapper around googletrans with logging and batching."
+    "description": "Simple CLI and Python wrapper around googletrans with logging and batching.",
+    "category": "active"
   },
   {
     "id": "py-googletrans-html",
@@ -231,7 +256,8 @@
     "pepy_url": "https://pepy.tech/projects/py-googletrans-html",
     "pypistats_url": "https://pypistats.org/packages/py-googletrans-html",
     "default_module": "googletrans",
-    "description": "Google Translate fork with specialized HTML preservation."
+    "description": "Google Translate fork with specialized HTML preservation.",
+    "category": "active"
   },
   {
     "id": "ggtrans",
@@ -240,7 +266,8 @@
     "pepy_url": "https://pepy.tech/projects/ggtrans",
     "pypistats_url": "https://pypistats.org/packages/ggtrans",
     "default_module": "googletrans",
-    "description": "Lightweight repackage of free Google Translate API for Python."
+    "description": "Lightweight repackage of free Google Translate API for Python.",
+    "category": "active"
   },
   {
     "id": "paraphrase-googletranslate",
@@ -249,7 +276,8 @@
     "pepy_url": "https://pepy.tech/projects/paraphrase-googletranslate",
     "pypistats_url": "https://pypistats.org/packages/paraphrase-googletranslate",
     "default_module": "paraphrase_googletranslate",
-    "description": "Paraphrasing engine built on top of google-trans-new."
+    "description": "Paraphrasing engine built on top of google-trans-new.",
+    "category": "active"
   },
   {
     "id": "SmallGoogleTranslator",
@@ -258,7 +286,8 @@
     "pepy_url": "https://pepy.tech/projects/SmallGoogleTranslator",
     "pypistats_url": "https://pypistats.org/packages/SmallGoogleTranslator",
     "default_module": "google.translator",
-    "description": "Minimalist async/sync Google Translator library scraping the web endpoint."
+    "description": "Minimalist async/sync Google Translator library scraping the web endpoint.",
+    "category": "active"
   },
   {
     "id": "cloud-translator",
@@ -267,7 +296,8 @@
     "pepy_url": "https://pepy.tech/projects/cloud-translator",
     "pypistats_url": "https://pypistats.org/packages/cloud-translator",
     "default_module": "translator",
-    "description": "Unified translation wrapper targeting Google Translate, Baidu, and Tencent."
+    "description": "Unified translation wrapper targeting Google Translate, Baidu, and Tencent.",
+    "category": "active"
   },
   {
     "id": "gotranslate",
@@ -276,7 +306,8 @@
     "pepy_url": "https://pepy.tech/projects/gotranslate",
     "pypistats_url": "https://pypistats.org/packages/gotranslate",
     "default_module": "gtranslate",
-    "description": "Lightweight GoogleTranslator library with language detection, details, and emoji flags."
+    "description": "Lightweight GoogleTranslator library with language detection, details, and emoji flags.",
+    "category": "active"
   },
   {
     "id": "unlimited-machine-translator",
@@ -285,7 +316,8 @@
     "pepy_url": "https://pepy.tech/projects/unlimited-machine-translator",
     "pypistats_url": "https://pypistats.org/packages/unlimited-machine-translator",
     "default_module": "unlimited_machine_translator",
-    "description": "Batch document and DataFrame machine translation leveraging Google Translate."
+    "description": "Batch document and DataFrame machine translation leveraging Google Translate.",
+    "category": "active"
   },
   {
     "id": "mintrans",
@@ -294,7 +326,8 @@
     "pepy_url": "https://pepy.tech/projects/mintrans",
     "pypistats_url": "https://pypistats.org/packages/mintrans",
     "default_module": "mintrans",
-    "description": "Free multi-service translation API wrapper supporting Google Translate, Bing, and DeepL."
+    "description": "Free multi-service translation API wrapper supporting Google Translate, Bing, and DeepL.",
+    "category": "active"
   },
   {
     "id": "freetrans-py",
@@ -303,7 +336,39 @@
     "pepy_url": "https://pepy.tech/projects/freetrans-py",
     "pypistats_url": "https://pypistats.org/packages/freetrans-py",
     "default_module": "freetrans",
-    "description": "Multi-provider translation library with curl-cffi anti-rate-limiting; supports both async Translator and sync SyncTranslator."
+    "description": "Multi-provider translation library with curl-cffi anti-rate-limiting; supports both async Translator and sync SyncTranslator.",
+    "category": "active"
+  },
+  {
+    "id": "py-trans",
+    "pypi_name": "py-trans",
+    "pypi_url": "https://pypi.org/project/py-trans/",
+    "pepy_url": "https://pepy.tech/projects/py-trans",
+    "pypistats_url": "https://pypistats.org/packages/py-trans",
+    "default_module": "py_trans",
+    "description": "Free translation library supporting multiple providers (Google Translate, Translate Dict) with async and sync support.",
+    "category": "active"
+  },
+  {
+    "id": "google-translate-py",
+    "pypi_name": "google-translate-py",
+    "pypi_url": "https://pypi.org/project/google-translate-py/",
+    "pepy_url": "https://pepy.tech/projects/google-translate-py",
+    "pypistats_url": "https://pypistats.org/packages/google-translate-py",
+    "default_module": "google_translate_py",
+    "description": "Google Apps Script-backed translation wrapper supporting sync and async Translator.",
+    "category": "defunct",
+    "category_reason": "Defunct Google Apps Script macro endpoint (script.google.com/macros/s/AKfycb... discontinued)."
+  },
+  {
+    "id": "python-translator",
+    "pypi_name": "python-translator",
+    "pypi_url": "https://pypi.org/project/python-translator/",
+    "pepy_url": "https://pepy.tech/projects/python-translator",
+    "pypistats_url": "https://pypistats.org/packages/python-translator",
+    "default_module": "python_translator",
+    "description": "HTML-scraping translation library with language code conversion.",
+    "category": "defunct",
+    "category_reason": "Defunct HTML scraping target (Google Translate removed div.result-container markup)."
   }
 ]
-

@@ -12,6 +12,7 @@ REQUIRED_KEYS = {
     "pepy_url",
     "pypistats_url",
     "default_module",
+    "category",
 }
 
 
@@ -24,7 +25,7 @@ def test_packages_count_and_keys():
         packages = json.load(f)
 
     assert isinstance(packages, list)
-    assert len(packages) == 34, f"Expected 34 packages, got {len(packages)}"
+    assert len(packages) == 37, f"Expected 37 packages, got {len(packages)}"
 
     seen_ids = set()
     seen_names = set()
@@ -44,3 +45,6 @@ def test_packages_count_and_keys():
         assert pkg["pypi_url"].startswith("https://pypi.org/project/")
         assert pkg["pepy_url"].startswith("https://pepy.tech/projects/")
         assert pkg["pypistats_url"].startswith("https://pypistats.org/packages/")
+        assert pkg["category"] in ["active", "defunct"]
+        if pkg["category"] == "defunct":
+            assert "category_reason" in pkg and len(pkg["category_reason"]) > 5

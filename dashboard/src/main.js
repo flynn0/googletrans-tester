@@ -109,12 +109,13 @@ function renderSummaryCards(summary) {
 
   const totalRuns = summary.total_historical_runs || 1;
   const trend = summary.trend_summary || { stable: 0, regressed: 0, recovered: 0 };
+  const defunctCount = summary.defunct_count || 0;
 
   container.innerHTML = `
     <div class="card passed">
       <div class="card-label">Working Implementations</div>
       <div class="card-value">${summary.passed} <span style="font-size: 1rem; color: var(--text-muted); font-weight: 500;">/ ${summary.total_packages}</span></div>
-      <div class="card-subtext">${summary.pass_rate}% live test pass rate</div>
+      <div class="card-subtext">${summary.pass_rate}% pass rate · ${defunctCount} defunct</div>
     </div>
     <div class="card ${trend.regressed > 0 ? "failed" : "passed"}">
       <div class="card-label">Run History & Stability</div>
@@ -171,10 +172,12 @@ function renderTable(packages) {
   const filtered = packages.filter((pkg) => {
     // 1. Pill Filter
     const status = pkg.test_result.status;
+    const isDefunct = pkg.category === "defunct" || status === "defunct";
     const apiType = (pkg.test_result.api_type || "").toLowerCase();
 
     if (activeFilter === "passed" && status !== "passed") return false;
-    if (activeFilter === "failed" && status === "passed") return false;
+    if (activeFilter === "failed" && (status === "passed" || isDefunct)) return false;
+    if (activeFilter === "defunct" && !isDefunct) return false;
     if (activeFilter === "async" && !/\basync\b/.test(apiType)) return false;
     if (activeFilter === "sync" && !/\bsync\b/.test(apiType)) return false;
 
@@ -183,9 +186,10 @@ function renderTable(packages) {
       const q = searchQuery.toLowerCase();
       const matchName = pkg.name.toLowerCase().includes(q);
       const matchDesc = (pkg.description || "").toLowerCase().includes(q);
+      const matchReason = (pkg.category_reason || "").toLowerCase().includes(q);
       const matchApi = apiType.includes(q);
       const matchModule = (pkg.default_module || "").toLowerCase().includes(q);
-      if (!matchName && !matchDesc && !matchApi && !matchModule) return false;
+      if (!matchName && !matchDesc && !matchReason && !matchApi && !matchModule) return false;
     }
 
     return true;
@@ -198,14 +202,20 @@ function renderTable(packages) {
 
   tbody.innerHTML = filtered
     .map((pkg) => {
+      const isDefunct = pkg.category === "defunct" || pkg.test_result.status === "defunct";
       const isPassed = pkg.test_result.status === "passed";
-      const statusBadge = isPassed
-        ? `<span class="badge badge-passed">PASS</span>`
-        : `<span class="badge badge-failed">FAIL</span>`;
+      let statusBadge;
+      if (isPassed) {
+        statusBadge = `<span class="badge badge-passed">PASS</span>`;
+      } else if (isDefunct) {
+        statusBadge = `<span class="badge badge-defunct" title="Defunct or deprecated implementation (endpoint removed/discontinued)">DEFUNCT</span>`;
+      } else {
+        statusBadge = `<span class="badge badge-failed">FAIL</span>`;
+      }
 
       const apiBadge = renderApiBadges(pkg.test_result.api_type, pkg.test_result.implementations);
       const latency = pkg.test_result.tests?.translate_en_de?.latency_ms;
-      const latencyStr = latency ? `${latency} ms` : "-";
+      const latencyStr = isDefunct ? `<span style="color: #fbbf24; font-size: 0.75rem;">skipped</span>` : latency ? `${latency} ms` : "-";
 
       // Reliability metrics
       const rel = pkg.reliability || { percentage: 0, total_runs: 0, trend: "stable" };
@@ -221,13 +231,16 @@ function renderTable(packages) {
       const slaBarHtml = createSlaTickBar(pkg.history || [], 30, false);
 
       return `
-        <tr>
+        <tr class="${isDefunct ? "row-defunct" : ""}">
           <td>${statusBadge}</td>
           <td>
             <div class="pkg-title">
               <a href="${pkg.pypi_url}" target="_blank" rel="noopener" class="pkg-name-link">${pkg.name}</a>
             </div>
-            <div class="pkg-desc">${pkg.description}</div>
+            <div class="pkg-desc">
+              ${pkg.description}
+              ${isDefunct && pkg.category_reason ? `<span class="defunct-note">⚠️ ${pkg.category_reason}</span>` : ""}
+            </div>
           </td>
           <td>
             <div class="rel-cell">
@@ -508,6 +521,7 @@ function openModal(pkg) {
   if (!modal || !modalBody) return;
 
   const isPassed = pkg.test_result.status === "passed";
+  const isDefunct = pkg.category === "defunct" || pkg.test_result.status === "defunct";
   const tr = pkg.test_result;
 
   const translateTest = tr.tests?.translate_en_de || {};
@@ -515,6 +529,12 @@ function openModal(pkg) {
   const importTest = tr.tests?.import || {};
   const pkgTest = tr.tests?.packaging || {};
   const rel = pkg.reliability || { percentage: 0, total_runs: 0, passed_runs: 0, trend: "stable" };
+
+  const statusBadgeModal = isPassed
+    ? `<span class="badge badge-passed">PASS</span>`
+    : isDefunct
+    ? `<span class="badge badge-defunct">DEFUNCT</span>`
+    : `<span class="badge badge-failed">FAIL</span>`;
 
   // Statuspage SLA bar for this package
   const slaBarModal = createSlaTickBar(pkg.history || [], 30, true);
@@ -554,13 +574,31 @@ function openModal(pkg) {
     <div class="modal-header">
       <h3>
         ${pkg.name}
-        <span class="badge ${isPassed ? "badge-passed" : "badge-failed"}">${tr.status}</span>
+        ${statusBadgeModal}
         <span class="badge-rel ${rel.percentage >= 80 ? "high" : rel.percentage >= 50 ? "medium" : "low"}" style="margin-left: 0.5rem;">
           ${rel.percentage}% Reliability
         </span>
       </h3>
       <p style="color: var(--text-muted); margin-top: 0.25rem;">${pkg.description}</p>
     </div>
+
+    ${
+      isDefunct
+        ? `
+      <div class="defunct-banner">
+        <div class="defunct-banner-title">⚠️ Defunct or Deprecated Implementation</div>
+        <div class="defunct-banner-text">
+          ${pkg.category_reason || "The remote endpoint or HTML scraping interface for this package is discontinued/removed. Daily test matrix execution is skipped, but historical telemetry and install volume continue to be tracked."}
+        </div>
+        <div class="defunct-banner-stats">
+          <span>2026 Volume: <strong>${formatCompactNumber(pkg.downloads.year_2026)}</strong> (${formatNumber(pkg.downloads.year_2026)} downloads)</span>
+          <span>Last Month: <strong>${formatCompactNumber(pkg.downloads.last_month)}</strong> (${formatNumber(pkg.downloads.last_month)} downloads)</span>
+          <span>All-Time: <strong>${formatCompactNumber(pkg.downloads.lifetime)}</strong> downloads</span>
+        </div>
+      </div>
+    `
+        : ""
+    }
 
     <!-- 30-Day SLA Uptime Bar in Modal -->
     <div class="modal-section">
@@ -807,6 +845,14 @@ async function loadData() {
     const allPill = document.getElementById("pill-all");
     if (allPill && data.packages) {
       allPill.textContent = `All (${data.packages.length})`;
+    }
+    const defunctPill = document.querySelector('.pill[data-filter="defunct"]');
+    if (defunctPill && data.summary) {
+      defunctPill.textContent = `Defunct (${data.summary.defunct_count || 0})`;
+    }
+    const passedPill = document.querySelector('.pill[data-filter="passed"]');
+    if (passedPill && data.summary) {
+      passedPill.textContent = `Working (${data.summary.passed})`;
     }
 
     renderSummaryCards(data.summary);

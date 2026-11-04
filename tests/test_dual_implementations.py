@@ -161,8 +161,8 @@ def test_dual_implementation_discovery_in_matrix_results():
     assert "both async" in curl_res["tests"]["translate_en_de"]["details"].lower()
 
 
-def test_all_five_dual_packages_in_matrix_results():
-    """Verifies that googletrans-curl, freetrans-py, mintrans, googletranslator-new, and SmallGoogleTranslator report dual async, sync support."""
+def test_all_dual_packages_in_matrix_results():
+    """Verifies that dual-support packages (googletrans-curl, freetrans-py, mintrans, googletranslator-new, SmallGoogleTranslator, py-trans, google-translate-py) report dual async, sync support."""
     import json
     matrix_file = BASE_DIR / "data" / "matrix_results.json"
     if not matrix_file.exists():
@@ -172,7 +172,15 @@ def test_all_five_dual_packages_in_matrix_results():
         data = json.load(f)
 
     results = data.get("results", {})
-    expected_dual = ["googletrans-curl", "freetrans-py", "mintrans", "googletranslator-new", "SmallGoogleTranslator"]
+    expected_dual = [
+        "googletrans-curl",
+        "freetrans-py",
+        "mintrans",
+        "googletranslator-new",
+        "SmallGoogleTranslator",
+        "py-trans",
+        "google-translate-py",
+    ]
 
     for name in expected_dual:
         pkg = results.get(name)

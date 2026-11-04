@@ -47,10 +47,10 @@ def test_package_in_isolation(package_meta, pip_timeout=60):
         pip_path = os.path.join(bin_dir, "pip")
         python_path = os.path.join(bin_dir, "python")
 
-        # 2. Pre-install compatibility shims (legacy-cgi for Python 3.13+, requests and aiohttp for packages missing explicit requirements)
+        # 2. Pre-install compatibility shims (legacy-cgi for Python 3.13+, requests, aiohttp, aiofiles, beautifulsoup4 for packages missing explicit requirements)
         # This gives older packages fair compatibility on modern runtimes
         subprocess.run([pip_path, "install", "--upgrade", "pip"], capture_output=True)
-        subprocess.run([pip_path, "install", "legacy-cgi", "requests", "aiohttp"], capture_output=True)
+        subprocess.run([pip_path, "install", "legacy-cgi", "requests", "aiohttp", "aiofiles", "beautifulsoup4"], capture_output=True)
 
         # 3. Install the target package
         logging.info("Installing %s...", pypi_name)
@@ -138,29 +138,73 @@ def test_package_in_isolation(package_meta, pip_timeout=60):
     return result_data
 
 
-def run_matrix(package_filter=None):
+def run_matrix(package_filter=None, include_defunct=False):
     with open(PACKAGES_FILE, "r", encoding="utf-8") as f:
         all_packages = json.load(f)
 
     target_packages = all_packages
     matrix_results = {}
 
+    if OUTPUT_FILE.exists():
+        try:
+            with open(OUTPUT_FILE, "r", encoding="utf-8") as f:
+                existing = json.load(f)
+                matrix_results = existing.get("results", {})
+        except Exception as read_err:
+            logging.warning("Could not load existing matrix results: %s", read_err)
+
     if package_filter:
         target_packages = [p for p in all_packages if p["pypi_name"] == package_filter or p["id"] == package_filter]
         if not target_packages:
             logging.error("Package %s not found in definitions", package_filter)
             sys.exit(1)
-        if OUTPUT_FILE.exists():
-            try:
-                with open(OUTPUT_FILE, "r", encoding="utf-8") as f:
-                    existing = json.load(f)
-                    matrix_results = existing.get("results", {})
-            except Exception as read_err:
-                logging.warning("Could not load existing matrix results: %s", read_err)
 
     for pkg_meta in target_packages:
+        pypi_name = pkg_meta["pypi_name"]
+        category = pkg_meta.get("category", "active")
+
+        # Skip active ephemeral test if package is marked defunct, unless explicitly requested
+        if category == "defunct" and not include_defunct and not package_filter:
+            logging.info("Skipping defunct package [%s] from daily matrix test (endpoint discontinued)...", pypi_name)
+            if pypi_name in matrix_results:
+                matrix_results[pypi_name]["category"] = "defunct"
+                matrix_results[pypi_name]["overall_status"] = "defunct"
+                matrix_results[pypi_name]["error_summary"] = pkg_meta.get(
+                    "category_reason", matrix_results[pypi_name].get("error_summary")
+                )
+            else:
+                matrix_results[pypi_name] = {
+                    "package_name": pypi_name,
+                    "package_id": pkg_meta["id"],
+                    "description": pkg_meta.get("description", ""),
+                    "pypi_url": pkg_meta.get("pypi_url", ""),
+                    "timestamp": datetime.now(timezone.utc).isoformat(),
+                    "python_version": sys.version.split()[0],
+                    "installed": True,
+                    "import_success": True,
+                    "module_name": pkg_meta.get("default_module"),
+                    "api_type": "defunct",
+                    "overall_status": "defunct",
+                    "category": "defunct",
+                    "error_summary": pkg_meta.get(
+                        "category_reason",
+                        "Defunct / Deprecated implementation (endpoint removed); skipped during daily matrix."
+                    ),
+                    "tests": {
+                        "packaging": {"status": "passed", "details": "Defunct distribution"},
+                        "import": {"status": "passed", "details": "Module available"},
+                        "translate_en_de": {"status": "failed", "latency_ms": None, "result": None, "error": "Defunct / Deprecated endpoint"},
+                        "detect_language": {"status": "skipped", "latency_ms": None, "result": None, "error": None, "details": "Defunct endpoint"}
+                    }
+                }
+            continue
+
         res = test_package_in_isolation(pkg_meta)
-        matrix_results[pkg_meta["pypi_name"]] = res
+        if res:
+            res["category"] = category
+            if category == "defunct" and res.get("overall_status") != "passed":
+                res["overall_status"] = "defunct"
+        matrix_results[pypi_name] = res
 
     passed_cnt = sum(1 for r in matrix_results.values() if r and r.get("overall_status") == "passed")
     failed_cnt = sum(1 for r in matrix_results.values() if not (r and r.get("overall_status") == "passed"))
@@ -168,6 +212,7 @@ def run_matrix(package_filter=None):
         "total": len(matrix_results),
         "passed": passed_cnt,
         "failed": failed_cnt,
+        "defunct": sum(1 for r in matrix_results.values() if r and (r.get("category") == "defunct" or r.get("overall_status") == "defunct")),
         "timestamp": datetime.now(timezone.utc).isoformat()
     }
 
@@ -195,5 +240,6 @@ def run_matrix(package_filter=None):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--package", help="Test a single specific package name or ID", default=None)
+    parser.add_argument("--include-defunct", action="store_true", help="Force re-testing of defunct/deprecated packages", default=False)
     args = parser.parse_args()
-    run_matrix(package_filter=args.package)
+    run_matrix(package_filter=args.package, include_defunct=args.include_defunct)

@@ -126,9 +126,13 @@ def sync():
         elif trend == "recovered":
             recovered_count += 1
 
+        category = pkg.get("category", "active")
         item = {
             "id": pkg["id"],
             "name": name,
+            "category": category,
+            "category_reason": pkg.get("category_reason"),
+            "is_defunct": category == "defunct" or test_res.get("overall_status") == "defunct",
             "description": pkg.get("description", ""),
             "pypi_url": pkg.get("pypi_url", f"https://pypi.org/project/{name}/"),
             "pepy_url": pkg.get("pepy_url", f"https://pepy.tech/projects/{name}"),
@@ -145,11 +149,11 @@ def sync():
                 "last_day": pkg_stat.get("downloads_last_day", 0) or 0
             },
             "test_result": {
-                "status": test_res.get("overall_status", "untested"),
+                "status": "defunct" if category == "defunct" and test_res.get("overall_status") != "passed" else test_res.get("overall_status", "untested"),
                 "api_type": test_res.get("api_type", "unknown"),
                 "module_name": test_res.get("module_name"),
                 "elapsed_sec": test_res.get("elapsed_sec"),
-                "error_summary": test_res.get("error_summary"),
+                "error_summary": pkg.get("category_reason") if category == "defunct" else test_res.get("error_summary"),
                 "tests": test_res.get("tests", {}),
                 "implementations": test_res.get("implementations", {})
             },
@@ -165,21 +169,26 @@ def sync():
         }
         package_reports.append(item)
 
-    # Sort: passed first, then by lifetime downloads descending
-    package_reports.sort(
-        key=lambda x: (
-            1 if x["test_result"]["status"] == "passed" else 0,
-            x["downloads"]["lifetime"]
-        ),
-        reverse=True
-    )
+    # Sort: passed first, then failing active, then defunct, ordered by lifetime downloads descending
+    def sort_key(pkg_item):
+        st = pkg_item["test_result"]["status"]
+        cat = pkg_item["category"]
+        if st == "passed":
+            tier = 2
+        elif cat == "defunct":
+            tier = 0
+        else:
+            tier = 1
+        return (tier, pkg_item["downloads"]["lifetime"])
+
+    package_reports.sort(key=sort_key, reverse=True)
 
     combined_payload = {
         "generated_at": now_iso,
         "metadata": {
             "title": "Googletrans Implementations & Forks Live Matrix",
-            "version": "v0.1.2",
-            "release_url": "https://github.com/flynn0/googletrans-tester/releases/tag/v0.1.2",
+            "version": "v0.1.3",
+            "release_url": "https://github.com/flynn0/googletrans-tester/releases/tag/v0.1.3",
             "repository": "https://github.com/flynn0/googletrans-tester",
             "inspiration_repos": [
                 "https://github.com/aikenf/googletrans-all",
@@ -191,6 +200,8 @@ def sync():
             "total_packages": len(packages),
             "passed": passed_count,
             "failed": failed_count,
+            "defunct_count": sum(1 for p in packages if p.get("category") == "defunct"),
+            "active_packages": sum(1 for p in packages if p.get("category") != "defunct"),
             "pass_rate": round((passed_count / len(packages) * 100), 1) if packages else 0,
             "total_downloads_lifetime": total_lifetime_dl,
             "total_downloads_2026": total_2026_dl,

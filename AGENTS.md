@@ -1,6 +1,6 @@
 # AGENTS.md
 
-Welcome to **`googletrans-tester`**! This repository provides an agentic testing harness, statistical telemetry collector, and interactive Vite-based dashboard for validating and comparing **all 34 PyPI packages and forks** of the Python `googletrans` ecosystem.
+Welcome to **`googletrans-tester`**! This repository provides an agentic testing harness, statistical telemetry collector, and interactive Vite-based dashboard for validating and comparing **all 37 PyPI packages and forks** of the Python `googletrans` ecosystem.
 
 Mirrors and expands upon [`aikenf/googletrans-all`](https://github.com/aikenf/googletrans-all), [`aikenf/googletrans-test`](https://github.com/aikenf/googletrans-test), and [`flynn0/googletrans-curl-tester`](https://github.com/flynn0/googletrans-curl-tester).
 
@@ -8,7 +8,7 @@ Mirrors and expands upon [`aikenf/googletrans-all`](https://github.com/aikenf/go
 
 ## 🎯 Architecture & Objectives
 
-There are 34 different PyPI distributions implementing, forking, or wrapping the unofficial Google Translate API:
+There are 37 different PyPI distributions implementing, forking, or wrapping the unofficial Google Translate API:
 1. `googletrans`
 2. `googletrans-curl`
 3. `googletrans-py`
@@ -43,11 +43,15 @@ There are 34 different PyPI distributions implementing, forking, or wrapping the
 32. `unlimited-machine-translator`
 33. `mintrans`
 34. `freetrans-py`
+35. `py-trans`
+36. `google-translate-py`
+37. `python-translator`
 
 Because Google regularly modifies its endpoints, token algorithms (e.g., `TKK`), rate limits, and network requirements, these forks exhibit varying states of functionality:
 - **Async vs. Sync & Dual Support:** Modern versions (like `googletrans` 4.0.2) use `httpx` and require `await translator.translate(...)`, whereas legacy forks provide synchronous APIs. Crucially, `googletrans-curl` and `freetrans-py` support **both** paradigms: modern async via `from googletrans import Translator` / `from freetrans import Translator` (with `await translator.translate(...)`) and backward-compatible synchronous usage for older v3.x codebases via `SyncTranslator as Translator` (with `translator.translate(...)`). The runner tests and reports both implementations when present under `implementations`.
-- **Import namespaces:** Most forks claim the top-level namespace `googletrans`, while others use custom package modules (e.g. `googletrans_di`, `googletrans_wheel`, `googletranswheel2`, `googletransx`, `vtrans`, `flask_googletrans`, `simple_googletrans`, `googletranslatepy`, `gtranslate`, `mintrans`, `freetrans`, `translator`, `paraphrase_googletranslate`, `unlimited_machine_translator`).
-- **Python version & dependency incompatibilities:** Older packages depend on removed standard library modules (like Python 3.13+ removing `cgi`, mitigated via `legacy-cgi`), missing requirements declarations (mitigated via `requests`), or pin older `httpx` submodules (e.g. `ProxiesTypes`).
+- **Import namespaces:** Most forks claim the top-level namespace `googletrans`, while others use custom package modules (e.g. `googletrans_di`, `googletrans_wheel`, `googletranswheel2`, `googletransx`, `vtrans`, `flask_googletrans`, `simple_googletrans`, `googletranslatepy`, `gtranslate`, `mintrans`, `freetrans`, `translator`, `paraphrase_googletranslate`, `unlimited_machine_translator`, `py_trans`, `google_translate_py`, `python_translator`).
+- **Python version & dependency incompatibilities:** Older packages depend on removed standard library modules (like Python 3.13+ removing `cgi`, mitigated via `legacy-cgi`), missing requirements declarations (mitigated via `requests`, `aiofiles`, `beautifulsoup4`), or pin older `httpx` submodules (e.g. `ProxiesTypes`).
+- **Defunct / Deprecated Implementations:** Packages whose endpoints or scraping structures are permanently removed (e.g. `google-translate-py` and `python-translator`) are cataloged under `"category": "defunct"`. Daily test matrix execution skips live testing for them to conserve resources, while PyPI/pepy/pypistats telemetry continues to be monitored and refreshed daily to track current volume.
 - **UI & Theme Requirements:** The dashboard supports dynamic Dark and Light mode switching with CSS custom properties (`[data-theme="dark"]` and `[data-theme="light"]`) and local storage persistence. All tables use separate borders with overflow scrollbars to prevent border collapsing or clipping.
 
 To test them without dependency collision, our agentic harness runs tests in isolated virtual environments or isolated sub-processes for each implementation.
@@ -63,7 +67,7 @@ googletrans-tester/
 │       ├── test-implementations.yml  # Matrix & scheduled test runner workflow
 │       └── deploy-pages.yml          # GitHub Pages Vite dashboard deployment
 ├── data/
-│   ├── packages.json                 # Definition and config for all 34 packages
+│   ├── packages.json                 # Definition and config for all 37 packages
 │   ├── history.db                    # SQLite historical test runs database
 │   ├── runs_history.json             # Structured multi-run history export
 │   └── latest_results.json           # Cached test results & download telemetry
@@ -109,7 +113,7 @@ Fetches:
 ```bash
 python3 runner/run_matrix.py
 ```
-Tests all 34 packages (or a specific package with `--package <name>`), recording:
+Tests all 37 packages (or a specific package with `--package <name>`), recording:
 - Installation success / failure
 - Import resolution & module name
 - Translation capability (English -> German, source detection)

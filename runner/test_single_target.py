@@ -122,6 +122,7 @@ def run_test(package_name, target_module_hint=None):
         "google_translator",
         "google_trans_new",
         "Paraphraser",
+        "PyTranslator",
     ]
     target_fn_names = [
         "translate",
@@ -145,13 +146,14 @@ def run_test(package_name, target_module_hint=None):
         }
 
     # Check for explicit asynchronous classes (AsyncGoogleTranslator / AsyncTranslator in mintrans etc.)
-    for async_name in ["AsyncGoogleTranslator", "AsyncTranslator"]:
+    for async_name in ["AsyncGoogleTranslator", "AsyncTranslator", "Async_PyTranslator"]:
         if hasattr(module, async_name) and inspect.isclass(getattr(module, async_name)):
+            method_call = "google('Hello world', dest='de')" if async_name == "Async_PyTranslator" else "translate('Hello world', to_lang='de')"
             discovered_impls["async"] = {
                 "class": getattr(module, async_name),
                 "class_name": async_name,
                 "import_syntax": f"from {imported_name} import {async_name} as Translator",
-                "call_syntax": "translator = Translator(); res = await translator.translate('Hello world', to_lang='de')",
+                "call_syntax": f"translator = Translator(); res = await translator.{method_call}",
                 "api_type": "async",
                 "notes": f"Asynchronous implementation via {async_name}"
             }
@@ -162,10 +164,13 @@ def run_test(package_name, target_module_hint=None):
         cls_obj = getattr(module, cand_name, None)
         if cls_obj and inspect.isclass(cls_obj):
             is_async_cls = False
-            for m in ["translate", "translate_text", "translate_async", "paraphrase"]:
+            for m in ["translate", "translate_text", "translate_async", "paraphrase", "google"]:
                 if hasattr(cls_obj, m) and inspect.iscoroutinefunction(getattr(cls_obj, m)):
                     is_async_cls = True
                     break
+
+            method_call_sync = "google('Hello world', dest='de')" if hasattr(cls_obj, "google") and not hasattr(cls_obj, "translate") else "translate('Hello world', dest='de')"
+            method_call_async = "google('Hello world', dest='de')" if hasattr(cls_obj, "google") and not hasattr(cls_obj, "translate") else "translate('Hello world', dest='de')"
 
             if is_async_cls:
                 if "async" not in discovered_impls:
@@ -173,7 +178,7 @@ def run_test(package_name, target_module_hint=None):
                         "class": cls_obj,
                         "class_name": cand_name,
                         "import_syntax": f"from {imported_name} import {cand_name}",
-                        "call_syntax": f"translator = {cand_name}(); res = await translator.translate('Hello world', dest='de')",
+                        "call_syntax": f"translator = {cand_name}(); res = await translator.{method_call_async}",
                         "api_type": "async",
                         "notes": f"Modern asynchronous implementation ({cand_name})"
                     }
@@ -195,7 +200,7 @@ def run_test(package_name, target_module_hint=None):
                         "class": cls_obj,
                         "class_name": cand_name,
                         "import_syntax": f"from {imported_name} import {cand_name}",
-                        "call_syntax": f"translator = {cand_name}(); res = translator.translate('Hello world', dest='de')",
+                        "call_syntax": f"translator = {cand_name}(); res = translator.{method_call_sync}",
                         "api_type": "sync",
                         "notes": f"Synchronous implementation ({cand_name})"
                     }
@@ -284,7 +289,7 @@ def run_test(package_name, target_module_hint=None):
     # Helper to execute translation on an instance or function
     async def execute_translate(inst, fn_override=None):
         if inst and not fn_override:
-            for method_cand in ["translate", "translate_async", "translate_sync", "translate_text", "paraphrase"]:
+            for method_cand in ["translate", "translate_async", "translate_sync", "translate_text", "paraphrase", "google"]:
                 if hasattr(inst, method_cand):
                     fn = getattr(inst, method_cand)
                     break
@@ -320,6 +325,10 @@ def run_test(package_name, target_module_hint=None):
                 res = fn("Hello world", to_lang="de")
             elif "target" in params:
                 res = fn("Hello world", target="de")
+            elif "target_language" in params and "source_language" in params:
+                res = fn("Hello world", target_language="de", source_language="en")
+            elif "target_language" in params:
+                res = fn("Hello world", target_language="de")
             elif "secondary_language" in params:
                 res = fn("Hello world", secondary_language="de")
             else:
@@ -362,14 +371,25 @@ def run_test(package_name, target_module_hint=None):
                         break
 
         if det_fn:
-            det_res = det_fn("Bonjour tout le monde")
-            if inspect.iscoroutine(det_res):
-                det_res = await det_res
-            lang = getattr(det_res, "lang", str(det_res))
-            return str(lang), None
+            try:
+                det_res = det_fn("Bonjour tout le monde")
+                if inspect.iscoroutine(det_res):
+                    det_res = await det_res
+                lang = getattr(det_res, "lang", str(det_res))
+                return str(lang), None
+            except Exception as e:
+                if isinstance(raw_res, dict):
+                    if "src" in raw_res:
+                        return str(raw_res["src"]), None
+                    if "origin_lang" in raw_res:
+                        return str(raw_res["origin_lang"]), None
+                raise e
 
-        if isinstance(raw_res, dict) and "src" in raw_res:
-            return str(raw_res["src"]), None
+        if isinstance(raw_res, dict):
+            if "src" in raw_res:
+                return str(raw_res["src"]), None
+            if "origin_lang" in raw_res:
+                return str(raw_res["origin_lang"]), None
 
         return None, "detect() API not provided by this implementation"
 
