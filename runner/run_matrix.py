@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 run_matrix.py
-Executes the test suite across all 11 packages in isolated virtual environments.
+Executes the test suite across all candidate packages in isolated virtual environments.
 Runs sequentially or filtered by package name.
 Saves comprehensive results to data/matrix_results.json.
 """

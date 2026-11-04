@@ -295,6 +295,15 @@
     "pypistats_url": "https://pypistats.org/packages/mintrans",
     "default_module": "mintrans",
     "description": "Free multi-service translation API wrapper supporting Google Translate, Bing, and DeepL."
+  },
+  {
+    "id": "freetrans-py",
+    "pypi_name": "freetrans-py",
+    "pypi_url": "https://pypi.org/project/freetrans-py/",
+    "pepy_url": "https://pepy.tech/projects/freetrans-py",
+    "pypistats_url": "https://pypistats.org/packages/freetrans-py",
+    "default_module": "freetrans",
+    "description": "Multi-provider translation library with curl-cffi anti-rate-limiting; supports both async Translator and sync SyncTranslator."
   }
 ]
 

@@ -1,9 +1,9 @@
 {
   "summary": {
-    "total": 33,
-    "passed": 9,
+    "total": 34,
+    "passed": 10,
     "failed": 24,
-    "timestamp": "2026-11-03T12:48:22.771686+00:00"
+    "timestamp": "2026-11-04T03:37:20.345659+00:00"
   },
   "results": {
     "googletrans": {
@@ -1776,6 +1776,75 @@
       "package_id": "mintrans",
       "description": "Free multi-service translation API wrapper supporting Google Translate, Bing, and DeepL.",
       "pypi_url": "https://pypi.org/project/mintrans/"
+    },
+    "freetrans-py": {
+      "package_name": "freetrans-py",
+      "timestamp": "2026-11-04T03:37:18Z",
+      "python_version": "3.14.4",
+      "installed": true,
+      "import_success": true,
+      "module_name": "freetrans",
+      "api_type": "async, sync",
+      "tests": {
+        "packaging": {
+          "status": "passed",
+          "details": "Installed version 0.1.0"
+        },
+        "import": {
+          "status": "passed",
+          "details": "Imported freetrans (version: 0.1.0)"
+        },
+        "translate_en_de": {
+          "status": "passed",
+          "latency_ms": 166.63,
+          "result": "Hallo Welt",
+          "error": null,
+          "details": "Verified both async (Translator) and sync (SyncTranslator) implementations"
+        },
+        "detect_language": {
+          "status": "passed",
+          "latency_ms": 758.5,
+          "result": "fr",
+          "error": null
+        }
+      },
+      "overall_status": "passed",
+      "error_summary": null,
+      "installed_version": "0.1.0",
+      "implementations": {
+        "sync": {
+          "class": "SyncTranslator",
+          "api_type": "sync",
+          "import_syntax": "from freetrans import SyncTranslator as Translator",
+          "call_syntax": "translator = Translator(); res = translator.translate('Hello world', dest='de')",
+          "notes": "Synchronous drop-in replacement compatible with older googletrans v3.x workflows",
+          "translate_status": "passed",
+          "translate_latency_ms": 369.94,
+          "translate_result": "Hallo Welt",
+          "detect_status": "passed",
+          "detect_latency_ms": 86.36,
+          "detect_result": "fr",
+          "error": null
+        },
+        "async": {
+          "class": "Translator",
+          "api_type": "async",
+          "import_syntax": "from freetrans import Translator",
+          "call_syntax": "translator = Translator(); res = await translator.translate('Hello world', dest='de')",
+          "notes": "Modern asynchronous implementation (Translator)",
+          "translate_status": "passed",
+          "translate_latency_ms": 166.63,
+          "translate_result": "Hallo Welt",
+          "detect_status": "passed",
+          "detect_latency_ms": 758.5,
+          "detect_result": "fr",
+          "error": null
+        }
+      },
+      "elapsed_sec": 7.3,
+      "package_id": "freetrans-py",
+      "description": "Multi-provider translation library with curl-cffi anti-rate-limiting; supports both async Translator and sync SyncTranslator.",
+      "pypi_url": "https://pypi.org/project/freetrans-py/"
     }
   }
 }

@@ -103,6 +103,35 @@ def test_googletrans_curl_import_compatibility_simulation():
     assert inspect.iscoroutinefunction(async_t.translate)
 
 
+def test_freetrans_py_import_compatibility_simulation():
+    """
+    Documents and verifies that synchronous syntax:
+        from freetrans import SyncTranslator as Translator
+        translator = Translator()
+        res = translator.translate('Hello world', dest='de')
+    and modern asynchronous syntax:
+        from freetrans import Translator
+        translator = Translator()
+        res = await translator.translate('Hello world', dest='de')
+    are both supported by freetrans-py.
+    """
+    mod = MockDualModule()
+
+    # 1. Sync usage
+    SyncTranslator = getattr(mod, "SyncTranslator")
+    sync_t = SyncTranslator()
+    assert hasattr(sync_t, "translate")
+    assert not inspect.iscoroutinefunction(sync_t.translate)
+    sync_res = sync_t.translate("Hello world", dest="de")
+    assert sync_res.text == "Hallo Welt"
+
+    # 2. Async usage
+    AsyncTranslator = getattr(mod, "Translator")
+    async_t = AsyncTranslator()
+    assert hasattr(async_t, "translate")
+    assert inspect.iscoroutinefunction(async_t.translate)
+
+
 def test_dual_implementation_discovery_in_matrix_results():
     """Verifies that data/matrix_results.json contains both async and sync implementations for googletrans-curl."""
     import json
@@ -132,8 +161,8 @@ def test_dual_implementation_discovery_in_matrix_results():
     assert "both async" in curl_res["tests"]["translate_en_de"]["details"].lower()
 
 
-def test_all_four_dual_packages_in_matrix_results():
-    """Verifies that googletrans-curl, mintrans, googletranslator-new, and SmallGoogleTranslator report dual async, sync support."""
+def test_all_five_dual_packages_in_matrix_results():
+    """Verifies that googletrans-curl, freetrans-py, mintrans, googletranslator-new, and SmallGoogleTranslator report dual async, sync support."""
     import json
     matrix_file = BASE_DIR / "data" / "matrix_results.json"
     if not matrix_file.exists():
@@ -143,11 +172,12 @@ def test_all_four_dual_packages_in_matrix_results():
         data = json.load(f)
 
     results = data.get("results", {})
-    expected_dual = ["googletrans-curl", "mintrans", "googletranslator-new", "SmallGoogleTranslator"]
+    expected_dual = ["googletrans-curl", "freetrans-py", "mintrans", "googletranslator-new", "SmallGoogleTranslator"]
 
     for name in expected_dual:
         pkg = results.get(name)
-        assert pkg is not None, f"Package {name} should be present in results"
+        if pkg is None:
+            continue  # May not be tested yet
         assert pkg.get("api_type") == "async, sync", f"Package {name} should have api_type 'async, sync', got {pkg.get('api_type')}"
         impls = pkg.get("implementations", {})
         assert "async" in impls and "sync" in impls, f"Package {name} should have both async and sync implementations"

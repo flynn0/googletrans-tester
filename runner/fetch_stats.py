@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 fetch_stats.py
-Collects release metadata and download statistics for all 11 packages from:
+Collects release metadata and download statistics for all candidate packages from:
 - PyPI JSON API: latest version, upload date, author, description
 - pepy.tech: total lifetime downloads
 - pypistats.org: recent downloads (last month, last week, last day) & 2026 downloads

@@ -4,7 +4,7 @@
 [![Deploy Dashboard to GitHub Pages](https://github.com/flynn0/googletrans-tester/actions/workflows/deploy-pages.yml/badge.svg)](https://github.com/flynn0/googletrans-tester/actions/workflows/deploy-pages.yml)
 [![Latest Release](https://img.shields.io/github/v/release/flynn0/googletrans-tester?color=blue)](https://github.com/flynn0/googletrans-tester/releases/tag/v0.1.2)
 
-An agentic multi-target testing harness, statistical telemetry collector, and interactive Vite dashboard for validating and comparing **all 33 major PyPI packages and forks** of the Python `googletrans` ecosystem.
+An agentic multi-target testing harness, statistical telemetry collector, and interactive Vite dashboard for validating and comparing **all 34 major PyPI packages and forks** of the Python `googletrans` ecosystem.
 
 Mirrors and expands upon [`aikenf/googletrans-all`](https://github.com/aikenf/googletrans-all), [`aikenf/googletrans-test`](https://github.com/aikenf/googletrans-test), and [`flynn0/googletrans-curl-tester`](https://github.com/flynn0/googletrans-curl-tester).
 
@@ -19,14 +19,14 @@ The interactive test dashboard is deployed to GitHub Pages:
 - **Dark & Light Mode Switch:** One-click toggle in the header with persistent theme storage in `localStorage` and automatic OS preference detection.
 - **Responsive, Non-Collapsing UI:** Clean separated borders, responsive grid layouts (`auto-fit`/`auto-fill`), and horizontal scroll views for full data visibility on desktop, tablet, and mobile without clipping.
 - **30-Day Statuspage SLA Tick Bars:** Discrete daily slot visualizations showing reliability, uptime percentage, and historical transitions.
-- **Working vs. Failing Status:** Real-time test results across all 33 candidate implementations.
+- **Working vs. Failing Status:** Real-time test results across all 34 candidate implementations.
 - **PyPI & Telemetry Stats:** Lifetime downloads (pepy.tech), 2026 current year downloads (pypistats.org), and last month active volume.
 - **Detailed Inspection Drawer:** View import resolutions, latency (ms), async vs. sync signatures, and error diagnostics.
 - **Instant Search & Filter:** Filter by API paradigm (`async` / `sync`) or test status.
 
 ---
 
-## 📦 Evaluated Implementations (33 Packages)
+## 📦 Evaluated Implementations (34 Packages)
 
 | Package | Status | API Paradigm | Lifetime DL (pepy) | Description |
 |---|---|---|---|---|
@@ -42,6 +42,7 @@ The interactive test dashboard is deployed to GitHub Pages:
 | [`googletranswheel2`](https://pypi.org/project/googletranswheel2/) | ✅ PASS | `sync` | 2.0k | Repackaged wheel with googletranswheel2 namespace. |
 | [`gotranslate`](https://pypi.org/project/gotranslate/) | ✅ PASS | `sync` | 1.0k | Lightweight GoogleTranslator library with language detection, details, and emoji flags. |
 | [`googletrans-curl`](https://pypi.org/project/googletrans-curl/) | ✅ PASS | `async, sync` | 903 | Modern fork utilizing curl-cffi and httpx[http2] for enhanced bypass and stability; supports both v4.x async Translator and legacy v3.x SyncTranslator. |
+| [`freetrans-py`](https://pypi.org/project/freetrans-py/) | ✅ PASS | `async, sync` | 0 | Free multi-provider translation library with curl-cffi anti-rate-limiting; supports both async Translator and sync SyncTranslator. |
 | [`googletransx`](https://pypi.org/project/googletransx/) | ❌ FAIL | `sync` | 1.0M | Independent fork using the googletransx namespace. |
 | [`googletrans2`](https://pypi.org/project/googletrans2/) | ❌ FAIL | `sync` | 317.0k | Alternative distribution tracking the googletrans 2.x branch. |
 | [`googletranslate`](https://pypi.org/project/googletranslate/) | ❌ FAIL | `-` | 177.0k | Candidate PyPI namespace tested for package availability. |
@@ -70,13 +71,14 @@ The interactive test dashboard is deployed to GitHub Pages:
 
 Modern `googletrans` forks have bifurcated across v3.x (synchronous) and v4.x (asynchronous with `httpx`):
 
-### 1. `googletrans-curl` (Dual Support)
-`googletrans-curl` uniquely provides full backward and modern forward compatibility out of the box:
+### 1. `googletrans-curl` & `freetrans-py` (Dual Support)
+Both `googletrans-curl` and `freetrans-py` provide full backward and modern forward compatibility out of the box using `curl-cffi` to eliminate HTTP 429 rate limits:
 
 - **Modern Asynchronous API (v4.x compatible):**
   ```python
   import asyncio
   from googletrans import Translator
+  # Or: from freetrans import Translator
 
   async def main():
       translator = Translator()
@@ -90,6 +92,7 @@ Modern `googletrans` forks have bifurcated across v3.x (synchronous) and v4.x (a
   Compatible drop-in replacement for older codebases that used `googletrans` v3.x, requiring only updating the import statement:
   ```python
   from googletrans import SyncTranslator as Translator
+  # Or: from freetrans import SyncTranslator as Translator
 
   translator = Translator()
   result = translator.translate("Hello world", dest="de")
@@ -113,7 +116,7 @@ googletrans-tester/
 │       ├── test-implementations.yml  # Daily matrix test & telemetry updater
 │       └── deploy-pages.yml          # GitHub Pages Vite deployment on push
 ├── data/
-│   ├── packages.json                 # Single source of truth for all 33 packages
+│   ├── packages.json                 # Single source of truth for all 34 packages
 │   ├── history.db                    # SQLite historical test runs database
 │   ├── runs_history.json             # Historical test runs JSON export
 │   ├── stats.json                    # Raw telemetry data (PyPI, pypistats, pepy)
@@ -169,12 +172,10 @@ Fetches:
 
 ### 2. Run Test Matrix
 ```bash
-# Test all 33 packages
+# Test all 34 packages
 python3 runner/run_matrix.py
-
-# Test a specific package
-python3 runner/run_matrix.py --package googletrans-curl
 ```
+*(or test a specific package with `--package <name>`)*
 
 ### 3. Sync Data & Build Dashboard
 ```bash
@@ -197,7 +198,7 @@ Or run everything with the helper script:
 
 1. **`test-implementations.yml`**:
    - Runs on schedule (`0 5 * * *`) and `workflow_dispatch`.
-   - Runs test matrix across all 33 implementations and collects latest statistics.
+   - Runs test matrix across all 34 implementations and collects latest statistics.
    - Commits updated telemetry data and automatically triggers dashboard deployment.
 
 2. **`deploy-pages.yml`**:
