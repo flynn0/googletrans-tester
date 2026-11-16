@@ -19,20 +19,23 @@ def test_packages_defunct_classification():
 
     assert "google-translate-py" in defunct_names
     assert "python-translator" in defunct_names
-    assert len(defunct_pkgs) == 2
+    assert "googletranslate" in defunct_names
+    assert "googletranslate-neon-plugin" in defunct_names
+    assert "googletrans2020" in defunct_names
+    assert len(defunct_pkgs) == 5
 
     for p in defunct_pkgs:
         assert "category_reason" in p and len(p["category_reason"]) > 10
 
 
-def test_results_metadata_version_v013():
+def test_results_metadata_version_v014():
     for fpath in [LATEST_RESULTS, DASHBOARD_RESULTS]:
         with open(fpath, "r", encoding="utf-8") as f:
             data = json.load(f)
 
-        assert data["metadata"]["version"] == "v0.1.3"
-        assert "v0.1.3" in data["metadata"]["release_url"]
-        assert data["summary"]["defunct_count"] == 2
+        assert data["metadata"]["version"] == "v0.1.4"
+        assert "v0.1.4" in data["metadata"]["release_url"]
+        assert data["summary"]["defunct_count"] == 5
         assert data["summary"]["total_packages"] == 37
 
 
@@ -55,3 +58,24 @@ def test_defunct_packages_preserve_telemetry_in_dashboard():
     assert py_tr["downloads"]["year_2026"] > 0
     assert py_tr["downloads"]["last_month"] >= 0
     assert py_tr["downloads"]["lifetime"] > 0
+
+    gt = by_name["googletranslate"]
+    assert gt["category"] == "defunct"
+    assert gt["test_result"]["status"] == "defunct"
+    assert gt["downloads"]["year_2026"] > 0
+    assert gt["downloads"]["last_month"] >= 0
+    assert gt["downloads"]["lifetime"] > 0
+
+    gt_neon = by_name["googletranslate-neon-plugin"]
+    assert gt_neon["category"] == "defunct"
+    assert gt_neon["test_result"]["status"] == "defunct"
+    assert gt_neon["downloads"]["year_2026"] > 0
+    assert gt_neon["downloads"]["last_month"] >= 0
+    assert gt_neon["downloads"]["lifetime"] > 0
+
+    gt_2020 = by_name["googletrans2020"]
+    assert gt_2020["category"] == "defunct"
+    assert gt_2020["test_result"]["status"] == "defunct"
+    assert gt_2020["downloads"]["year_2026"] > 0
+    assert gt_2020["downloads"]["last_month"] >= 0
+    assert gt_2020["downloads"]["lifetime"] > 0

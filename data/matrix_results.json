@@ -3,7 +3,7 @@
     "total": 37,
     "passed": 14,
     "failed": 23,
-    "defunct": 2,
+    "defunct": 5,
     "timestamp": "2026-11-16T08:13:55.111273+00:00"
   },
   "results": {
@@ -746,13 +746,13 @@
           "error": null
         }
       },
-      "overall_status": "failed",
-      "error_summary": "pip install googletrans2020 failed: 96, in findsource\n          raise OSError('could not get source code')\n      OSError: could not get source code\n      [end of output]\n  \n  note: This error originates from a subprocess, and is likely not a problem with pip.\nERROR: Failed to build 'playsound' when getting requirements to build wheel\n",
+      "overall_status": "defunct",
+      "error_summary": "Unmaintained since 2020; broken setup-time dependency 'playsound' crashes on modern Python.",
       "elapsed_sec": 8.23,
       "package_id": "googletrans2020",
       "description": "Community fork providing updated translation endpoints from 2020.",
       "pypi_url": "https://pypi.org/project/googletrans2020/",
-      "category": "active"
+      "category": "defunct"
     },
     "googletransapi": {
       "package_name": "googletransapi",
@@ -879,13 +879,13 @@
           "error": null
         }
       },
-      "overall_status": "failed",
-      "error_summary": "pip install googletranslate failed: ERROR: Could not find a version that satisfies the requirement googletranslate (from versions: none)\nERROR: No matching distribution found for googletranslate\n",
+      "overall_status": "defunct",
+      "error_summary": "Package deleted or yanked from PyPI index (HTTP 404 / no distribution available).",
       "elapsed_sec": 6.28,
       "package_id": "googletranslate",
       "description": "Candidate PyPI namespace tested for package availability.",
       "pypi_url": "https://pypi.org/project/googletranslate/",
-      "category": "active"
+      "category": "defunct"
     },
     "googletranslate-neon-plugin": {
       "package_name": "googletranslate-neon-plugin",
@@ -917,13 +917,13 @@
           "error": null
         }
       },
-      "overall_status": "failed",
-      "error_summary": "pip install googletranslate-neon-plugin failed: ERROR: Could not find a version that satisfies the requirement google-tx (from googletranslate-neon-plugin) (from versions: none)\nERROR: No matching distribution found for google-tx (from googletranslate-neon-plugin)\n",
+      "overall_status": "defunct",
+      "error_summary": "Unresolvable dependency on missing PyPI distribution 'google-tx'.",
       "elapsed_sec": 6.41,
       "package_id": "googletranslate-neon-plugin",
       "description": "Neon AI framework translation plugin powered by Google Translate.",
       "pypi_url": "https://pypi.org/project/googletranslate-neon-plugin/",
-      "category": "active"
+      "category": "defunct"
     },
     "googletranslate-python": {
       "package_name": "googletranslate-python",

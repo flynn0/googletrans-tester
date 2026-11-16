@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-16T08:13:55.216630+00:00",
+  "generated_at": "2026-11-16T09:07:56.274823+00:00",
   "total_runs_tracked": 62,
   "runs": [
     {
@@ -27039,11 +27039,11 @@
         {
           "run_id": "run_2026-11-16T08-13-55_111273+00-00",
           "timestamp": "2026-11-16T08:13:55.111273+00:00",
-          "status": "failed",
+          "status": "defunct",
           "version": null,
           "api_type": "unknown",
           "latency_ms": null,
-          "error_summary": "pip install googletrans2020 failed: 96, in findsource\n          raise OSError('could not get source code')\n      OSError: could not get source code\n      [end of output]\n  \n  note: This error originates from a subprocess, and is likely not a problem with pip.\nERROR: Failed to build 'playsound' when getting requirements to build wheel\n",
+          "error_summary": "Unmaintained since 2020; broken setup-time dependency 'playsound' crashes on modern Python.",
           "tests": {
             "packaging": {
               "status": "failed",
@@ -30995,11 +30995,11 @@
         {
           "run_id": "run_2026-11-16T08-13-55_111273+00-00",
           "timestamp": "2026-11-16T08:13:55.111273+00:00",
-          "status": "failed",
+          "status": "defunct",
           "version": null,
           "api_type": "unknown",
           "latency_ms": null,
-          "error_summary": "pip install googletranslate failed: ERROR: Could not find a version that satisfies the requirement googletranslate (from versions: none)\nERROR: No matching distribution found for googletranslate\n",
+          "error_summary": "Package deleted or yanked from PyPI index (HTTP 404 / no distribution available).",
           "tests": {
             "packaging": {
               "status": "failed",
@@ -32308,11 +32308,11 @@
         {
           "run_id": "run_2026-11-16T08-13-55_111273+00-00",
           "timestamp": "2026-11-16T08:13:55.111273+00:00",
-          "status": "failed",
+          "status": "defunct",
           "version": null,
           "api_type": "unknown",
           "latency_ms": null,
-          "error_summary": "pip install googletranslate-neon-plugin failed: ERROR: Could not find a version that satisfies the requirement google-tx (from googletranslate-neon-plugin) (from versions: none)\nERROR: No matching distribution found for google-tx (from googletranslate-neon-plugin)\n",
+          "error_summary": "Unresolvable dependency on missing PyPI distribution 'google-tx'.",
           "tests": {
             "packaging": {
               "status": "failed",

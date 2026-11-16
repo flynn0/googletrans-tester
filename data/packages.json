@@ -137,7 +137,8 @@
     "pypistats_url": "https://pypistats.org/packages/googletrans2020",
     "default_module": "GoogleTrans2020",
     "description": "Community fork providing updated translation endpoints from 2020.",
-    "category": "active"
+    "category": "defunct",
+    "category_reason": "Unmaintained since 2020; broken setup-time dependency 'playsound' crashes on modern Python."
   },
   {
     "id": "googletransapi",
@@ -167,7 +168,8 @@
     "pypistats_url": "https://pypistats.org/packages/googletranslate",
     "default_module": "googletranslate",
     "description": "Candidate PyPI namespace tested for package availability.",
-    "category": "active"
+    "category": "defunct",
+    "category_reason": "Package deleted or yanked from PyPI index (HTTP 404 / no distribution available)."
   },
   {
     "id": "googletranslate-neon-plugin",
@@ -177,7 +179,8 @@
     "pypistats_url": "https://pypistats.org/packages/googletranslate-neon-plugin",
     "default_module": "googletranslate_neon_plugin",
     "description": "Neon AI framework translation plugin powered by Google Translate.",
-    "category": "active"
+    "category": "defunct",
+    "category_reason": "Unresolvable dependency on missing PyPI distribution 'google-tx'."
   },
   {
     "id": "googletranslate-python",

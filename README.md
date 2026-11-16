@@ -2,7 +2,7 @@
 
 [![Test Implementations Matrix](https://github.com/flynn0/googletrans-tester/actions/workflows/test-implementations.yml/badge.svg)](https://github.com/flynn0/googletrans-tester/actions/workflows/test-implementations.yml)
 [![Deploy Dashboard to GitHub Pages](https://github.com/flynn0/googletrans-tester/actions/workflows/deploy-pages.yml/badge.svg)](https://github.com/flynn0/googletrans-tester/actions/workflows/deploy-pages.yml)
-[![Latest Release](https://img.shields.io/github/v/release/flynn0/googletrans-tester?color=blue)](https://github.com/flynn0/googletrans-tester/releases/tag/v0.1.3)
+[![Latest Release](https://img.shields.io/github/v/release/flynn0/googletrans-tester?color=blue)](https://github.com/flynn0/googletrans-tester/releases/tag/v0.1.4)
 
 An agentic multi-target testing harness, statistical telemetry collector, and interactive Vite dashboard for validating and comparing **all 37 major PyPI packages and forks** of the Python `googletrans` ecosystem.
 
@@ -28,7 +28,7 @@ The interactive test dashboard is deployed to GitHub Pages:
 
 ## 📦 Evaluated Implementations (37 Packages)
 
-### Active & Evaluated Forks (35 Packages)
+### Active & Evaluated Forks (32 Packages)
 
 | Package | Status | API Paradigm | Lifetime DL (pepy) | Description |
 |---|---|---|---|---|
@@ -48,9 +48,7 @@ The interactive test dashboard is deployed to GitHub Pages:
 | [`freetrans-py`](https://pypi.org/project/freetrans-py/) | ✅ PASS | `async, sync` | 0 | Free multi-provider translation library with curl-cffi anti-rate-limiting; supports both async Translator and sync SyncTranslator. |
 | [`googletransx`](https://pypi.org/project/googletransx/) | ❌ FAIL | `sync` | 1.0M | Independent fork using the googletransx namespace. |
 | [`googletrans2`](https://pypi.org/project/googletrans2/) | ❌ FAIL | `sync` | 317.0k | Alternative distribution tracking the googletrans 2.x branch. |
-| [`googletranslate`](https://pypi.org/project/googletranslate/) | ❌ FAIL | `-` | 177.0k | Candidate PyPI namespace tested for package availability. |
 | [`ggtrans`](https://pypi.org/project/ggtrans/) | ❌ FAIL | `sync` | 157.0k | Lightweight repackage of free Google Translate API for Python. |
-| [`googletrans2020`](https://pypi.org/project/googletrans2020/) | ❌ FAIL | `-` | 105.0k | Community fork providing updated translation endpoints from 2020. |
 | [`py-googletrans`](https://pypi.org/project/py-googletrans/) | ❌ FAIL | `-` | 84.0k | PyPI release published under original py-googletrans repository name. |
 | [`cloud-translator`](https://pypi.org/project/cloud-translator/) | ❌ FAIL | `sync` | 30.0k | Unified translation wrapper targeting Google Translate, Baidu, and Tencent. |
 | [`paraphrase-googletranslate`](https://pypi.org/project/paraphrase-googletranslate/) | ❌ FAIL | `sync` | 25.0k | Paraphrasing engine built on top of google-trans-new. |
@@ -66,16 +64,18 @@ The interactive test dashboard is deployed to GitHub Pages:
 | [`py-googletrans-html`](https://pypi.org/project/py-googletrans-html/) | ❌ FAIL | `sync` | 6.0k | Google Translate fork with specialized HTML preservation. |
 | [`vtrans`](https://pypi.org/project/vtrans/) | ❌ FAIL | `sync` | 5.0k | Cross-platform self-updating translator supporting up to 130 languages. |
 | [`googletrans-wheel`](https://pypi.org/project/googletrans-wheel/) | ❌ FAIL | `sync` | 2.0k | Binary wheel build with googletrans_wheel module namespace. |
-| [`googletranslate-neon-plugin`](https://pypi.org/project/googletranslate-neon-plugin/) | ❌ FAIL | `-` | 2.0k | Neon AI framework translation plugin powered by Google Translate. |
 
-### ⚠️ Defunct or Deprecated Implementations (2 Packages)
+### ⚠️ Defunct or Deprecated Implementations (5 Packages)
 
-These packages rely on endpoints or HTML structures that have been permanently removed or discontinued by Google. To avoid wasted resources, daily matrix execution skips live testing for them, while download statistics continue to be collected and updated daily:
+These packages rely on endpoints, missing distributions, or HTML structures that have been permanently removed or discontinued. To avoid wasted CI compute, daily matrix execution skips live testing for them, while download statistics continue to be collected and updated daily:
 
-| Package | Status | Lifetime DL | 2026 Volume | Last Month | Reason / Defunct Endpoint |
+| Package | Status | Lifetime DL | 2026 Volume | Last Month | Reason / Defunct Mechanism |
 |---|---|---|---|---|---|
+| [`googletranslate`](https://pypi.org/project/googletranslate/) | ⚠️ DEFUNCT | 177.0k | ~11.9k | 5 | Package deleted or yanked from PyPI index (HTTP 404 / no distribution available). |
+| [`googletrans2020`](https://pypi.org/project/googletrans2020/) | ⚠️ DEFUNCT | 105.0k | ~189 | 38 | Unmaintained since 2020; broken setup-time dependency `playsound` crashes modern Python builds. |
 | [`google-translate-py`](https://pypi.org/project/google-translate-py/) | ⚠️ DEFUNCT | 61.0k | ~1.8k | ~200 | Defunct Google Apps Script macro endpoint (`script.google.com/macros/s/AKfycb...` discontinued). |
 | [`python-translator`](https://pypi.org/project/python-translator/) | ⚠️ DEFUNCT | 18.0k | ~1.5k | ~180 | Defunct HTML scraping target (`div.result-container` removed from Google Translate web interface). |
+| [`googletranslate-neon-plugin`](https://pypi.org/project/googletranslate-neon-plugin/) | ⚠️ DEFUNCT | 2.0k | ~127 | 22 | Unresolvable dependency on missing PyPI distribution `google-tx`. |
 
 ---
 
