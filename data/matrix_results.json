@@ -1,15 +1,15 @@
 {
   "summary": {
     "total": 37,
-    "passed": 11,
-    "failed": 26,
+    "passed": 14,
+    "failed": 23,
     "defunct": 5,
-    "timestamp": "2026-11-20T13:58:58.816670+00:00"
+    "timestamp": "2026-11-21T13:23:29.207820+00:00"
   },
   "results": {
     "googletrans": {
       "package_name": "googletrans",
-      "timestamp": "2026-11-20T13:55:44Z",
+      "timestamp": "2026-11-21T13:19:34Z",
       "python_version": "3.12.16",
       "installed": true,
       "import_success": true,
@@ -25,20 +25,21 @@
           "details": "Imported googletrans (version: 3.4.0)"
         },
         "translate_en_de": {
-          "status": "failed",
-          "latency_ms": 549.22,
-          "result": "Hello world",
-          "error": "Untranslated echo output: 'Hello world'"
+          "status": "passed",
+          "latency_ms": 176.0,
+          "result": "Hallo Welt",
+          "error": null,
+          "details": "Verified async (Translator) implementation"
         },
         "detect_language": {
           "status": "passed",
-          "latency_ms": 316.03,
-          "result": "en",
+          "latency_ms": 111.63,
+          "result": "fr",
           "error": null
         }
       },
-      "overall_status": "failed",
-      "error_summary": "Untranslated echo output: 'Hello world'",
+      "overall_status": "passed",
+      "error_summary": null,
       "installed_version": "4.0.2",
       "implementations": {
         "async": {
@@ -47,16 +48,16 @@
           "import_syntax": "from googletrans import Translator",
           "call_syntax": "translator = Translator(); res = await translator.translate('Hello world', dest='de')",
           "notes": "Modern asynchronous implementation (Translator)",
-          "translate_status": "failed",
-          "translate_latency_ms": 549.22,
-          "translate_result": "Hello world",
+          "translate_status": "passed",
+          "translate_latency_ms": 176.0,
+          "translate_result": "Hallo Welt",
           "detect_status": "passed",
-          "detect_latency_ms": 316.03,
-          "detect_result": "en",
-          "error": "Untranslated echo output: 'Hello world'"
+          "detect_latency_ms": 111.63,
+          "detect_result": "fr",
+          "error": null
         }
       },
-      "elapsed_sec": 8.4,
+      "elapsed_sec": 7.44,
       "package_id": "googletrans",
       "description": "The original and most widespread unofficial Google Translate API library.",
       "pypi_url": "https://pypi.org/project/googletrans/",
@@ -64,7 +65,7 @@
     },
     "googletrans-curl": {
       "package_name": "googletrans-curl",
-      "timestamp": "2026-11-20T13:55:51Z",
+      "timestamp": "2026-11-21T13:19:41Z",
       "python_version": "3.12.16",
       "installed": true,
       "import_success": true,
@@ -81,14 +82,14 @@
         },
         "translate_en_de": {
           "status": "passed",
-          "latency_ms": 74.98,
+          "latency_ms": 100.8,
           "result": "Hallo Welt",
           "error": null,
           "details": "Verified both async (Translator) and sync (SyncTranslator) implementations"
         },
         "detect_language": {
           "status": "passed",
-          "latency_ms": 76.19,
+          "latency_ms": 163.27,
           "result": "fr",
           "error": null
         }
@@ -104,10 +105,10 @@
           "call_syntax": "translator = Translator(); res = translator.translate('Hello world', dest='de')",
           "notes": "Synchronous drop-in replacement compatible with older googletrans v3.x workflows",
           "translate_status": "passed",
-          "translate_latency_ms": 103.32,
+          "translate_latency_ms": 109.12,
           "translate_result": "Hallo Welt",
           "detect_status": "passed",
-          "detect_latency_ms": 47.37,
+          "detect_latency_ms": 128.17,
           "detect_result": "fr",
           "error": null
         },
@@ -118,15 +119,15 @@
           "call_syntax": "translator = Translator(); res = await translator.translate('Hello world', dest='de')",
           "notes": "Modern asynchronous implementation (Translator)",
           "translate_status": "passed",
-          "translate_latency_ms": 74.98,
+          "translate_latency_ms": 100.8,
           "translate_result": "Hallo Welt",
           "detect_status": "passed",
-          "detect_latency_ms": 76.19,
+          "detect_latency_ms": 163.27,
           "detect_result": "fr",
           "error": null
         }
       },
-      "elapsed_sec": 6.92,
+      "elapsed_sec": 7.47,
       "package_id": "googletrans-curl",
       "description": "Modern fork utilizing curl-cffi and httpx[http2]; supports both v4.x async Translator and v3.x SyncTranslator.",
       "pypi_url": "https://pypi.org/project/googletrans-curl/",
@@ -134,7 +135,7 @@
     },
     "googletrans-py": {
       "package_name": "googletrans-py",
-      "timestamp": "2026-11-20T13:55:57Z",
+      "timestamp": "2026-11-21T13:19:50Z",
       "python_version": "3.12.16",
       "installed": true,
       "import_success": true,
@@ -151,14 +152,14 @@
         },
         "translate_en_de": {
           "status": "passed",
-          "latency_ms": 912.88,
+          "latency_ms": 142.57,
           "result": "Hallo Welt",
           "error": null,
           "details": "Verified sync (Translator) implementation"
         },
         "detect_language": {
           "status": "passed",
-          "latency_ms": 483.77,
+          "latency_ms": 138.74,
           "result": "fr",
           "error": null
         }
@@ -174,15 +175,15 @@
           "call_syntax": "translator = Translator(); res = translator.translate('Hello world', dest='de')",
           "notes": "Synchronous implementation (Translator)",
           "translate_status": "passed",
-          "translate_latency_ms": 912.88,
+          "translate_latency_ms": 142.57,
           "translate_result": "Hallo Welt",
           "detect_status": "passed",
-          "detect_latency_ms": 483.77,
+          "detect_latency_ms": 138.74,
           "detect_result": "fr",
           "error": null
         }
       },
-      "elapsed_sec": 6.38,
+      "elapsed_sec": 8.06,
       "package_id": "googletrans-py",
       "description": "Fork packaging synchronous 4.0.0 API.",
       "pypi_url": "https://pypi.org/project/googletrans-py/",
@@ -190,7 +191,7 @@
     },
     "googletrans-py39": {
       "package_name": "googletrans-py39",
-      "timestamp": "2026-11-20T13:56:03Z",
+      "timestamp": "2026-11-21T13:19:57Z",
       "python_version": "3.12.16",
       "installed": true,
       "import_success": true,
@@ -207,14 +208,14 @@
         },
         "translate_en_de": {
           "status": "passed",
-          "latency_ms": 282.32,
+          "latency_ms": 246.65,
           "result": "Hallo Welt",
           "error": null,
           "details": "Verified sync (Translator) implementation"
         },
         "detect_language": {
           "status": "passed",
-          "latency_ms": 110.1,
+          "latency_ms": 146.48,
           "result": "fr",
           "error": null
         }
@@ -230,15 +231,15 @@
           "call_syntax": "translator = Translator(); res = translator.translate('Hello world', dest='de')",
           "notes": "Synchronous implementation (Translator)",
           "translate_status": "passed",
-          "translate_latency_ms": 282.32,
+          "translate_latency_ms": 246.65,
           "translate_result": "Hallo Welt",
           "detect_status": "passed",
-          "detect_latency_ms": 110.1,
+          "detect_latency_ms": 146.48,
           "detect_result": "fr",
           "error": null
         }
       },
-      "elapsed_sec": 5.41,
+      "elapsed_sec": 7.24,
       "package_id": "googletrans-py39",
       "description": "Python 3.9 compatibility fork.",
       "pypi_url": "https://pypi.org/project/googletrans-py39/",
@@ -246,7 +247,7 @@
     },
     "googletrans-python": {
       "package_name": "googletrans-python",
-      "timestamp": "2026-11-20T13:56:08Z",
+      "timestamp": "2026-11-21T13:20:03Z",
       "python_version": "3.12.16",
       "installed": true,
       "import_success": true,
@@ -263,7 +264,7 @@
         },
         "translate_en_de": {
           "status": "failed",
-          "latency_ms": 426.42,
+          "latency_ms": 459.23,
           "result": null,
           "error": "HTTPError: HTTP Error 429: Too Many Requests"
         },
@@ -286,7 +287,7 @@
           "call_syntax": "res = translate('Hello world', dest='de')",
           "notes": "Direct function translate",
           "translate_status": "failed",
-          "translate_latency_ms": 426.42,
+          "translate_latency_ms": 459.23,
           "translate_result": null,
           "detect_status": "skipped",
           "detect_latency_ms": 0.0,
@@ -295,7 +296,7 @@
           "detect_details": "detect() API not provided by this implementation"
         }
       },
-      "elapsed_sec": 5.08,
+      "elapsed_sec": 6.47,
       "package_id": "googletrans-python",
       "description": "Alternative wrapper providing direct translate() function.",
       "pypi_url": "https://pypi.org/project/googletrans-python/",
@@ -303,7 +304,7 @@
     },
     "googletrans-sw": {
       "package_name": "googletrans-sw",
-      "timestamp": "2026-11-20T13:56:14Z",
+      "timestamp": "2026-11-21T13:20:10Z",
       "python_version": "3.12.16",
       "installed": true,
       "import_success": true,
@@ -320,14 +321,14 @@
         },
         "translate_en_de": {
           "status": "passed",
-          "latency_ms": 1066.34,
+          "latency_ms": 501.24,
           "result": "Hallo Welt",
           "error": null,
           "details": "Verified sync (Translator) implementation"
         },
         "detect_language": {
           "status": "passed",
-          "latency_ms": 871.76,
+          "latency_ms": 111.09,
           "result": "fr",
           "error": null
         }
@@ -343,15 +344,15 @@
           "call_syntax": "translator = Translator(); res = translator.translate('Hello world', dest='de')",
           "notes": "Synchronous implementation (Translator)",
           "translate_status": "passed",
-          "translate_latency_ms": 1066.34,
+          "translate_latency_ms": 501.24,
           "translate_result": "Hallo Welt",
           "detect_status": "passed",
-          "detect_latency_ms": 871.76,
+          "detect_latency_ms": 111.09,
           "detect_result": "fr",
           "error": null
         }
       },
-      "elapsed_sec": 6.88,
+      "elapsed_sec": 6.98,
       "package_id": "googletrans-sw",
       "description": "Swahili / customized distribution fork.",
       "pypi_url": "https://pypi.org/project/googletrans-sw/",
@@ -359,7 +360,7 @@
     },
     "googletrans-wheel": {
       "package_name": "googletrans-wheel",
-      "timestamp": "2026-11-20T13:56:21Z",
+      "timestamp": "2026-11-21T13:20:17Z",
       "python_version": "3.12.16",
       "installed": true,
       "import_success": true,
@@ -376,13 +377,13 @@
         },
         "translate_en_de": {
           "status": "failed",
-          "latency_ms": 178.34,
+          "latency_ms": 249.17,
           "result": null,
           "error": "AttributeError: 'NoneType' object has no attribute 'group'"
         },
         "detect_language": {
           "status": "failed",
-          "latency_ms": 148.51,
+          "latency_ms": 243.48,
           "result": null,
           "error": "AttributeError: 'NoneType' object has no attribute 'group'"
         }
@@ -398,16 +399,16 @@
           "call_syntax": "translator = Translator(); res = translator.translate('Hello world', dest='de')",
           "notes": "Synchronous implementation (Translator)",
           "translate_status": "failed",
-          "translate_latency_ms": 178.34,
+          "translate_latency_ms": 249.17,
           "translate_result": null,
           "detect_status": "failed",
-          "detect_latency_ms": 148.51,
+          "detect_latency_ms": 243.48,
           "detect_result": null,
           "error": "AttributeError: 'NoneType' object has no attribute 'group'",
           "detect_error": "AttributeError: 'NoneType' object has no attribute 'group'"
         }
       },
-      "elapsed_sec": 5.63,
+      "elapsed_sec": 7.12,
       "package_id": "googletrans-wheel",
       "description": "Binary wheel build with googletrans_wheel module namespace.",
       "pypi_url": "https://pypi.org/project/googletrans-wheel/",
@@ -415,7 +416,7 @@
     },
     "googletrans-di": {
       "package_name": "googletrans-di",
-      "timestamp": "2026-11-20T13:56:26Z",
+      "timestamp": "2026-11-21T13:20:24Z",
       "python_version": "3.12.16",
       "installed": true,
       "import_success": false,
@@ -446,7 +447,7 @@
       "overall_status": "failed",
       "error_summary": "Failed to import candidate modules: googletrans_di: No module named 'httpcore' | googletrans: No module named 'googletrans'",
       "installed_version": "4.0.2",
-      "elapsed_sec": 4.61,
+      "elapsed_sec": 6.23,
       "package_id": "googletrans-di",
       "description": "Fork using googletrans_di namespace.",
       "pypi_url": "https://pypi.org/project/googletrans-di/",
@@ -454,7 +455,7 @@
     },
     "googletrans-modified": {
       "package_name": "googletrans-modified",
-      "timestamp": "2026-11-20T13:56:31Z",
+      "timestamp": "2026-11-21T13:20:30Z",
       "python_version": "3.12.16",
       "installed": true,
       "import_success": true,
@@ -470,20 +471,21 @@
           "details": "Imported googletrans (version: 1.1.1)"
         },
         "translate_en_de": {
-          "status": "failed",
-          "latency_ms": 488.69,
-          "result": "Hello world",
-          "error": "Untranslated echo output: 'Hello world'"
+          "status": "passed",
+          "latency_ms": 370.57,
+          "result": "Hallo Welt",
+          "error": null,
+          "details": "Verified sync (Translator) implementation"
         },
         "detect_language": {
           "status": "passed",
-          "latency_ms": 467.11,
-          "result": "en",
+          "latency_ms": 105.51,
+          "result": "fr",
           "error": null
         }
       },
-      "overall_status": "failed",
-      "error_summary": "Untranslated echo output: 'Hello world'",
+      "overall_status": "passed",
+      "error_summary": null,
       "installed_version": "1.1.1",
       "implementations": {
         "sync": {
@@ -492,16 +494,16 @@
           "import_syntax": "from googletrans import Translator",
           "call_syntax": "translator = Translator(); res = translator.translate('Hello world', dest='de')",
           "notes": "Synchronous implementation (Translator)",
-          "translate_status": "failed",
-          "translate_latency_ms": 488.69,
-          "translate_result": "Hello world",
+          "translate_status": "passed",
+          "translate_latency_ms": 370.57,
+          "translate_result": "Hallo Welt",
           "detect_status": "passed",
-          "detect_latency_ms": 467.11,
-          "detect_result": "en",
-          "error": "Untranslated echo output: 'Hello world'"
+          "detect_latency_ms": 105.51,
+          "detect_result": "fr",
+          "error": null
         }
       },
-      "elapsed_sec": 5.99,
+      "elapsed_sec": 6.97,
       "package_id": "googletrans-modified",
       "description": "Modified release with adjusted query handling.",
       "pypi_url": "https://pypi.org/project/googletrans-modified/",
@@ -509,7 +511,7 @@
     },
     "py-googletrans": {
       "package_name": "py-googletrans",
-      "timestamp": "2026-11-20T13:56:37Z",
+      "timestamp": "2026-11-21T13:20:37Z",
       "python_version": "3.12.16",
       "installed": true,
       "import_success": false,
@@ -522,7 +524,7 @@
         },
         "import": {
           "status": "failed",
-          "details": "googletrans: cannot import name 'ProxiesTypes' from 'httpx._types' (/tmp/test_py_googletrans_2mx9vgoa/venv/lib/python3.12/site-packages/httpx/_types.py) | py_googletrans: No module named 'py_googletrans'"
+          "details": "googletrans: cannot import name 'ProxiesTypes' from 'httpx._types' (/tmp/test_py_googletrans_vot5ivj9/venv/lib/python3.12/site-packages/httpx/_types.py) | py_googletrans: No module named 'py_googletrans'"
         },
         "translate_en_de": {
           "status": "pending",
@@ -538,9 +540,9 @@
         }
       },
       "overall_status": "failed",
-      "error_summary": "Failed to import candidate modules: googletrans: cannot import name 'ProxiesTypes' from 'httpx._types' (/tmp/test_py_googletrans_2mx9vgoa/venv/lib/python3.12/site-packages/httpx/_types.py) | py_googletrans: No module named 'py_googletrans'",
+      "error_summary": "Failed to import candidate modules: googletrans: cannot import name 'ProxiesTypes' from 'httpx._types' (/tmp/test_py_googletrans_vot5ivj9/venv/lib/python3.12/site-packages/httpx/_types.py) | py_googletrans: No module named 'py_googletrans'",
       "installed_version": "4.0.0",
-      "elapsed_sec": 5.05,
+      "elapsed_sec": 6.41,
       "package_id": "py-googletrans",
       "description": "PyPI release published under original py-googletrans repository name.",
       "pypi_url": "https://pypi.org/project/py-googletrans/",
@@ -548,7 +550,7 @@
     },
     "googletrans-wheel2-py": {
       "package_name": "googletrans-wheel2-py",
-      "timestamp": "2026-11-20T13:56:42Z",
+      "timestamp": "2026-11-21T13:20:44Z",
       "python_version": "3.12.16",
       "installed": true,
       "import_success": true,
@@ -565,14 +567,14 @@
         },
         "translate_en_de": {
           "status": "passed",
-          "latency_ms": 394.4,
+          "latency_ms": 205.09,
           "result": "Hallo Welt",
           "error": null,
           "details": "Verified sync (Translator) implementation"
         },
         "detect_language": {
           "status": "passed",
-          "latency_ms": 477.35,
+          "latency_ms": 139.55,
           "result": "fr",
           "error": null
         }
@@ -588,15 +590,15 @@
           "call_syntax": "translator = Translator(); res = translator.translate('Hello world', dest='de')",
           "notes": "Synchronous implementation (Translator)",
           "translate_status": "passed",
-          "translate_latency_ms": 394.4,
+          "translate_latency_ms": 205.09,
           "translate_result": "Hallo Welt",
           "detect_status": "passed",
-          "detect_latency_ms": 477.35,
+          "detect_latency_ms": 139.55,
           "detect_result": "fr",
           "error": null
         }
       },
-      "elapsed_sec": 5.87,
+      "elapsed_sec": 6.77,
       "package_id": "googletrans-wheel2-py",
       "description": "Wheel repackage fork targeting modern python versions.",
       "pypi_url": "https://pypi.org/project/googletrans-wheel2-py/",
@@ -604,7 +606,7 @@
     },
     "googletrans-temp": {
       "package_name": "googletrans-temp",
-      "timestamp": "2026-11-20T13:56:47Z",
+      "timestamp": "2026-11-21T13:20:50Z",
       "python_version": "3.12.16",
       "installed": true,
       "import_success": true,
@@ -621,13 +623,13 @@
         },
         "translate_en_de": {
           "status": "failed",
-          "latency_ms": 226.5,
+          "latency_ms": 302.35,
           "result": null,
           "error": "AttributeError: 'NoneType' object has no attribute 'group'"
         },
         "detect_language": {
           "status": "failed",
-          "latency_ms": 203.77,
+          "latency_ms": 257.44,
           "result": null,
           "error": "AttributeError: 'NoneType' object has no attribute 'group'"
         }
@@ -643,16 +645,16 @@
           "call_syntax": "translator = Translator(); res = translator.translate('Hello world', dest='de')",
           "notes": "Synchronous implementation (Translator)",
           "translate_status": "failed",
-          "translate_latency_ms": 226.5,
+          "translate_latency_ms": 302.35,
           "translate_result": null,
           "detect_status": "failed",
-          "detect_latency_ms": 203.77,
+          "detect_latency_ms": 257.44,
           "detect_result": null,
           "error": "AttributeError: 'NoneType' object has no attribute 'group'",
           "detect_error": "AttributeError: 'NoneType' object has no attribute 'group'"
         }
       },
-      "elapsed_sec": 5.34,
+      "elapsed_sec": 6.62,
       "package_id": "googletrans-temp",
       "description": "Temporary mirror release of googletrans v2.3.0.",
       "pypi_url": "https://pypi.org/project/googletrans-temp/",
@@ -660,7 +662,7 @@
     },
     "googletrans2": {
       "package_name": "googletrans2",
-      "timestamp": "2026-11-20T13:56:53Z",
+      "timestamp": "2026-11-21T13:20:57Z",
       "python_version": "3.12.16",
       "installed": true,
       "import_success": true,
@@ -677,13 +679,13 @@
         },
         "translate_en_de": {
           "status": "failed",
-          "latency_ms": 166.09,
+          "latency_ms": 312.57,
           "result": null,
           "error": "IndexError: list index out of range"
         },
         "detect_language": {
           "status": "failed",
-          "latency_ms": 152.29,
+          "latency_ms": 256.24,
           "result": null,
           "error": "IndexError: list index out of range"
         }
@@ -699,16 +701,16 @@
           "call_syntax": "translator = Translator(); res = translator.translate('Hello world', dest='de')",
           "notes": "Synchronous implementation (Translator)",
           "translate_status": "failed",
-          "translate_latency_ms": 166.09,
+          "translate_latency_ms": 312.57,
           "translate_result": null,
           "detect_status": "failed",
-          "detect_latency_ms": 152.29,
+          "detect_latency_ms": 256.24,
           "detect_result": null,
           "error": "IndexError: list index out of range",
           "detect_error": "IndexError: list index out of range"
         }
       },
-      "elapsed_sec": 4.97,
+      "elapsed_sec": 6.44,
       "package_id": "googletrans2",
       "description": "Alternative distribution tracking the googletrans 2.x branch.",
       "pypi_url": "https://pypi.org/project/googletrans2/",
@@ -754,7 +756,7 @@
     },
     "googletransapi": {
       "package_name": "googletransapi",
-      "timestamp": "2026-11-20T13:56:58Z",
+      "timestamp": "2026-11-21T13:21:04Z",
       "python_version": "3.12.16",
       "installed": true,
       "import_success": true,
@@ -785,7 +787,7 @@
       "overall_status": "failed",
       "error_summary": "Neither Translator class nor translate() function found",
       "installed_version": "1.0.0",
-      "elapsed_sec": 4.67,
+      "elapsed_sec": 6.27,
       "package_id": "googletransapi",
       "description": "Wrapper package providing translation and MP3 audio generation.",
       "pypi_url": "https://pypi.org/project/googletransapi/",
@@ -793,7 +795,7 @@
     },
     "googletransfork": {
       "package_name": "googletransfork",
-      "timestamp": "2026-11-20T13:57:03Z",
+      "timestamp": "2026-11-21T13:21:10Z",
       "python_version": "3.12.16",
       "installed": true,
       "import_success": true,
@@ -810,14 +812,14 @@
         },
         "translate_en_de": {
           "status": "passed",
-          "latency_ms": 427.02,
+          "latency_ms": 148.15,
           "result": "Hallo Welt",
           "error": null,
           "details": "Verified sync (Translator) implementation"
         },
         "detect_language": {
           "status": "passed",
-          "latency_ms": 777.09,
+          "latency_ms": 155.49,
           "result": "fr",
           "error": null
         }
@@ -833,15 +835,15 @@
           "call_syntax": "translator = Translator(); res = translator.translate('Hello world', dest='de')",
           "notes": "Synchronous implementation (Translator)",
           "translate_status": "passed",
-          "translate_latency_ms": 427.02,
+          "translate_latency_ms": 148.15,
           "translate_result": "Hallo Welt",
           "detect_status": "passed",
-          "detect_latency_ms": 777.09,
+          "detect_latency_ms": 155.49,
           "detect_result": "fr",
           "error": null
         }
       },
-      "elapsed_sec": 6.31,
+      "elapsed_sec": 7.35,
       "package_id": "googletransfork",
       "description": "Fork package based on early googletrans release.",
       "pypi_url": "https://pypi.org/project/googletransfork/",
@@ -925,7 +927,7 @@
     },
     "googletranslate-python": {
       "package_name": "googletranslate-python",
-      "timestamp": "2026-11-20T13:57:10Z",
+      "timestamp": "2026-11-21T13:21:18Z",
       "python_version": "3.12.16",
       "installed": true,
       "import_success": true,
@@ -942,7 +944,7 @@
         },
         "translate_en_de": {
           "status": "failed",
-          "latency_ms": 443.86,
+          "latency_ms": 472.73,
           "result": "False",
           "error": "Invalid translation result: False"
         },
@@ -965,7 +967,7 @@
           "call_syntax": "translator = Translator(); res = translator.translate('Hello world', dest='de')",
           "notes": "Synchronous implementation (Translator)",
           "translate_status": "failed",
-          "translate_latency_ms": 443.86,
+          "translate_latency_ms": 472.73,
           "translate_result": "False",
           "detect_status": "skipped",
           "detect_latency_ms": 0.01,
@@ -974,7 +976,7 @@
           "detect_details": "detect() API not provided by this implementation"
         }
       },
-      "elapsed_sec": 6.15,
+      "elapsed_sec": 7.67,
       "package_id": "googletranslate-python",
       "description": "Google Translate client built on top of deep-translator.",
       "pypi_url": "https://pypi.org/project/googletranslate-python/",
@@ -982,7 +984,7 @@
     },
     "googletranslator-new": {
       "package_name": "googletranslator-new",
-      "timestamp": "2026-11-20T13:57:15Z",
+      "timestamp": "2026-11-21T13:21:25Z",
       "python_version": "3.12.16",
       "installed": true,
       "import_success": true,
@@ -999,13 +1001,13 @@
         },
         "translate_en_de": {
           "status": "failed",
-          "latency_ms": 444.49,
+          "latency_ms": 302.89,
           "result": null,
           "error": "IndexError: list index out of range"
         },
         "detect_language": {
           "status": "skipped",
-          "latency_ms": 0.0,
+          "latency_ms": 0.01,
           "result": null,
           "error": null,
           "details": "detect() API not provided by this implementation"
@@ -1022,10 +1024,10 @@
           "call_syntax": "translator = GoogleTranslator(); res = await translator.translate('Hello world', dest='de')",
           "notes": "Modern asynchronous implementation (GoogleTranslator)",
           "translate_status": "failed",
-          "translate_latency_ms": 444.49,
+          "translate_latency_ms": 302.89,
           "translate_result": null,
           "detect_status": "skipped",
-          "detect_latency_ms": 0.0,
+          "detect_latency_ms": 0.01,
           "detect_result": null,
           "error": "IndexError: list index out of range",
           "detect_details": "detect() API not provided by this implementation"
@@ -1037,7 +1039,7 @@
           "call_syntax": "translator = GoogleTranslator(); res = translator.translate_sync('Hello world', dest='de')",
           "notes": "Synchronous translate_sync method on GoogleTranslator",
           "translate_status": "failed",
-          "translate_latency_ms": 315.23,
+          "translate_latency_ms": 474.2,
           "translate_result": null,
           "detect_status": "skipped",
           "detect_latency_ms": 0.01,
@@ -1046,7 +1048,7 @@
           "detect_details": "detect() API not provided by this implementation"
         }
       },
-      "elapsed_sec": 5.72,
+      "elapsed_sec": 7.52,
       "package_id": "googletranslator-new",
       "description": "Convenient Russian/multilingual Google Translator client wrapper.",
       "pypi_url": "https://pypi.org/project/googletranslator-new/",
@@ -1054,7 +1056,7 @@
     },
     "googletranswheel2": {
       "package_name": "googletranswheel2",
-      "timestamp": "2026-11-20T13:57:21Z",
+      "timestamp": "2026-11-21T13:21:32Z",
       "python_version": "3.12.16",
       "installed": true,
       "import_success": true,
@@ -1071,14 +1073,14 @@
         },
         "translate_en_de": {
           "status": "passed",
-          "latency_ms": 230.47,
+          "latency_ms": 129.72,
           "result": "Hallo Welt",
           "error": null,
           "details": "Verified sync (Translator) implementation"
         },
         "detect_language": {
           "status": "passed",
-          "latency_ms": 420.73,
+          "latency_ms": 267.89,
           "result": "fr",
           "error": null
         }
@@ -1094,15 +1096,15 @@
           "call_syntax": "translator = Translator(); res = translator.translate('Hello world', dest='de')",
           "notes": "Synchronous implementation (Translator)",
           "translate_status": "passed",
-          "translate_latency_ms": 230.47,
+          "translate_latency_ms": 129.72,
           "translate_result": "Hallo Welt",
           "detect_status": "passed",
-          "detect_latency_ms": 420.73,
+          "detect_latency_ms": 267.89,
           "detect_result": "fr",
           "error": null
         }
       },
-      "elapsed_sec": 5.73,
+      "elapsed_sec": 6.59,
       "package_id": "googletranswheel2",
       "description": "Repackaged wheel with googletranswheel2 namespace.",
       "pypi_url": "https://pypi.org/project/googletranswheel2/",
@@ -1110,7 +1112,7 @@
     },
     "googletransx": {
       "package_name": "googletransx",
-      "timestamp": "2026-11-20T13:57:26Z",
+      "timestamp": "2026-11-21T13:21:39Z",
       "python_version": "3.12.16",
       "installed": true,
       "import_success": true,
@@ -1127,13 +1129,13 @@
         },
         "translate_en_de": {
           "status": "failed",
-          "latency_ms": 269.23,
+          "latency_ms": 249.03,
           "result": null,
           "error": "AttributeError: 'NoneType' object has no attribute 'group'"
         },
         "detect_language": {
           "status": "failed",
-          "latency_ms": 178.98,
+          "latency_ms": 316.06,
           "result": null,
           "error": "AttributeError: 'NoneType' object has no attribute 'group'"
         }
@@ -1149,16 +1151,16 @@
           "call_syntax": "translator = Translator(); res = translator.translate('Hello world', dest='de')",
           "notes": "Synchronous implementation (Translator)",
           "translate_status": "failed",
-          "translate_latency_ms": 269.23,
+          "translate_latency_ms": 249.03,
           "translate_result": null,
           "detect_status": "failed",
-          "detect_latency_ms": 178.98,
+          "detect_latency_ms": 316.06,
           "detect_result": null,
           "error": "AttributeError: 'NoneType' object has no attribute 'group'",
           "detect_error": "AttributeError: 'NoneType' object has no attribute 'group'"
         }
       },
-      "elapsed_sec": 5.2,
+      "elapsed_sec": 6.62,
       "package_id": "googletransx",
       "description": "Independent fork using the googletransx namespace.",
       "pypi_url": "https://pypi.org/project/googletransx/",
@@ -1166,7 +1168,7 @@
     },
     "vtrans": {
       "package_name": "vtrans",
-      "timestamp": "2026-11-20T13:57:37Z",
+      "timestamp": "2026-11-21T13:21:53Z",
       "python_version": "3.12.16",
       "installed": true,
       "import_success": true,
@@ -1183,13 +1185,13 @@
         },
         "translate_en_de": {
           "status": "failed",
-          "latency_ms": 404.84,
+          "latency_ms": 315.32,
           "result": "Hello world",
           "error": "Untranslated echo output: 'Hello world'"
         },
         "detect_language": {
           "status": "passed",
-          "latency_ms": 251.98,
+          "latency_ms": 350.32,
           "result": "en",
           "error": null
         }
@@ -1205,15 +1207,15 @@
           "call_syntax": "translator = Translator(); res = translator.translate('Hello world', dest='de')",
           "notes": "Synchronous implementation (Translator)",
           "translate_status": "failed",
-          "translate_latency_ms": 404.84,
+          "translate_latency_ms": 315.32,
           "translate_result": "Hello world",
           "detect_status": "passed",
-          "detect_latency_ms": 251.98,
+          "detect_latency_ms": 350.32,
           "detect_result": "en",
           "error": "Untranslated echo output: 'Hello world'"
         }
       },
-      "elapsed_sec": 11.43,
+      "elapsed_sec": 14.2,
       "package_id": "vtrans",
       "description": "Cross-platform self-updating translator supporting up to 130 languages.",
       "pypi_url": "https://pypi.org/project/vtrans/",
@@ -1221,7 +1223,7 @@
     },
     "Flask-Googletrans": {
       "package_name": "Flask-Googletrans",
-      "timestamp": "2026-11-20T13:57:44Z",
+      "timestamp": "2026-11-21T13:22:00Z",
       "python_version": "3.12.16",
       "installed": true,
       "import_success": true,
@@ -1237,20 +1239,21 @@
           "details": "Imported flask_googletrans (version: unknown)"
         },
         "translate_en_de": {
-          "status": "failed",
-          "latency_ms": 291.16,
-          "result": "Hello world",
-          "error": "Untranslated echo output: 'Hello world'"
+          "status": "passed",
+          "latency_ms": 112.96,
+          "result": "Hallo Welt",
+          "error": null,
+          "details": "Verified async (google_translator) implementation"
         },
         "detect_language": {
           "status": "passed",
-          "latency_ms": 291.73,
-          "result": "en",
+          "latency_ms": 316.14,
+          "result": "fr",
           "error": null
         }
       },
-      "overall_status": "failed",
-      "error_summary": "Untranslated echo output: 'Hello world'",
+      "overall_status": "passed",
+      "error_summary": null,
       "installed_version": "0.11",
       "implementations": {
         "async": {
@@ -1259,16 +1262,16 @@
           "import_syntax": "from flask_googletrans import google_translator",
           "call_syntax": "translator = google_translator(); res = await translator.translate('Hello world', dest='de')",
           "notes": "Modern asynchronous implementation (google_translator)",
-          "translate_status": "failed",
-          "translate_latency_ms": 291.16,
-          "translate_result": "Hello world",
+          "translate_status": "passed",
+          "translate_latency_ms": 112.96,
+          "translate_result": "Hallo Welt",
           "detect_status": "passed",
-          "detect_latency_ms": 291.73,
-          "detect_result": "en",
-          "error": "Untranslated echo output: 'Hello world'"
+          "detect_latency_ms": 316.14,
+          "detect_result": "fr",
+          "error": null
         }
       },
-      "elapsed_sec": 6.26,
+      "elapsed_sec": 7.52,
       "package_id": "Flask-Googletrans",
       "description": "Flask web application extension for automated template translation.",
       "pypi_url": "https://pypi.org/project/Flask-Googletrans/",
@@ -1276,7 +1279,7 @@
     },
     "simple-googletrans": {
       "package_name": "simple-googletrans",
-      "timestamp": "2026-11-20T13:57:50Z",
+      "timestamp": "2026-11-21T13:22:09Z",
       "python_version": "3.12.16",
       "installed": true,
       "import_success": true,
@@ -1323,7 +1326,7 @@
           "error": "Init error: Translator.__init__() got an unexpected keyword argument 'proxies'"
         }
       },
-      "elapsed_sec": 5.65,
+      "elapsed_sec": 8.24,
       "package_id": "simple-googletrans",
       "description": "Simple CLI and Python wrapper around googletrans with logging and batching.",
       "pypi_url": "https://pypi.org/project/simple-googletrans/",
@@ -1331,7 +1334,7 @@
     },
     "py-googletrans-html": {
       "package_name": "py-googletrans-html",
-      "timestamp": "2026-11-20T13:57:55Z",
+      "timestamp": "2026-11-21T13:22:16Z",
       "python_version": "3.12.16",
       "installed": true,
       "import_success": true,
@@ -1348,13 +1351,13 @@
         },
         "translate_en_de": {
           "status": "failed",
-          "latency_ms": 180.12,
+          "latency_ms": 244.57,
           "result": null,
           "error": "AttributeError: 'NoneType' object has no attribute 'group'"
         },
         "detect_language": {
           "status": "failed",
-          "latency_ms": 198.68,
+          "latency_ms": 246.14,
           "result": null,
           "error": "AttributeError: 'NoneType' object has no attribute 'group'"
         }
@@ -1370,16 +1373,16 @@
           "call_syntax": "translator = Translator(); res = translator.translate('Hello world', dest='de')",
           "notes": "Synchronous implementation (Translator)",
           "translate_status": "failed",
-          "translate_latency_ms": 180.12,
+          "translate_latency_ms": 244.57,
           "translate_result": null,
           "detect_status": "failed",
-          "detect_latency_ms": 198.68,
+          "detect_latency_ms": 246.14,
           "detect_result": null,
           "error": "AttributeError: 'NoneType' object has no attribute 'group'",
           "detect_error": "AttributeError: 'NoneType' object has no attribute 'group'"
         }
       },
-      "elapsed_sec": 5.52,
+      "elapsed_sec": 6.97,
       "package_id": "py-googletrans-html",
       "description": "Google Translate fork with specialized HTML preservation.",
       "pypi_url": "https://pypi.org/project/py-googletrans-html/",
@@ -1387,7 +1390,7 @@
     },
     "ggtrans": {
       "package_name": "ggtrans",
-      "timestamp": "2026-11-20T13:58:00Z",
+      "timestamp": "2026-11-21T13:22:22Z",
       "python_version": "3.12.16",
       "installed": true,
       "import_success": true,
@@ -1404,13 +1407,13 @@
         },
         "translate_en_de": {
           "status": "failed",
-          "latency_ms": 176.54,
+          "latency_ms": 327.65,
           "result": null,
           "error": "AttributeError: 'NoneType' object has no attribute 'group'"
         },
         "detect_language": {
           "status": "failed",
-          "latency_ms": 168.76,
+          "latency_ms": 270.98,
           "result": null,
           "error": "AttributeError: 'NoneType' object has no attribute 'group'"
         }
@@ -1426,16 +1429,16 @@
           "call_syntax": "translator = Translator(); res = translator.translate('Hello world', dest='de')",
           "notes": "Synchronous implementation (Translator)",
           "translate_status": "failed",
-          "translate_latency_ms": 176.54,
+          "translate_latency_ms": 327.65,
           "translate_result": null,
           "detect_status": "failed",
-          "detect_latency_ms": 168.76,
+          "detect_latency_ms": 270.98,
           "detect_result": null,
           "error": "AttributeError: 'NoneType' object has no attribute 'group'",
           "detect_error": "AttributeError: 'NoneType' object has no attribute 'group'"
         }
       },
-      "elapsed_sec": 5.15,
+      "elapsed_sec": 6.44,
       "package_id": "ggtrans",
       "description": "Lightweight repackage of free Google Translate API for Python.",
       "pypi_url": "https://pypi.org/project/ggtrans/",
@@ -1443,7 +1446,7 @@
     },
     "paraphrase-googletranslate": {
       "package_name": "paraphrase-googletranslate",
-      "timestamp": "2026-11-20T13:58:06Z",
+      "timestamp": "2026-11-21T13:22:29Z",
       "python_version": "3.12.16",
       "installed": true,
       "import_success": true,
@@ -1460,7 +1463,7 @@
         },
         "translate_en_de": {
           "status": "failed",
-          "latency_ms": 196.11,
+          "latency_ms": 123.43,
           "result": "None",
           "error": "Invalid translation result: None"
         },
@@ -1483,7 +1486,7 @@
           "call_syntax": "translator = Paraphraser(); res = translator.translate('Hello world', dest='de')",
           "notes": "Synchronous implementation (Paraphraser)",
           "translate_status": "failed",
-          "translate_latency_ms": 196.11,
+          "translate_latency_ms": 123.43,
           "translate_result": "None",
           "detect_status": "skipped",
           "detect_latency_ms": 0.01,
@@ -1492,7 +1495,7 @@
           "detect_details": "detect() API not provided by this implementation"
         }
       },
-      "elapsed_sec": 5.08,
+      "elapsed_sec": 6.02,
       "package_id": "paraphrase-googletranslate",
       "description": "Paraphrasing engine built on top of google-trans-new.",
       "pypi_url": "https://pypi.org/project/paraphrase-googletranslate/",
@@ -1500,7 +1503,7 @@
     },
     "SmallGoogleTranslator": {
       "package_name": "SmallGoogleTranslator",
-      "timestamp": "2026-11-20T13:58:11Z",
+      "timestamp": "2026-11-21T13:22:35Z",
       "python_version": "3.12.16",
       "installed": true,
       "import_success": true,
@@ -1517,7 +1520,7 @@
         },
         "translate_en_de": {
           "status": "failed",
-          "latency_ms": 585.04,
+          "latency_ms": 331.23,
           "result": null,
           "error": "IndexError: list index out of range"
         },
@@ -1540,7 +1543,7 @@
           "call_syntax": "translator = GoogleTranslator(); res = await translator.translate('Hello world', dest='de')",
           "notes": "Modern asynchronous implementation (GoogleTranslator)",
           "translate_status": "failed",
-          "translate_latency_ms": 585.04,
+          "translate_latency_ms": 331.23,
           "translate_result": null,
           "detect_status": "skipped",
           "detect_latency_ms": 0.01,
@@ -1555,16 +1558,16 @@
           "call_syntax": "translator = GoogleTranslator(); res = translator.translate_sync('Hello world', dest='de')",
           "notes": "Synchronous translate_sync method on GoogleTranslator",
           "translate_status": "failed",
-          "translate_latency_ms": 513.24,
+          "translate_latency_ms": 553.79,
           "translate_result": null,
           "detect_status": "skipped",
-          "detect_latency_ms": 0.01,
+          "detect_latency_ms": 0.0,
           "detect_result": null,
           "error": "AttributeError: 'Response' object has no attribute 'decode'",
           "detect_details": "detect() API not provided by this implementation"
         }
       },
-      "elapsed_sec": 5.88,
+      "elapsed_sec": 7.39,
       "package_id": "SmallGoogleTranslator",
       "description": "Minimalist async/sync Google Translator library scraping the web endpoint.",
       "pypi_url": "https://pypi.org/project/SmallGoogleTranslator/",
@@ -1572,7 +1575,7 @@
     },
     "cloud-translator": {
       "package_name": "cloud-translator",
-      "timestamp": "2026-11-20T13:58:17Z",
+      "timestamp": "2026-11-21T13:22:43Z",
       "python_version": "3.12.16",
       "installed": true,
       "import_success": true,
@@ -1595,7 +1598,7 @@
         },
         "detect_language": {
           "status": "skipped",
-          "latency_ms": 0.01,
+          "latency_ms": 0.0,
           "result": null,
           "error": null,
           "details": "detect() API not provided by this implementation"
@@ -1615,13 +1618,13 @@
           "translate_latency_ms": 0.05,
           "translate_result": null,
           "detect_status": "skipped",
-          "detect_latency_ms": 0.01,
+          "detect_latency_ms": 0.0,
           "detect_result": null,
           "error": "AttributeError: 'coroutine' object has no attribute 'text'",
           "detect_details": "detect() API not provided by this implementation"
         }
       },
-      "elapsed_sec": 5.19,
+      "elapsed_sec": 7.42,
       "package_id": "cloud-translator",
       "description": "Unified translation wrapper targeting Google Translate, Baidu, and Tencent.",
       "pypi_url": "https://pypi.org/project/cloud-translator/",
@@ -1629,7 +1632,7 @@
     },
     "gotranslate": {
       "package_name": "gotranslate",
-      "timestamp": "2026-11-20T13:58:22Z",
+      "timestamp": "2026-11-21T13:22:50Z",
       "python_version": "3.12.16",
       "installed": true,
       "import_success": true,
@@ -1646,14 +1649,14 @@
         },
         "translate_en_de": {
           "status": "passed",
-          "latency_ms": 56.36,
+          "latency_ms": 83.08,
           "result": "Hallo Welt",
           "error": null,
           "details": "Verified sync (GoogleTranslator) implementation"
         },
         "detect_language": {
           "status": "passed",
-          "latency_ms": 58.36,
+          "latency_ms": 83.16,
           "result": "fr",
           "error": null
         }
@@ -1669,15 +1672,15 @@
           "call_syntax": "translator = GoogleTranslator(); res = translator.translate('Hello world', dest='de')",
           "notes": "Synchronous implementation (GoogleTranslator)",
           "translate_status": "passed",
-          "translate_latency_ms": 56.36,
+          "translate_latency_ms": 83.08,
           "translate_result": "Hallo Welt",
           "detect_status": "passed",
-          "detect_latency_ms": 58.36,
+          "detect_latency_ms": 83.16,
           "detect_result": "fr",
           "error": null
         }
       },
-      "elapsed_sec": 4.91,
+      "elapsed_sec": 6.34,
       "package_id": "gotranslate",
       "description": "Lightweight GoogleTranslator library with language detection, details, and emoji flags.",
       "pypi_url": "https://pypi.org/project/gotranslate/",
@@ -1685,7 +1688,7 @@
     },
     "unlimited-machine-translator": {
       "package_name": "unlimited-machine-translator",
-      "timestamp": "2026-11-20T13:58:33Z",
+      "timestamp": "2026-11-21T13:23:05Z",
       "python_version": "3.12.16",
       "installed": true,
       "import_success": true,
@@ -1702,13 +1705,13 @@
         },
         "translate_en_de": {
           "status": "failed",
-          "latency_ms": 512.23,
+          "latency_ms": 573.54,
           "result": null,
           "error": "TooManyRequests: Server Error: You made too many requests to the server.According to google, you are allowed to make 5 requests per secondand up to 200k requests per day. You can wait and try again later oryou can try the translate_batch function"
         },
         "detect_language": {
           "status": "skipped",
-          "latency_ms": 0.01,
+          "latency_ms": 0.0,
           "result": null,
           "error": null,
           "details": "detect() API not provided by this implementation"
@@ -1725,16 +1728,16 @@
           "call_syntax": "res = machine_translator_doc('Hello world', dest='de')",
           "notes": "Direct function machine_translator_doc",
           "translate_status": "failed",
-          "translate_latency_ms": 512.23,
+          "translate_latency_ms": 573.54,
           "translate_result": null,
           "detect_status": "skipped",
-          "detect_latency_ms": 0.01,
+          "detect_latency_ms": 0.0,
           "detect_result": null,
           "error": "TooManyRequests: Server Error: You made too many requests to the server.According to google, you are allowed to make 5 requests per secondand up to 200k requests per day. You can wait and try again later oryou can try the translate_batch function",
           "detect_details": "detect() API not provided by this implementation"
         }
       },
-      "elapsed_sec": 13.48,
+      "elapsed_sec": 16.67,
       "package_id": "unlimited-machine-translator",
       "description": "Batch document and DataFrame machine translation leveraging Google Translate.",
       "pypi_url": "https://pypi.org/project/unlimited-machine-translator/",
@@ -1742,7 +1745,7 @@
     },
     "mintrans": {
       "package_name": "mintrans",
-      "timestamp": "2026-11-20T13:58:40Z",
+      "timestamp": "2026-11-21T13:23:13Z",
       "python_version": "3.12.16",
       "installed": true,
       "import_success": true,
@@ -1759,10 +1762,10 @@
         },
         "translate_en_de": {
           "status": "passed",
-          "latency_ms": 553.77,
+          "latency_ms": 615.78,
           "result": "Hallo Welt",
           "error": null,
-          "details": "Verified sync (GoogleTranslator) implementation"
+          "details": "Verified both async (AsyncGoogleTranslator) and sync (GoogleTranslator) implementations"
         },
         "detect_language": {
           "status": "passed",
@@ -1781,14 +1784,13 @@
           "import_syntax": "from mintrans import AsyncGoogleTranslator as Translator",
           "call_syntax": "translator = Translator(); res = await translator.translate('Hello world', to_lang='de')",
           "notes": "Asynchronous implementation via AsyncGoogleTranslator",
-          "translate_status": "failed",
-          "translate_latency_ms": 4865.74,
-          "translate_result": null,
-          "detect_status": "skipped",
+          "translate_status": "passed",
+          "translate_latency_ms": 615.78,
+          "translate_result": "Hallo Welt",
+          "detect_status": "passed",
           "detect_latency_ms": 0.01,
-          "detect_result": null,
-          "error": "RateLimitException: Google Translate rate limit reached!",
-          "detect_details": "detect() API not provided by this implementation"
+          "detect_result": "en",
+          "error": null
         },
         "sync": {
           "class": "GoogleTranslator",
@@ -1797,7 +1799,7 @@
           "call_syntax": "translator = GoogleTranslator(); res = translator.translate('Hello world', dest='de')",
           "notes": "Synchronous implementation (GoogleTranslator)",
           "translate_status": "passed",
-          "translate_latency_ms": 553.77,
+          "translate_latency_ms": 629.62,
           "translate_result": "Hallo Welt",
           "detect_status": "passed",
           "detect_latency_ms": 0.01,
@@ -1805,7 +1807,7 @@
           "error": null
         }
       },
-      "elapsed_sec": 10.2,
+      "elapsed_sec": 7.56,
       "package_id": "mintrans",
       "description": "Free multi-service translation API wrapper supporting Google Translate, Bing, and DeepL.",
       "pypi_url": "https://pypi.org/project/mintrans/",
@@ -1813,7 +1815,7 @@
     },
     "freetrans-py": {
       "package_name": "freetrans-py",
-      "timestamp": "2026-11-20T13:58:51Z",
+      "timestamp": "2026-11-21T13:23:21Z",
       "python_version": "3.12.16",
       "installed": true,
       "import_success": true,
@@ -1830,14 +1832,14 @@
         },
         "translate_en_de": {
           "status": "passed",
-          "latency_ms": 392.73,
+          "latency_ms": 106.23,
           "result": "Hallo Welt",
           "error": null,
           "details": "Verified both async (Translator) and sync (SyncTranslator) implementations"
         },
         "detect_language": {
           "status": "passed",
-          "latency_ms": 452.72,
+          "latency_ms": 275.83,
           "result": "fr",
           "error": null
         }
@@ -1853,10 +1855,10 @@
           "call_syntax": "translator = Translator(); res = translator.translate('Hello world', dest='de')",
           "notes": "Synchronous drop-in replacement compatible with older googletrans v3.x workflows",
           "translate_status": "passed",
-          "translate_latency_ms": 376.95,
+          "translate_latency_ms": 95.18,
           "translate_result": "Hallo Welt",
           "detect_status": "passed",
-          "detect_latency_ms": 44.73,
+          "detect_latency_ms": 122.48,
           "detect_result": "fr",
           "error": null
         },
@@ -1867,15 +1869,15 @@
           "call_syntax": "translator = Translator(); res = await translator.translate('Hello world', dest='de')",
           "notes": "Modern asynchronous implementation (Translator)",
           "translate_status": "passed",
-          "translate_latency_ms": 392.73,
+          "translate_latency_ms": 106.23,
           "translate_result": "Hallo Welt",
           "detect_status": "passed",
-          "detect_latency_ms": 452.72,
+          "detect_latency_ms": 275.83,
           "detect_result": "fr",
           "error": null
         }
       },
-      "elapsed_sec": 6.77,
+      "elapsed_sec": 7.8,
       "package_id": "freetrans-py",
       "description": "Multi-provider translation library with curl-cffi anti-rate-limiting; supports both async Translator and sync SyncTranslator.",
       "pypi_url": "https://pypi.org/project/freetrans-py/",
@@ -1883,7 +1885,7 @@
     },
     "py-trans": {
       "package_name": "py-trans",
-      "timestamp": "2026-11-20T13:58:57Z",
+      "timestamp": "2026-11-21T13:23:28Z",
       "python_version": "3.12.16",
       "installed": true,
       "import_success": true,
@@ -1900,14 +1902,14 @@
         },
         "translate_en_de": {
           "status": "passed",
-          "latency_ms": 70.09,
+          "latency_ms": 100.77,
           "result": "Hallo Welt",
           "error": null,
           "details": "Verified both async (Async_PyTranslator) and sync (PyTranslator) implementations"
         },
         "detect_language": {
           "status": "passed",
-          "latency_ms": 219.6,
+          "latency_ms": 263.33,
           "result": "en",
           "error": null
         }
@@ -1923,10 +1925,10 @@
           "call_syntax": "translator = Translator(); res = await translator.google('Hello world', dest='de')",
           "notes": "Asynchronous implementation via Async_PyTranslator",
           "translate_status": "passed",
-          "translate_latency_ms": 70.09,
+          "translate_latency_ms": 100.77,
           "translate_result": "Hallo Welt",
           "detect_status": "passed",
-          "detect_latency_ms": 219.6,
+          "detect_latency_ms": 263.33,
           "detect_result": "en",
           "error": null
         },
@@ -1937,15 +1939,15 @@
           "call_syntax": "translator = PyTranslator(); res = translator.google('Hello world', dest='de')",
           "notes": "Synchronous implementation (PyTranslator)",
           "translate_status": "passed",
-          "translate_latency_ms": 87.12,
+          "translate_latency_ms": 80.62,
           "translate_result": "Hallo Welt",
           "detect_status": "passed",
-          "detect_latency_ms": 219.01,
+          "detect_latency_ms": 237.45,
           "detect_result": "en",
           "error": null
         }
       },
-      "elapsed_sec": 5.98,
+      "elapsed_sec": 6.78,
       "package_id": "py-trans",
       "description": "Free translation library supporting multiple providers (Google Translate, Translate Dict) with async and sync support.",
       "pypi_url": "https://pypi.org/project/py-trans/",
