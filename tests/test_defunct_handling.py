@@ -28,13 +28,13 @@ def test_packages_defunct_classification():
         assert "category_reason" in p and len(p["category_reason"]) > 10
 
 
-def test_results_metadata_version_v014():
+def test_results_metadata_version_v015():
     for fpath in [LATEST_RESULTS, DASHBOARD_RESULTS]:
         with open(fpath, "r", encoding="utf-8") as f:
             data = json.load(f)
 
-        assert data["metadata"]["version"] == "v0.1.4"
-        assert "v0.1.4" in data["metadata"]["release_url"]
+        assert data["metadata"]["version"] == "v0.1.5"
+        assert "v0.1.5" in data["metadata"]["release_url"]
         assert data["summary"]["defunct_count"] == 5
         assert data["summary"]["total_packages"] == 37
 
