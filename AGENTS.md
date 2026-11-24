@@ -139,7 +139,7 @@ npm run preview
 ## 🔄 CI / GitHub Actions Workflows
 
 1. **`test-implementations.yml` (`.github/workflows/test-implementations.yml`)**:
-   - Runs on schedule (`0 5 * * *`) and `workflow_dispatch`.
+   - Runs on schedule (`17 19 * * *`, daily at 19:17 UTC) and `workflow_dispatch`.
    - Runs test matrix across implementations and collects latest statistics.
    - Commits updated `data/latest_results.json` and triggers dashboard deployment.
 

@@ -211,7 +211,7 @@ Or run everything with the helper script:
 ## 🔄 CI / GitHub Actions Workflows
 
 1. **`test-implementations.yml`**:
-   - Runs on schedule (`0 5 * * *`) and `workflow_dispatch`.
+   - Runs on schedule (`17 19 * * *`, daily at 19:17 UTC) and `workflow_dispatch`.
    - Runs test matrix across all 37 implementations and collects latest statistics.
    - Commits updated telemetry data and automatically triggers dashboard deployment.
 
