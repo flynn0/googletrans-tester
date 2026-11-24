@@ -72,12 +72,9 @@ jobs:
             echo "No changes to commit."
           fi
 
-  trigger-deploy:
+  build-dashboard:
     needs: run-matrix
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout Code
         uses: actions/checkout@v7
@@ -114,6 +111,16 @@ jobs:
         with:
           path: "dashboard/dist"
 
+  deploy-dashboard:
+    needs: build-dashboard
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
