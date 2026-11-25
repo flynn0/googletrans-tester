@@ -15,7 +15,7 @@
     "downloads_last_month": 1629378,
     "downloads_last_week": 150750,
     "downloads_last_day": 22801,
-    "fetched_at": "2026-11-25T03:03:59.305488+00:00"
+    "fetched_at": "2026-11-25T23:05:11.224298+00:00"
   },
   "googletrans-curl": {
     "package_id": "googletrans-curl",
@@ -33,7 +33,7 @@
     "downloads_last_month": 1072,
     "downloads_last_week": 199,
     "downloads_last_day": 29,
-    "fetched_at": "2026-11-25T03:03:59.305488+00:00"
+    "fetched_at": "2026-11-25T23:05:11.224298+00:00"
   },
   "googletrans-py": {
     "package_id": "googletrans-py",
@@ -48,10 +48,10 @@
     "downloads_lifetime": 2000000,
     "downloads_2026": 511736,
     "downloads_2026_with_mirrors": 512725,
-    "downloads_last_month": 75984,
-    "downloads_last_week": 16044,
-    "downloads_last_day": 3966,
-    "fetched_at": "2026-11-25T03:03:59.305488+00:00"
+    "downloads_last_month": 0,
+    "downloads_last_week": 0,
+    "downloads_last_day": 0,
+    "fetched_at": "2026-11-25T23:05:11.224298+00:00"
   },
   "googletrans-py39": {
     "package_id": "googletrans-py39",
@@ -66,10 +66,10 @@
     "downloads_lifetime": 24000,
     "downloads_2026": 4174,
     "downloads_2026_with_mirrors": 4537,
-    "downloads_last_month": 347,
-    "downloads_last_week": 52,
-    "downloads_last_day": 12,
-    "fetched_at": "2026-11-25T03:03:59.305488+00:00"
+    "downloads_last_month": 0,
+    "downloads_last_week": 0,
+    "downloads_last_day": 0,
+    "fetched_at": "2026-11-25T23:05:11.224298+00:00"
   },
   "googletrans-python": {
     "package_id": "googletrans-python",
@@ -84,10 +84,10 @@
     "downloads_lifetime": 11000,
     "downloads_2026": 918,
     "downloads_2026_with_mirrors": 1271,
-    "downloads_last_month": 146,
-    "downloads_last_week": 49,
-    "downloads_last_day": 12,
-    "fetched_at": "2026-11-25T03:03:59.305488+00:00"
+    "downloads_last_month": 0,
+    "downloads_last_week": 0,
+    "downloads_last_day": 0,
+    "fetched_at": "2026-11-25T23:05:11.224298+00:00"
   },
   "googletrans-sw": {
     "package_id": "googletrans-sw",
@@ -102,10 +102,10 @@
     "downloads_lifetime": 4000,
     "downloads_2026": 140,
     "downloads_2026_with_mirrors": 582,
-    "downloads_last_month": 28,
-    "downloads_last_week": 5,
-    "downloads_last_day": 3,
-    "fetched_at": "2026-11-25T03:03:59.305488+00:00"
+    "downloads_last_month": 0,
+    "downloads_last_week": 0,
+    "downloads_last_day": 0,
+    "fetched_at": "2026-11-25T23:05:11.224298+00:00"
   },
   "googletrans-wheel": {
     "package_id": "googletrans-wheel",
@@ -120,10 +120,10 @@
     "downloads_lifetime": 2000,
     "downloads_2026": 131,
     "downloads_2026_with_mirrors": 372,
-    "downloads_last_month": 30,
-    "downloads_last_week": 8,
-    "downloads_last_day": 4,
-    "fetched_at": "2026-11-25T03:03:59.305488+00:00"
+    "downloads_last_month": 0,
+    "downloads_last_week": 0,
+    "downloads_last_day": 0,
+    "fetched_at": "2026-11-25T23:05:11.224298+00:00"
   },
   "googletrans-di": {
     "package_id": "googletrans-di",
@@ -141,7 +141,7 @@
     "downloads_last_month": 2375,
     "downloads_last_week": 87,
     "downloads_last_day": 3,
-    "fetched_at": "2026-11-25T03:03:59.305488+00:00"
+    "fetched_at": "2026-11-25T23:05:11.224298+00:00"
   },
   "googletrans-modified": {
     "package_id": "googletrans-modified",
@@ -156,10 +156,10 @@
     "downloads_lifetime": 15000,
     "downloads_2026": 944,
     "downloads_2026_with_mirrors": 1321,
-    "downloads_last_month": 31,
-    "downloads_last_week": 8,
-    "downloads_last_day": 4,
-    "fetched_at": "2026-11-25T03:03:59.305488+00:00"
+    "downloads_last_month": 0,
+    "downloads_last_week": 0,
+    "downloads_last_day": 0,
+    "fetched_at": "2026-11-25T23:05:11.224298+00:00"
   },
   "py-googletrans": {
     "package_id": "py-googletrans",
@@ -174,10 +174,10 @@
     "downloads_lifetime": 88000,
     "downloads_2026": 12382,
     "downloads_2026_with_mirrors": 13024,
-    "downloads_last_month": 3091,
-    "downloads_last_week": 733,
-    "downloads_last_day": 118,
-    "fetched_at": "2026-11-25T03:03:59.305488+00:00"
+    "downloads_last_month": 0,
+    "downloads_last_week": 0,
+    "downloads_last_day": 0,
+    "fetched_at": "2026-11-25T23:05:11.224298+00:00"
   },
   "googletrans-wheel2-py": {
     "package_id": "googletrans-wheel2-py",
@@ -192,10 +192,10 @@
     "downloads_lifetime": 3000,
     "downloads_2026": 128,
     "downloads_2026_with_mirrors": 363,
-    "downloads_last_month": 27,
-    "downloads_last_week": 8,
-    "downloads_last_day": 3,
-    "fetched_at": "2026-11-25T03:03:59.305488+00:00"
+    "downloads_last_month": 0,
+    "downloads_last_week": 0,
+    "downloads_last_day": 0,
+    "fetched_at": "2026-11-25T23:05:11.224298+00:00"
   },
   "googletrans-temp": {
     "package_id": "googletrans-temp",
@@ -210,10 +210,10 @@
     "downloads_lifetime": 21000,
     "downloads_2026": 222,
     "downloads_2026_with_mirrors": 436,
-    "downloads_last_month": 39,
-    "downloads_last_week": 7,
-    "downloads_last_day": 3,
-    "fetched_at": "2026-11-25T03:03:59.305488+00:00"
+    "downloads_last_month": 0,
+    "downloads_last_week": 0,
+    "downloads_last_day": 0,
+    "fetched_at": "2026-11-25T23:05:11.224298+00:00"
   },
   "googletrans2": {
     "package_id": "googletrans2",
@@ -231,7 +231,7 @@
     "downloads_last_month": 78,
     "downloads_last_week": 11,
     "downloads_last_day": 4,
-    "fetched_at": "2026-11-25T03:03:59.305488+00:00"
+    "fetched_at": "2026-11-25T23:05:11.224298+00:00"
   },
   "googletrans2020": {
     "package_id": "googletrans2020",
@@ -246,10 +246,10 @@
     "downloads_lifetime": 105000,
     "downloads_2026": 203,
     "downloads_2026_with_mirrors": 1527,
-    "downloads_last_month": 44,
-    "downloads_last_week": 10,
-    "downloads_last_day": 3,
-    "fetched_at": "2026-11-25T03:03:59.305488+00:00"
+    "downloads_last_month": 0,
+    "downloads_last_week": 0,
+    "downloads_last_day": 0,
+    "fetched_at": "2026-11-25T23:05:11.224298+00:00"
   },
   "googletransapi": {
     "package_id": "googletransapi",
@@ -267,7 +267,7 @@
     "downloads_last_month": 34,
     "downloads_last_week": 8,
     "downloads_last_day": 4,
-    "fetched_at": "2026-11-25T03:03:59.305488+00:00"
+    "fetched_at": "2026-11-25T23:05:11.224298+00:00"
   },
   "googletransfork": {
     "package_id": "googletransfork",
@@ -282,10 +282,10 @@
     "downloads_lifetime": 6000,
     "downloads_2026": 173,
     "downloads_2026_with_mirrors": 760,
-    "downloads_last_month": 34,
-    "downloads_last_week": 6,
-    "downloads_last_day": 3,
-    "fetched_at": "2026-11-25T03:03:59.305488+00:00"
+    "downloads_last_month": 0,
+    "downloads_last_week": 0,
+    "downloads_last_day": 0,
+    "fetched_at": "2026-11-25T23:05:11.224298+00:00"
   },
   "googletranslate": {
     "package_id": "googletranslate",
@@ -303,7 +303,7 @@
     "downloads_last_month": 4,
     "downloads_last_week": 0,
     "downloads_last_day": 0,
-    "fetched_at": "2026-11-25T03:03:59.305488+00:00"
+    "fetched_at": "2026-11-25T23:05:11.224298+00:00"
   },
   "googletranslate-neon-plugin": {
     "package_id": "googletranslate-neon-plugin",
@@ -318,10 +318,10 @@
     "downloads_lifetime": 2000,
     "downloads_2026": 133,
     "downloads_2026_with_mirrors": 358,
-    "downloads_last_month": 19,
-    "downloads_last_week": 6,
-    "downloads_last_day": 3,
-    "fetched_at": "2026-11-25T03:03:59.305488+00:00"
+    "downloads_last_month": 0,
+    "downloads_last_week": 0,
+    "downloads_last_day": 0,
+    "fetched_at": "2026-11-25T23:05:11.224298+00:00"
   },
   "googletranslate-python": {
     "package_id": "googletranslate-python",
@@ -336,10 +336,10 @@
     "downloads_lifetime": 22000,
     "downloads_2026": 802,
     "downloads_2026_with_mirrors": 1783,
-    "downloads_last_month": 103,
-    "downloads_last_week": 29,
-    "downloads_last_day": 6,
-    "fetched_at": "2026-11-25T03:03:59.305488+00:00"
+    "downloads_last_month": 0,
+    "downloads_last_week": 0,
+    "downloads_last_day": 0,
+    "fetched_at": "2026-11-25T23:05:11.224298+00:00"
   },
   "googletranslator-new": {
     "package_id": "googletranslator-new",
@@ -357,7 +357,7 @@
     "downloads_last_month": 36,
     "downloads_last_week": 8,
     "downloads_last_day": 3,
-    "fetched_at": "2026-11-25T03:03:59.305488+00:00"
+    "fetched_at": "2026-11-25T23:05:11.224298+00:00"
   },
   "googletranswheel2": {
     "package_id": "googletranswheel2",
@@ -375,7 +375,7 @@
     "downloads_last_month": 0,
     "downloads_last_week": 0,
     "downloads_last_day": 0,
-    "fetched_at": "2026-11-25T03:03:59.305488+00:00"
+    "fetched_at": "2026-11-25T23:05:11.224298+00:00"
   },
   "googletransx": {
     "package_id": "googletransx",
@@ -393,7 +393,7 @@
     "downloads_last_month": 2414,
     "downloads_last_week": 509,
     "downloads_last_day": 74,
-    "fetched_at": "2026-11-25T03:03:59.305488+00:00"
+    "fetched_at": "2026-11-25T23:05:11.224298+00:00"
   },
   "vtrans": {
     "package_id": "vtrans",
@@ -408,10 +408,10 @@
     "downloads_lifetime": 5000,
     "downloads_2026": 99,
     "downloads_2026_with_mirrors": 428,
-    "downloads_last_month": 15,
-    "downloads_last_week": 6,
-    "downloads_last_day": 3,
-    "fetched_at": "2026-11-25T03:03:59.305488+00:00"
+    "downloads_last_month": 0,
+    "downloads_last_week": 0,
+    "downloads_last_day": 0,
+    "fetched_at": "2026-11-25T23:05:11.224298+00:00"
   },
   "Flask-Googletrans": {
     "package_id": "Flask-Googletrans",
@@ -429,7 +429,7 @@
     "downloads_last_month": 0,
     "downloads_last_week": 0,
     "downloads_last_day": 0,
-    "fetched_at": "2026-11-25T03:03:59.305488+00:00"
+    "fetched_at": "2026-11-25T23:05:11.224298+00:00"
   },
   "simple-googletrans": {
     "package_id": "simple-googletrans",
@@ -444,10 +444,10 @@
     "downloads_lifetime": 15000,
     "downloads_2026": 3142,
     "downloads_2026_with_mirrors": 3620,
-    "downloads_last_month": 2319,
-    "downloads_last_week": 100,
+    "downloads_last_month": 0,
+    "downloads_last_week": 0,
     "downloads_last_day": 0,
-    "fetched_at": "2026-11-25T03:03:59.305488+00:00"
+    "fetched_at": "2026-11-25T23:05:11.224298+00:00"
   },
   "py-googletrans-html": {
     "package_id": "py-googletrans-html",
@@ -462,10 +462,10 @@
     "downloads_lifetime": 7000,
     "downloads_2026": 160,
     "downloads_2026_with_mirrors": 471,
-    "downloads_last_month": 36,
-    "downloads_last_week": 7,
-    "downloads_last_day": 3,
-    "fetched_at": "2026-11-25T03:03:59.305488+00:00"
+    "downloads_last_month": 0,
+    "downloads_last_week": 0,
+    "downloads_last_day": 0,
+    "fetched_at": "2026-11-25T23:05:11.224298+00:00"
   },
   "ggtrans": {
     "package_id": "ggtrans",
@@ -483,7 +483,7 @@
     "downloads_last_month": 23,
     "downloads_last_week": 4,
     "downloads_last_day": 1,
-    "fetched_at": "2026-11-25T03:03:59.305488+00:00"
+    "fetched_at": "2026-11-25T23:05:11.224298+00:00"
   },
   "paraphrase-googletranslate": {
     "package_id": "paraphrase-googletranslate",
@@ -498,10 +498,10 @@
     "downloads_lifetime": 26000,
     "downloads_2026": 660,
     "downloads_2026_with_mirrors": 1660,
-    "downloads_last_month": 44,
-    "downloads_last_week": 7,
-    "downloads_last_day": 1,
-    "fetched_at": "2026-11-25T03:03:59.305488+00:00"
+    "downloads_last_month": 0,
+    "downloads_last_week": 0,
+    "downloads_last_day": 0,
+    "fetched_at": "2026-11-25T23:05:11.224298+00:00"
   },
   "SmallGoogleTranslator": {
     "package_id": "SmallGoogleTranslator",
@@ -519,7 +519,7 @@
     "downloads_last_month": 0,
     "downloads_last_week": 0,
     "downloads_last_day": 0,
-    "fetched_at": "2026-11-25T03:03:59.305488+00:00"
+    "fetched_at": "2026-11-25T23:05:11.224298+00:00"
   },
   "cloud-translator": {
     "package_id": "cloud-translator",
@@ -537,7 +537,7 @@
     "downloads_last_month": 28,
     "downloads_last_week": 3,
     "downloads_last_day": 0,
-    "fetched_at": "2026-11-25T03:03:59.305488+00:00"
+    "fetched_at": "2026-11-25T23:05:11.224298+00:00"
   },
   "gotranslate": {
     "package_id": "gotranslate",
@@ -552,10 +552,10 @@
     "downloads_lifetime": 1000,
     "downloads_2026": 199,
     "downloads_2026_with_mirrors": 618,
-    "downloads_last_month": 27,
-    "downloads_last_week": 5,
-    "downloads_last_day": 2,
-    "fetched_at": "2026-11-25T03:03:59.305488+00:00"
+    "downloads_last_month": 0,
+    "downloads_last_week": 0,
+    "downloads_last_day": 0,
+    "fetched_at": "2026-11-25T23:05:11.224298+00:00"
   },
   "unlimited-machine-translator": {
     "package_id": "unlimited-machine-translator",
@@ -570,10 +570,10 @@
     "downloads_lifetime": 16000,
     "downloads_2026": 464,
     "downloads_2026_with_mirrors": 1373,
-    "downloads_last_month": 44,
-    "downloads_last_week": 4,
-    "downloads_last_day": 1,
-    "fetched_at": "2026-11-25T03:03:59.305488+00:00"
+    "downloads_last_month": 0,
+    "downloads_last_week": 0,
+    "downloads_last_day": 0,
+    "fetched_at": "2026-11-25T23:05:11.224298+00:00"
   },
   "mintrans": {
     "package_id": "mintrans",
@@ -588,10 +588,10 @@
     "downloads_lifetime": 8000,
     "downloads_2026": 413,
     "downloads_2026_with_mirrors": 1055,
-    "downloads_last_month": 67,
-    "downloads_last_week": 13,
-    "downloads_last_day": 4,
-    "fetched_at": "2026-11-25T03:03:59.305488+00:00"
+    "downloads_last_month": 0,
+    "downloads_last_week": 0,
+    "downloads_last_day": 0,
+    "fetched_at": "2026-11-25T23:05:11.224298+00:00"
   },
   "freetrans-py": {
     "package_id": "freetrans-py",
@@ -603,13 +603,13 @@
     "latest_release_date": "2026-11-04T03:22:22.088626Z",
     "summary": "Free, open translation across multiple providers with curl-cffi anti-rate-limiting",
     "author": "Matthias Kreier",
-    "downloads_lifetime": 712,
+    "downloads_lifetime": 738,
     "downloads_2026": 407,
     "downloads_2026_with_mirrors": 738,
-    "downloads_last_month": 407,
-    "downloads_last_week": 118,
-    "downloads_last_day": 18,
-    "fetched_at": "2026-11-25T03:03:59.305488+00:00"
+    "downloads_last_month": 0,
+    "downloads_last_week": 0,
+    "downloads_last_day": 0,
+    "fetched_at": "2026-11-25T23:05:11.224298+00:00"
   },
   "py-trans": {
     "package_id": "py-trans",
@@ -627,7 +627,7 @@
     "downloads_last_month": 296,
     "downloads_last_week": 100,
     "downloads_last_day": 13,
-    "fetched_at": "2026-11-25T03:03:59.305488+00:00"
+    "fetched_at": "2026-11-25T23:05:11.224298+00:00"
   },
   "google-translate-py": {
     "package_id": "google-translate-py",
@@ -642,10 +642,10 @@
     "downloads_lifetime": 61000,
     "downloads_2026": 632,
     "downloads_2026_with_mirrors": 1206,
-    "downloads_last_month": 63,
-    "downloads_last_week": 11,
-    "downloads_last_day": 4,
-    "fetched_at": "2026-11-25T03:03:59.305488+00:00"
+    "downloads_last_month": 0,
+    "downloads_last_week": 0,
+    "downloads_last_day": 0,
+    "fetched_at": "2026-11-25T23:05:11.224298+00:00"
   },
   "python-translator": {
     "package_id": "python-translator",
@@ -660,9 +660,9 @@
     "downloads_lifetime": 18000,
     "downloads_2026": 935,
     "downloads_2026_with_mirrors": 1304,
-    "downloads_last_month": 193,
-    "downloads_last_week": 63,
-    "downloads_last_day": 11,
-    "fetched_at": "2026-11-25T03:03:59.305488+00:00"
+    "downloads_last_month": 0,
+    "downloads_last_week": 0,
+    "downloads_last_day": 0,
+    "fetched_at": "2026-11-25T23:05:11.224298+00:00"
   }
 }
