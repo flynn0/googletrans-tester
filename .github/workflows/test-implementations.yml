@@ -2,7 +2,7 @@ name: Test Implementations Matrix
 
 on:
   schedule:
-    - cron: "17 19 * * *"
+    - cron: "17 14 * * *"
   workflow_dispatch:
     inputs:
       target_package:
